@@ -1,0 +1,172 @@
+{
+  "home": [
+    {
+      "question": "Can I file for divorce in Florida if I am stationed here?",
+      "answer": "Florida requires that at least one spouse reside in the state for six months before a dissolution is filed. Military orders can affect how residency and domicile are evaluated, so this is usually reviewed together with your orders, your home of record and where your family lives."
+    },
+    {
+      "question": "How is a military pension divided in a divorce?",
+      "answer": "Dividing retired pay usually involves the Uniformed Services Former Spouses’ Protection Act, the length of the marriage overlapping service, and the “10/10 rule.” The court’s authority and the payment mechanisms available depend on those factors and on how the marital portion is characterized."
+    },
+    {
+      "question": "What happens to my custody rights if I deploy?",
+      "answer": "Deployment alone generally should not be treated as a change in a parent’s fitness or as grounds to permanently modify time-sharing. A parenting plan that anticipates deployment can establish notice provisions, temporary schedules and communication terms before any orders arrive."
+    },
+    {
+      "question": "Do you handle criminal cases as well as family law?",
+      "answer": "Yes. The office handles both family law and criminal defense, which matters when a criminal charge and a family law case involve the same people or the same events, such as domestic violence charges alongside an injunction or a divorce."
+    },
+    {
+      "question": "How does a consultation work and is it confidential?",
+      "answer": "An initial consultation is confidential. The firm will explain what to expect, what to bring and how the process works before anything is scheduled. No attorney-client relationship is created until a written engagement is signed."
+    }
+  ],
+  "militaryDivorce": [
+    {
+      "question": "Does the 10/10 rule decide whether retired pay can be divided?",
+      "answer": "No. It governs how a division is paid. Where the marriage and service did not overlap for ten years, a court may still address retired pay, but the payment mechanism is different and the order must be drafted accordingly. This is general information, not advice about your case."
+    },
+    {
+      "question": "Do I need 20 years of marriage to keep TRICARE after divorce?",
+      "answer": "The 20/20/20 rule generally requires 20 years of marriage, 20 years of creditable service and 20 years of overlap. A 15-year overlap may provide a limited period of continued coverage instead. Eligibility depends on the specific service and marriage dates."
+    },
+    {
+      "question": "Can my custody schedule change while I am deployed?",
+      "answer": "Florida’s deployment statute allows for a temporary arrangement during deployment, with a return to the original schedule afterward. A parenting plan that anticipates deployment can reduce conflict by setting notice and scheduling terms in advance."
+    },
+    {
+      "question": "Does the SCRA stop a divorce case while I am deployed?",
+      "answer": "It can support a request to delay proceedings when military service materially affects your ability to participate, and it requires an affidavit before a default judgment. It does not automatically suspend a case or every deadline."
+    }
+  ],
+  "resources": {
+    "Military Divorce": [
+      {
+        "question": "Can I file for divorce in Florida if I am stationed here?",
+        "answer": "Florida requires that a petitioner reside in the state for six months before a dissolution is filed. Military orders can affect how residency and domicile are evaluated, so this is usually reviewed together with your orders, your home of record and where your spouse and children live."
+      },
+      {
+        "question": "How is military retired pay divided?",
+        "answer": "Under the Uniformed Services Former Spouses’ Protection Act, a state court may treat disposable retired pay as marital property and divide it under state law. The 10/10 rule generally controls whether DFAS can pay a former spouse directly, which is a separate question from whether a division may be ordered."
+      },
+      {
+        "question": "What is the difference between the 20/20/20 and 20/20/15 rules?",
+        "answer": "The 20/20/20 rule generally requires 20 years of marriage, 20 years of creditable service and 20 years of overlap, and it can preserve medical and base privileges for an unremarried former spouse. Where the overlap is 15 to 19 years, the 20/20/15 rule may provide a limited period of continued medical coverage instead."
+      },
+      {
+        "question": "Does a Survivor Benefit Plan election carry into a divorce?",
+        "answer": "SBP coverage may be ordered for a former spouse, and a deemed election generally must be requested within one year of the divorce. Because the deadlines are short and the annuity is long-term, the election is usually addressed before the final judgment is signed."
+      },
+      {
+        "question": "Will my former spouse keep TRICARE?",
+        "answer": "TRICARE eligibility after divorce turns on statutory tests, including the 20/20/20 and 20/20/15 rules for unremarried former spouses. It is not automatic, and coverage for children is analyzed separately from coverage for a former spouse."
+      },
+      {
+        "question": "Is a military pension always divided at divorce?",
+        "answer": "No. Whether and how retired pay is divided depends on the marital portion, state law and the specific orders entered. A pension valuation and a review of the service timeline are usually part of the analysis."
+      }
+    ],
+    "Child Custody & Deployment": [
+      {
+        "question": "What happens to my time-sharing if I deploy?",
+        "answer": "Florida’s Uniform Deployed Parents Custody and Visitation Act allows for a temporary arrangement during deployment and for a return to the original schedule afterward. A parenting plan that sets notice requirements in advance reduces conflict when orders arrive."
+      },
+      {
+        "question": "Does deployment count against a parent in a custody case?",
+        "answer": "Deployment alone generally should not be treated as a change in a parent’s fitness or as automatic grounds to modify time-sharing permanently. Courts look at the child’s best interests and the arrangements actually in place."
+      },
+      {
+        "question": "Can a parenting plan be modified after it is entered?",
+        "answer": "Yes, when there has been a substantial and material change in circumstances that was not anticipated when the plan was entered. The parent requesting the change generally has to prove that change."
+      },
+      {
+        "question": "Can a military parent be required to appear in court while stationed elsewhere?",
+        "answer": "The Servicemembers Civil Relief Act can support a request to delay proceedings where military service materially affects the ability to appear. A court may also allow participation by telephone or video where the rules permit it."
+      }
+    ],
+    "Criminal Charges": [
+      {
+        "question": "What should I do immediately after a DUI arrest in Florida?",
+        "answer": "Address the license process, which runs on its own short timeline separate from the criminal case. Keep every document you were given, note the court date, and speak with an attorney before discussing the facts of the stop with anyone."
+      },
+      {
+        "question": "Can a service member face both military and civilian consequences?",
+        "answer": "Yes. A civilian charge and command action can proceed at the same time, and certain arrests may need to be reported. Handling both tracks together avoids inconsistent statements and missed obligations."
+      },
+      {
+        "question": "What is the difference between a criminal domestic violence charge and an injunction?",
+        "answer": "A criminal charge is prosecuted by the state and can lead to a conviction and sentence. An injunction is a civil protective-order proceeding with its own hearing and conditions, such as contact restrictions, which can be entered even when no criminal case is filed."
+      }
+    ],
+    "Domestic Violence & Injunctions": [
+      {
+        "question": "How long does a domestic violence injunction last?",
+        "answer": "A temporary injunction may be issued while the case is pending, and a final injunction can be entered for a set period or, in some circumstances, permanently. The terms and duration depend on the findings at the hearing."
+      },
+      {
+        "question": "What happens if I violate an injunction?",
+        "answer": "A violation can be pursued as a separate criminal matter, and it can also affect the underlying family law case. The specific consequences depend on the terms of the order and the conduct alleged."
+      },
+      {
+        "question": "Can an injunction affect time-sharing with my children?",
+        "answer": "An injunction can include temporary provisions affecting contact and time-sharing while the family law case proceeds. Those terms are usually revisited in the family law proceeding."
+      }
+    ]
+  },
+  "familyLawServices": [
+    {
+      "question": "Divorce Representation",
+      "answer": "A dissolution of marriage resolves the marriage itself and, where applicable, property, support and parental responsibility. Florida offers both a simplified procedure for narrow circumstances and a standard petition process for contested or more complex cases.\n\nPetition, response and the required financial disclosures\nContested and uncontested paths, and what changes between them\nWhat must be settled before a final judgment is entered"
+    },
+    {
+      "question": "Child Custody and Time-Sharing",
+      "answer": "Florida uses the terms time-sharing and parental responsibility. Courts decide these based on the best interests of the child, guided by statutory factors that include stability, each parent’s involvement and the child’s needs.\n\nTime-sharing schedules and holiday rotations\nDecision-making authority and parental responsibility\nDocumentation that supports a proposed schedule"
+    },
+    {
+      "question": "Parenting Plans",
+      "answer": "A parenting plan is the written framework for how parents will share time and make decisions. A workable plan is specific: it addresses exchanges, communication, travel, schooling, medical care and how disputes will be handled.\n\nExchange logistics and transportation responsibilities\nCommunication rules between parents and with the child\nProcedures for changes, travel and emergencies"
+    },
+    {
+      "question": "Child Support",
+      "answer": "Child support in Florida is calculated using statutory guidelines that consider both parents’ incomes, the time-sharing arrangement and costs such as health insurance and childcare. Support can be established by agreement or by the court.\n\nGuideline calculations and required income documentation\nHealth insurance, childcare and other add-on costs\nEnforcement when payments are missed"
+    },
+    {
+      "question": "Alimony and Spousal Support",
+      "answer": "Alimony is decided on factors set by statute, including the length of the marriage, each spouse’s financial position and the standard of living established during the marriage. Florida law recognizes several forms of support, each with different durations and purposes.\n\nBridge-the-gap, rehabilitative, durational and permanent support\nHow the length of the marriage affects the analysis\nTax and budgeting consequences to plan for"
+    },
+    {
+      "question": "Property and Asset Division",
+      "answer": "Florida distributes marital property equitably rather than automatically in half. The analysis begins with identifying marital and non-marital assets, then valuing them, including retirement accounts, businesses and the family residence.\n\nMarital versus non-marital characterization\nValuation, discovery and tracing of separate funds\nDebts, the residence and refinancing practicalities"
+    },
+    {
+      "question": "Termination of Parental Rights",
+      "answer": "Termination of parental rights is the most serious proceeding in family law. It may arise through a voluntary surrender in an adoption or through a contested statutory ground, and it requires proof that termination serves the child’s best interests.\n\nStatutory grounds and the standard of proof\nThe role of the guardian ad litem where one is appointed\nRelated step-parent adoption questions"
+    },
+    {
+      "question": "Paternity",
+      "answer": "Paternity establishes a legal father, which is the foundation for time-sharing, parental responsibility and child support. It may be established by agreement, by acknowledgment, through the Department of Revenue, or by court order.\n\nEstablishing paternity and the resulting rights\nGenetic testing and acknowledgments of paternity\nCoordinating paternity with a parenting plan"
+    },
+    {
+      "question": "Modifications",
+      "answer": "Existing orders can be changed when there has been a substantial and material change in circumstances that was not anticipated when the order was entered. The party requesting the change generally carries the burden of proving it.\n\nChanges in income, employment or health\nRelocation and schedule changes\nDocumenting the change before filing"
+    },
+    {
+      "question": "Motions for Contempt and Enforcement",
+      "answer": "When a court order is not being followed, the remedy is usually a motion to enforce or a motion for contempt. Courts can compel compliance, and in some circumstances impose sanctions, but the process depends on a clear record of what the order required.\n\nDocumenting missed payments or denied time-sharing\nWhat a motion must establish to proceed\nAvailable remedies and how they are enforced"
+    }
+  ],
+  "familyLaw": [
+    {
+      "question": "Is custody decided the same way for every family?",
+      "answer": "No. Florida courts decide time-sharing and parental responsibility on the best interests of the child, weighing statutory factors that depend on each family’s circumstances. A proposal is stronger when it is specific and supported by documentation."
+    },
+    {
+      "question": "Can child support be changed later?",
+      "answer": "Yes, when there is a substantial and material change in circumstances, such as a significant change in income or the child’s needs. The change generally must be proven and then ordered by the court."
+    },
+    {
+      "question": "What if the other parent ignores the parenting plan?",
+      "answer": "The usual path is a motion to enforce or a motion for contempt, supported by a record of what the plan required and what happened. Keeping dated records of exchanges and communications makes that record possible."
+    }
+  ]
+}
