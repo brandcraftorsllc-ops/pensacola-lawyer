@@ -134,10 +134,10 @@ export function HomePage() {
               ))}
             </div>
             <div className="about-actions">
-              <Link className="text-link" href="/attorney">
+              <Link className="button button-gold" href="/attorney">
                 Read the Full Profile <span aria-hidden="true">→</span>
               </Link>
-              <Link className="text-link" href="/case-evaluation">
+              <Link className="button button-outline" href="/case-evaluation">
                 Or Schedule a Consultation <span aria-hidden="true">→</span>
               </Link>
             </div>

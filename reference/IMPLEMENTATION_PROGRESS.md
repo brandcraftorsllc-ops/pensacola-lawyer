@@ -31,6 +31,9 @@
   and mobile screenshots.
 - [x] Final build, typecheck, lint and 7-test Playwright suite pass after the
   latest responsive and footer adjustments.
+- [x] Matched the homepage attorney section to the Base44 reference layout:
+  widened 1280px desktop grid, aligned portrait and copy proportions, converted
+  credentials to label/value rows, and restored gold/outline action buttons.
 
 ## Known limitations
 
