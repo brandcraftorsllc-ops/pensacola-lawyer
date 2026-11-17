@@ -29,6 +29,28 @@ test("all discovered routes load directly with a page heading", async ({ page })
   }
 });
 
+test("approach timeline progress follows the scroll position", async ({ page }) => {
+  await page.goto("/");
+  const timeline = page.locator(".approach-timeline");
+  const midpoint = await timeline.evaluate((element) => {
+    const markers = element.querySelectorAll<HTMLElement>(".approach-marker");
+    const first = markers[0].getBoundingClientRect();
+    const last = markers[markers.length - 1].getBoundingClientRect();
+    const firstTop = window.scrollY + first.top + first.height / 2;
+    const lastTop = window.scrollY + last.top + last.height / 2;
+    const start = firstTop - window.innerHeight * 0.68;
+    const end = lastTop - window.innerHeight * 0.42;
+    return start + (end - start) / 2;
+  });
+
+  await page.evaluate((top) => window.scrollTo(0, top), midpoint);
+  await expect
+    .poll(async () =>
+      Number(await timeline.evaluate((element) => element.style.getPropertyValue("--approach-progress"))),
+    )
+    .toBeGreaterThan(0.45);
+});
+
 test("resource categories switch the visible questions", async ({ page }) => {
   await page.goto("/resources");
   await page.getByRole("tab", { name: "Criminal Charges" }).click();

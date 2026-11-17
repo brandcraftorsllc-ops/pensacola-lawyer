@@ -658,6 +658,15 @@ img {
   color: #f4f0e6;
 }
 
+.about-copy h2::after {
+  content: "";
+  width: 44px;
+  height: 1px;
+  margin: 17px 0 18px;
+  display: block;
+  background: #c29e61;
+}
+
 .about-copy > .eyebrow {
   font-family: Manrope, ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-size: 10px;
@@ -673,6 +682,10 @@ img {
   font-weight: 400;
   line-height: 24px;
   color: #f4f0e6a6;
+}
+
+.about-copy > p:not(.eyebrow) + p {
+  margin-top: 12px;
 }
 
 .about-facts {
@@ -730,25 +743,103 @@ img {
   width: min(100% - 80px, 1200px);
 }
 
+.approach-section .section-heading h2::after {
+  content: "";
+  width: 48px;
+  height: 1px;
+  margin: 18px 0;
+  display: block;
+  background: rgba(194, 158, 97, 0.6);
+}
+
+.approach-section .section-heading > p:not(.eyebrow) {
+  margin-top: 0;
+}
+
+.approach-timeline {
+  position: relative;
+  margin-top: 60px;
+  padding-left: 48px;
+}
+
+.approach-track,
+.approach-progress {
+  position: absolute;
+  top: var(--approach-line-top, 7px);
+  left: 8px;
+  width: 1px;
+  height: var(--approach-line-height, 100%);
+  pointer-events: none;
+}
+
+.approach-track {
+  background: rgba(244, 240, 230, 0.12);
+}
+
+.approach-progress {
+  transform: scaleY(var(--approach-progress, 0));
+  transform-origin: top;
+  background: rgba(194, 158, 97, 0.7);
+}
+
 .approach-list {
-  margin-left: 192px;
   display: flex;
   flex-direction: column;
   gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .approach-list .step-card {
   position: relative;
-  padding: 31px 0 34px;
-  border-top: 1px solid rgba(194, 158, 97, 0.48);
-  border-bottom: 0;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 40px;
+  padding: 0 0 52px;
+  border: 0;
+}
+
+.approach-list .step-card:last-child {
+  padding-bottom: 0;
+}
+
+.approach-marker {
+  position: absolute;
+  top: 4px;
+  left: -46px;
+  width: 14px;
+  height: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(194, 158, 97, 0.6);
+  border-radius: 50%;
+  background: var(--panel);
+  z-index: 1;
+}
+
+.approach-marker > span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.72;
+}
+
+.approach-marker.is-active {
+  border-color: var(--gold);
+}
+
+.approach-marker.is-active > span {
+  opacity: 1;
 }
 
 .approach-list .step-number {
-  position: absolute;
-  top: 34px;
-  left: -192px;
   margin: 0;
+  color: rgba(194, 158, 97, 0.55);
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 30px;
+  line-height: 1.2;
 }
 
 .approach-list .step-card h3 {
@@ -757,7 +848,13 @@ img {
 
 .approach-list .step-card p {
   max-width: 700px;
-  margin-top: 8px;
+  margin: 8px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .approach-progress {
+    transition: none;
+  }
 }
 
 .step-card {
@@ -3421,21 +3518,51 @@ img {
   }
 
   .approach-list {
-    margin-left: 0;
+    margin: 0;
+  }
+
+  .approach-timeline {
+    margin-top: 48px;
+    padding-left: 40px;
+  }
+
+  .approach-track,
+  .approach-progress {
+    left: 6px;
   }
 
   .approach-list .step-card {
-    padding: 24px 0;
-    display: grid;
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 0 12px;
-    border-bottom: 1px solid var(--line);
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 0 0 32px;
+    border: 0;
+  }
+
+  .approach-list .step-card:last-child {
+    padding-bottom: 0;
+  }
+
+  .approach-marker {
+    left: -40px;
   }
 
   .approach-list .step-number {
     position: static;
-    grid-row: 1 / span 2;
-    margin: 2px 0 0;
+    grid-row: auto;
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .approach-list .step-card h3 {
+    font-size: 21px;
+  }
+
+  .approach-list .step-card p {
+    margin-top: 8px;
+  }
+
+  .approach-step-copy {
+    min-width: 0;
   }
 
   .attorney-facts {

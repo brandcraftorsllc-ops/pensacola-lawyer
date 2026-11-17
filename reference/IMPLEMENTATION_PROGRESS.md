@@ -34,6 +34,9 @@
 - [x] Matched the homepage attorney section to the Base44 reference layout:
   widened 1280px desktop grid, aligned portrait and copy proportions, converted
   credentials to label/value rows, and restored gold/outline action buttons.
+- [x] Recreated the homepage approach section's scroll-linked vertical progress
+  line, step markers, and heading divider; verified scroll progress in desktop
+  and mobile renders.
 
 ## Known limitations
 

@@ -6,6 +6,7 @@ import {
   SectionHeading,
 } from "@/components/sections/CommonSections";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
+import { ApproachTimeline } from "@/components/sections/ApproachTimeline";
 import { homeContent } from "@/data/site-content";
 
 export function HomePage() {
@@ -153,15 +154,7 @@ export function HomePage() {
             description={homeContent.approachIntro.description}
             align="left"
           />
-          <div className="steps-grid approach-list">
-            {homeContent.approach.map((step, index) => (
-              <article className="step-card" key={step.title}>
-                <span className="step-number">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </article>
-            ))}
-          </div>
+          <ApproachTimeline steps={homeContent.approach} />
         </div>
       </section>
 
