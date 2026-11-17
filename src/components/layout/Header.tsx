@@ -11,33 +11,33 @@ const practiceGroups = [
     label: "Divorce",
     href: "/family-law",
     items: [
-      { href: "/military-divorce", label: "Military Divorce" },
-      { href: "/family-law#child-support", label: "Child Support Law" },
+      { href: "/family-law#military-divorce", label: "Military Divorce" },
+      { href: "/family-law#child-support-law", label: "Child Support Law" },
       {
-        href: "/blog/custody-rights-for-deployed-parents",
+        href: "/family-law#deployed-parents-custody-rights",
         label: "Deployed Parents’ Custody Rights",
       },
       {
-        href: "/blog/how-social-media-can-affect-a-divorce",
+        href: "/family-law#how-can-social-media-affect-my-divorce",
         label: "How can Social Media Affect My Divorce",
       },
       {
-        href: "/blog/military-retirement-benefits-20-20-20",
+        href: "/family-law#military-retirement-benefits",
         label: "Military Retirement Benefits",
       },
       {
-        href: "/blog/residency-in-a-florida-military-divorce",
+        href: "/family-law#military-divorce-residency",
         label: "Military Divorce Residency",
       },
-      { href: "/family-law#divorce-representation", label: "Same Sex Marriage in Florida" },
-      { href: "/family-law#divorce-representation", label: "Senior Citizen Divorce" },
-      { href: "/family-law#divorce-representation", label: "Substantial Asset Divorce" },
+      { href: "/family-law#same-sex-marriage-in-florida", label: "Same Sex Marriage in Florida" },
+      { href: "/family-law#senior-citizen-divorce", label: "Senior Citizen Divorce" },
+      { href: "/family-law#substantial-asset-divorce", label: "Substantial Asset Divorce" },
       {
-        href: "/family-law#divorce-representation",
+        href: "/family-law#the-irretrievably-broken-marriage",
         label: "The Irretrievably-Broken Marriage",
       },
       {
-        href: "/family-law#divorce-representation",
+        href: "/family-law#what-to-expect-during-a-florida-divorce",
         label: "What to Expect During a Florida Divorce",
       },
     ],
@@ -49,19 +49,19 @@ const practiceGroups = [
     items: [
       { href: "/criminal-defense#drug-trafficking", label: "Drug Trafficking" },
       {
-        href: "/blog/when-stalking-is-a-misdemeanor-or-felony",
+        href: "/criminal-defense#stalking",
         label: "Stalking",
       },
       {
-        href: "/criminal-defense#injunction-violations",
+        href: "/criminal-defense#violation-of-domestic-violence-criminal",
         label: "Violation of Domestic Violence – Criminal",
       },
       {
-        href: "/criminal-defense#domestic-violence-injunctions",
+        href: "/criminal-defense#domestic-violence-injunction",
         label: "Domestic Violence Injunction",
       },
       {
-        href: "/criminal-defense#sexual-assault-allegations",
+        href: "/criminal-defense#sexual-assault",
         label: "Sexual Assault",
       },
       { href: "/criminal-defense#dui", label: "DUI" },

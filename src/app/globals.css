@@ -3814,6 +3814,98 @@ img {
   margin-bottom: 0;
 }
 
+.practice-area-reading {
+  overflow: clip;
+}
+
+.practice-area-reading .practice-area-topic {
+  max-width: none;
+  margin: 0 auto 80px;
+  padding: 0 0 75px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 55px);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.practice-area-reading .practice-area-reveal:last-child .practice-area-topic {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.practice-area-copy {
+  min-width: 0;
+}
+
+.practice-area-reading .practice-area-reveal:nth-child(even) .practice-area-copy {
+  order: 2;
+}
+
+.practice-area-reading .practice-area-reveal:nth-child(even) .practice-artwork {
+  order: 1;
+}
+
+.practice-area-reading .practice-area-topic h2 {
+  margin-bottom: 22px;
+  font-size: clamp(27px, 2.4vw, 36px);
+}
+
+.practice-area-reading .practice-area-topic p {
+  margin: 0 0 17px;
+}
+
+.practice-area-reading .practice-area-topic p:last-of-type {
+  margin-bottom: 0;
+}
+
+.practice-area-reading .practice-area-topic ul {
+  margin-top: 21px;
+}
+
+.practice-artwork {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  aspect-ratio: 1.52;
+  transition:
+    border-color 220ms ease,
+    transform 420ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+.practice-artwork svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.practice-area-topic:hover .practice-artwork {
+  transform: scale(1.015);
+  border-color: rgba(194, 158, 97, 0.42);
+}
+
+.scroll-reveal {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+.scroll-reveal.is-pending {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .article-page-section {
   padding: 116px 0 53px;
 }
@@ -3904,6 +3996,11 @@ img {
   .criminal-steps {
     grid-template-columns: 1fr;
   }
+
+  .practice-area-reading .practice-area-topic {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+    gap: 28px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3959,6 +4056,26 @@ img {
 
   .criminal-card h2 {
     font-size: 21px;
+  }
+
+  .practice-area-reading .practice-area-topic {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 56px;
+    padding-bottom: 50px;
+  }
+
+  .practice-area-reading .practice-area-reveal:nth-child(even) .practice-area-copy,
+  .practice-area-reading .practice-area-reveal:nth-child(even) .practice-artwork {
+    order: initial;
+  }
+
+  .practice-area-reading .practice-area-topic h2 {
+    font-size: 27px;
+  }
+
+  .practice-artwork {
+    max-width: 480px;
   }
 
   .attorney-profile {

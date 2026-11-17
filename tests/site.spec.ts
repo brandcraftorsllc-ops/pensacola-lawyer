@@ -66,7 +66,7 @@ test("desktop navigation follows the requested order and opens practice areas on
   ]);
   await expect(divorceSubmenu.getByRole("link", { name: "Child Support Law" })).toHaveAttribute(
     "href",
-    "/family-law#child-support",
+    "/family-law#child-support-law",
   );
   await expect(
     divorceSubmenu.getByRole("link", { name: "What to Expect During a Florida Divorce" }),
@@ -131,6 +131,53 @@ test("all discovered routes load directly with a page heading", async ({ page })
     expect(response?.status(), route).toBe(200);
     await expect(page.locator("main h1").first(), route).toBeVisible();
   }
+});
+
+test("practice hub navigation links target sections on both hub pages", async ({ page }) => {
+  for (const { route, submenu } of [
+    { route: "/family-law", submenu: "divorce" },
+    { route: "/criminal-defense", submenu: "criminal-defense" },
+  ]) {
+    await page.goto(route);
+    const sectionIds = await page.locator(".practice-area-topic").evaluateAll((sections) =>
+      sections.map((section) => section.id),
+    );
+    const dropdown = page.locator(".desktop-nav .nav-dropdown");
+    await dropdown.hover();
+    await dropdown
+      .getByRole("link", { name: submenu === "divorce" ? "Divorce" : "Criminal Defense" })
+      .hover();
+    const navigationTargets = await Promise.all(
+      [
+        page.locator(".practice-area-toc a"),
+        page.locator(`.desktop-nav [data-practice-submenu="${submenu}"] a`),
+      ].map((links) =>
+        links.evaluateAll((anchors) =>
+          anchors.map((anchor) => new URL((anchor as HTMLAnchorElement).href).hash.slice(1)),
+        ),
+      ),
+    );
+
+    expect(sectionIds.length, route).toBeGreaterThan(0);
+    for (const targets of navigationTargets) expect(targets, route).toEqual(sectionIds);
+    await expect(page.locator(".practice-area-topic .practice-artwork")).toHaveCount(sectionIds.length);
+    const columnCount = await page
+      .locator(".practice-area-topic")
+      .first()
+      .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
+    expect(columnCount, route).toBe(2);
+    await expect(page.locator(".practice-area-toc")).toHaveCSS("position", "sticky");
+
+    const firstReveal = page.locator(".practice-area-reveal").first();
+    await firstReveal.scrollIntoViewIfNeeded();
+    await expect(firstReveal).toHaveClass(/is-visible/);
+  }
+});
+
+test("legacy military divorce route redirects to its consolidated section", async ({ page }) => {
+  await page.goto("/military-divorce");
+  await expect(page).toHaveURL(/\/family-law#military-divorce$/);
+  await expect(page.locator("#military-divorce")).toBeVisible();
 });
 
 test("approach timeline progress follows the scroll position", async ({ page }) => {

@@ -4,7 +4,6 @@ import { getSiteUrl } from "@/lib/site";
 
 const paths = [
   "/",
-  "/military-divorce",
   "/family-law",
   "/motions-for-contempt",
   "/criminal-defense",

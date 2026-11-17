@@ -1,4 +1,4 @@
-import type { AccordionItemData } from "@/components/ui/Accordion";
+import type { PracticeAreaSection } from "@/components/sections/PracticeAreaGuide";
 import { familyFaqs, familyServiceItems, homeFaqs, militaryFaqs } from "@/data/faq";
 import {
   SITE_ADDRESS,
@@ -38,7 +38,7 @@ export const homeContent = {
     },
     {
       number: "02",
-      href: "/military-divorce",
+      href: "/family-law#military-divorce",
       title: "Military Divorce",
       description: "Help for military service members and spouses facing family changes.",
     },
@@ -251,11 +251,10 @@ export const militaryDivorcePage = {
 };
 
 export const familyLawPage = {
-  eyebrow: "Divorce & Family Law",
-  title: "Guidance for family-law matters",
+  eyebrow: "Divorce",
+  title: "Divorce and family-law matters in Pensacola",
   description:
     "The source website lists divorce, family law, child custody, support, alimony, modifications and enforcement among its practice areas. The details of each matter depend on the people and circumstances involved.",
-  services: familyServiceItems,
   faqIntro: {
     eyebrow: "Family Law Questions",
     title: "Common questions about custody and support",
@@ -310,69 +309,62 @@ export const criminalDefensePage = {
   title: "Criminal defense in Pensacola",
   description:
     "The source website identifies DUI, drug trafficking, sexual assault, stalking, domestic-violence charges and injunction-related matters among its criminal-defense services.",
-  servicesIntro: {
-    eyebrow: "Practice Areas",
-    title: "Criminal defense matters",
-    description: "The source website lists the following criminal-defense practice areas. The information here is general.",
-  },
-  services: [
+  sections: [
     {
-      title: "DUI",
-      paragraphs: [
-        "The source website lists DUI among the criminal matters handled by the office. The circumstances, records and legal issues in each case need individual review.",
-        "If you have questions after an arrest or charge, contact an attorney to discuss the matter and any documents you received.",
-      ],
-    },
-    {
-      title: "Sexual Assault Allegations",
-      paragraphs: [
-        "The source website lists sexual assault among the criminal matters addressed by the practice. Each allegation and its supporting information should be reviewed on its own facts.",
-        "Avoid relying on a general web description to assess a specific investigation or charge.",
-      ],
-    },
-    {
-      title: "Domestic Violence Injunctions",
-      paragraphs: [
-        "The source website discusses domestic-violence injunctions as a distinct legal matter. The applicable process and requirements depend on the petition and the court's orders.",
-        "Read any papers carefully and seek legal guidance about the next steps.",
-      ],
-    },
-    {
-      title: "Domestic-Violence Charges",
-      paragraphs: [
-        "The source website lists domestic-violence charges among the matters addressed by the office. Criminal allegations and any related family-court proceedings may raise separate issues.",
-        "The specific charge, documents and court process should be reviewed individually.",
-      ],
-    },
-    {
-      title: "Injunction Violations",
-      paragraphs: [
-        "The source website lists injunction violations among the criminal matters addressed by the practice. The circumstances, existing orders and current law should be reviewed in an individual case.",
-        "This page does not determine whether an order was violated or predict a case outcome.",
-      ],
-    },
-    {
+      id: "drug-trafficking",
       title: "Drug Trafficking",
+      visual: "evidence",
       paragraphs: [
         "The source website lists drug trafficking as a criminal-defense practice area. The facts, evidence and law applicable to an individual case require review.",
         "This page does not describe penalties or predict an outcome.",
       ],
     },
     {
-      title: "Stalking and Cyberstalking",
+      id: "stalking",
+      title: "Stalking",
+      visual: "eye",
       paragraphs: [
         "Stalking is among the criminal matters listed on the source website. Questions about the conduct alleged, communications and any related orders depend on the specific record.",
         "A general web page cannot determine how a particular allegation will be charged or resolved.",
       ],
     },
     {
-      title: "Misdemeanors and Felonies",
+      id: "violation-of-domestic-violence-criminal",
+      title: "Violation of Domestic Violence – Criminal",
+      visual: "order",
       paragraphs: [
-        "The source website also refers to criminal defense more broadly. For a matter not listed above, contact the office to confirm whether it can assist.",
-        "No outcome or particular defense can be assumed without reviewing the case-specific information.",
+        "The source website lists domestic-violence charges and injunction violations among matters addressed by the office. Criminal allegations and any related family-court proceedings may raise separate issues.",
+        "The charge, documents, existing order and current law should be reviewed individually. This page does not determine whether an order was violated or predict a case outcome.",
       ],
     },
-  ],
+    {
+      id: "domestic-violence-injunction",
+      title: "Domestic Violence Injunction",
+      visual: "shield",
+      paragraphs: [
+        "The source website discusses domestic-violence injunctions as a distinct legal matter. The applicable process and requirements depend on the petition and the court's orders.",
+        "Read any papers carefully and seek legal guidance about the next steps.",
+      ],
+    },
+    {
+      id: "sexual-assault",
+      title: "Sexual Assault",
+      visual: "scales",
+      paragraphs: [
+        "The source website lists sexual assault among the criminal matters addressed by the practice. Each allegation and its supporting information should be reviewed on its own facts.",
+        "Avoid relying on a general web description to assess a specific investigation or charge.",
+      ],
+    },
+    {
+      id: "dui",
+      title: "DUI",
+      visual: "vehicle",
+      paragraphs: [
+        "The source website lists DUI among the criminal matters handled by the office. The circumstances, records and legal issues in each case need individual review.",
+        "If you have questions after an arrest or charge, contact an attorney to discuss the matter and any documents you received.",
+      ],
+    },
+  ] satisfies PracticeAreaSection[],
   stepsIntro: {
     eyebrow: "If You Have Been Charged",
     title: "Questions after an arrest or charge",
@@ -720,9 +712,115 @@ export const articleData = [
   },
 ] as const;
 
-export const familyServiceAccordionItems: AccordionItemData[] = familyServiceItems.map((item) => ({
-  id: item.id,
-  question: item.question,
-  answer: item.description,
-  bullets: item.bullets,
-}));
+function getFamilyServiceContent(question: string) {
+  const service = familyServiceItems.find((item) => item.question === question);
+  if (!service) throw new Error(`Missing family-law content for "${question}".`);
+
+  return {
+    paragraphs: [service.description],
+    bullets: service.bullets,
+  };
+}
+
+function getArticleContent(slug: string) {
+  const article = articleData.find((item) => item.slug === slug);
+  if (!article) throw new Error(`Missing article content for "${slug}".`);
+
+  return {
+    paragraphs: article.sections.flatMap((section) =>
+      "paragraphs" in section ? section.paragraphs : [],
+    ),
+    bullets: article.sections.flatMap((section) => "bullets" in section ? section.bullets : []),
+  };
+}
+
+const unverifiedTopic = (topic: string) => ({
+  paragraphs: [
+    `The source materials reviewed do not include verified details for ${topic}. Contact the office to confirm its current scope and discuss your circumstances.`,
+  ],
+});
+
+const militaryRetirementSection = militaryDivorcePage.sections[0];
+if (!militaryRetirementSection) throw new Error("Missing military retirement section content.");
+
+export const divorcePracticeSections: PracticeAreaSection[] = [
+  {
+    id: "military-divorce",
+    title: "Military Divorce",
+    visual: "military",
+    paragraphs: [
+      militaryDivorcePage.description,
+      "Military-service questions may include finances, benefits, parenting arrangements and where a case can be handled. The details depend on current rules and the family's records.",
+    ],
+    bullets: [
+      "Service and marriage records",
+      "Existing parenting plans and court orders",
+      "Questions about benefits, support and residency",
+    ],
+  },
+  {
+    id: "child-support-law",
+    title: "Child Support Law",
+    visual: "family",
+    ...getFamilyServiceContent("Child Support"),
+  },
+  {
+    id: "deployed-parents-custody-rights",
+    title: "Deployed Parents’ Custody Rights",
+    visual: "deployment",
+    ...getArticleContent("custody-rights-for-deployed-parents"),
+  },
+  {
+    id: "how-can-social-media-affect-my-divorce",
+    title: "How can Social Media Affect My Divorce",
+    visual: "conversation",
+    ...getArticleContent("how-social-media-can-affect-a-divorce"),
+  },
+  {
+    id: "military-retirement-benefits",
+    title: "Military Retirement Benefits",
+    visual: "benefits",
+    paragraphs: militaryRetirementSection.paragraphs,
+    bullets: militaryRetirementSection.bullets,
+  },
+  {
+    id: "military-divorce-residency",
+    title: "Military Divorce Residency",
+    visual: "location",
+    ...getArticleContent("residency-in-a-florida-military-divorce"),
+  },
+  {
+    id: "same-sex-marriage-in-florida",
+    title: "Same Sex Marriage in Florida",
+    visual: "equality",
+    ...unverifiedTopic("same-sex marriage in Florida"),
+  },
+  {
+    id: "senior-citizen-divorce",
+    title: "Senior Citizen Divorce",
+    visual: "generations",
+    ...unverifiedTopic("senior citizen divorce"),
+  },
+  {
+    id: "substantial-asset-divorce",
+    title: "Substantial Asset Divorce",
+    visual: "property",
+    ...getFamilyServiceContent("Property and Asset Division"),
+  },
+  {
+    id: "the-irretrievably-broken-marriage",
+    title: "The Irretrievably-Broken Marriage",
+    visual: "separation",
+    ...unverifiedTopic("the irretrievably-broken marriage topic"),
+  },
+  {
+    id: "what-to-expect-during-a-florida-divorce",
+    title: "What to Expect During a Florida Divorce",
+    visual: "checklist",
+    paragraphs: [
+      "The source website does not outline a step-by-step timeline for a Florida divorce. Timing and issues depend on the people, documents and court process involved.",
+      "Contact the office to discuss the questions and circumstances relevant to your matter.",
+    ],
+    bullets: getFamilyServiceContent("Divorce Representation").bullets,
+  },
+];

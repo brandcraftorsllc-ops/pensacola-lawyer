@@ -12,15 +12,10 @@ export const routeMetadata: Record<string, RouteMetadata> = {
     description:
       "The Law Office of James M. Burns serves Pensacola with divorce, military family law and criminal defense representation.",
   },
-  "/military-divorce": {
-    title: "Military Divorce in Pensacola | Law Office of James M. Burns",
-    description:
-      "The office lists military divorce, support, custody, visitation and related family-law matters among its practice areas.",
-  },
   "/family-law": {
-    title: "Divorce & Family Law in Pensacola | Law Office of James M. Burns",
+    title: "Divorce in Pensacola | Law Office of James M. Burns",
     description:
-      "The Law Office of James M. Burns lists divorce, family law, support, alimony, modifications and enforcement among its practice areas.",
+      "The Law Office of James M. Burns lists divorce, military family matters, child support, alimony and related family-law services in Pensacola.",
   },
   "/motions-for-contempt": {
     title: "Motions for Contempt | Law Office of James M. Burns",

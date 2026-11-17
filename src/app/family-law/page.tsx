@@ -1,7 +1,7 @@
-import { Accordion } from "@/components/ui/Accordion";
 import { CallToAction, FaqSection, PageHero } from "@/components/sections/CommonSections";
+import { PracticeAreaGuide } from "@/components/sections/PracticeAreaGuide";
 import { getPageMetadata } from "@/data/route-metadata";
-import { familyLawPage, familyServiceAccordionItems } from "@/data/site-content";
+import { divorcePracticeSections, familyLawPage } from "@/data/site-content";
 
 export const metadata = getPageMetadata("/family-law");
 
@@ -9,22 +9,13 @@ export default function FamilyLawPage() {
   return (
     <main id="main">
       <PageHero
-        current="Divorce & Family Law"
+        current="Divorce"
         eyebrow={familyLawPage.eyebrow}
         title={familyLawPage.title}
         description={familyLawPage.description}
         image="/images/family-law-header.png"
       />
-      <section className="section section-alt family-services">
-        <div className="container">
-          <Accordion
-            className="service-accordion-grid"
-            items={familyServiceAccordionItems}
-            label="Family law services"
-            multiple
-          />
-        </div>
-      </section>
+      <PracticeAreaGuide sections={divorcePracticeSections} />
       <FaqSection
         eyebrow={familyLawPage.faqIntro.eyebrow}
         title={familyLawPage.faqIntro.title}

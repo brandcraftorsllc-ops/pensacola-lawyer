@@ -12,7 +12,7 @@ import {
 
 const practiceLinks = [
   { href: "/family-law", label: "Divorce & Family Law" },
-  { href: "/military-divorce", label: "Military Divorce" },
+  { href: "/family-law#military-divorce", label: "Military Divorce" },
   { href: "/criminal-defense", label: "Criminal Defense" },
 ];
 
