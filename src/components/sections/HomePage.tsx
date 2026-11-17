@@ -8,13 +8,14 @@ import {
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { ApproachTimeline } from "@/components/sections/ApproachTimeline";
 import { homeContent } from "@/data/site-content";
+import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
 export function HomePage() {
   return (
     <main id="main">
       <section
         className="home-hero"
-        aria-label="Military divorce, family law and criminal defense in Pensacola"
+        aria-label="Divorce, family law and criminal defense in Pensacola"
       >
         <Image
           className="hero-media"
@@ -34,10 +35,10 @@ export function HomePage() {
           <p className="hero-lead">{homeContent.lead}</p>
           <div className="hero-actions">
             <Link className="button button-gold" href="/case-evaluation">
-              Schedule a Confidential Consultation <span aria-hidden="true">→</span>
+              Free Consultation <span aria-hidden="true">→</span>
             </Link>
-            <a className="button button-outline" href="tel:+18502930392">
-              <span aria-hidden="true">⌕</span> Call (850) 293-0392
+            <a className="button button-outline" href={SITE_PHONE_LINK}>
+              <span aria-hidden="true">⌕</span> Call {SITE_PHONE}
             </a>
           </div>
           <p className="hero-note">{homeContent.promise}</p>
@@ -47,7 +48,7 @@ export function HomePage() {
         </a>
       </section>
 
-      <section className="trust-strip" aria-label="Why clients choose JMB">
+      <section className="trust-strip" aria-label="Practice areas and location">
         <div className="trust-grid">
           {homeContent.trustItems.map((item) => (
             <span key={item}>{item}</span>
@@ -115,7 +116,7 @@ export function HomePage() {
           <div className="portrait-wrap">
             <Image
               src="/images/headshot-placeholder.png"
-              alt="Placeholder portrait, to be replaced with a professional headshot of James Martinez Burns"
+              alt="Placeholder portrait of James M. Burns"
               width={1024}
               height={1365}
               sizes="(max-width: 600px) 90vw, 40vw"
@@ -139,7 +140,7 @@ export function HomePage() {
                 Read the Full Profile <span aria-hidden="true">→</span>
               </Link>
               <Link className="button button-outline" href="/case-evaluation">
-                Or Schedule a Consultation <span aria-hidden="true">→</span>
+                Free Consultation <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -168,7 +169,7 @@ export function HomePage() {
           <TestimonialCarousel items={homeContent.testimonials} />
           <div className="section-foot">
             <Link className="text-link" href="/results">
-              See Client Results <span aria-hidden="true">→</span>
+              Client Feedback <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

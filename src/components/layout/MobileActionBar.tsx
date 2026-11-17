@@ -10,7 +10,7 @@ export function MobileActionBar() {
       </a>
       <Link href="/case-evaluation">
         <span aria-hidden="true">▣</span>
-        Consultation
+        Free Consultation
       </Link>
     </div>
   );

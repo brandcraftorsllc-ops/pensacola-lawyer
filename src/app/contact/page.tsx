@@ -28,7 +28,7 @@ export default function ContactPage() {
               <a href={SITE_PHONE_LINK}>{contactPage.phone}</a>
             </div>
             <div>
-              <span className="eyebrow">Email</span>
+              <span className="eyebrow">Email (not confirmed by source)</span>
               <a href={SITE_EMAIL_LINK}>{contactPage.email}</a>
             </div>
             <div>
@@ -67,8 +67,8 @@ export default function ContactPage() {
         </div>
       </section>
       <CallToAction
-        title="Ready when you are."
-        description="Use the case evaluation to share the details that matter, or call the office directly."
+        title="Need to discuss a legal matter?"
+        description="Call the office to arrange a free consultation."
       />
     </main>
   );

@@ -4,420 +4,447 @@ import {
   SITE_ADDRESS,
   SITE_CITY,
   SITE_EMAIL,
+  SITE_OFFICE_HOURS,
   SITE_PHONE,
   SERVICE_AREA,
 } from "@/lib/site";
 
 export const homeContent = {
-  eyebrow: "Pensacola, Florida | Military Divorce, Family Law & Criminal Defense",
-  titleFirst: "Your Service Protected.",
-  titleSecond: "Your Family Defended.",
+  eyebrow: "Direct. Determined. Dedicated.",
+  titleFirst: "Experience you need.",
+  titleSecond: "Attention you deserve.",
   lead:
-    "Military divorce, family law and criminal defense for Pensacola service members, veterans and families. Strategic. Discreet. Relentless.",
-  promise: "Confidential. Responsive. Mission-focused.",
+    "Divorce, military family matters and criminal defense, with guidance for your next step in Pensacola.",
+  promise: "Here in Pensacola. Here for your next step.",
   trustItems: [
-    "Military Divorce Focus",
-    "Family Law and Criminal Defense",
-    "Serving the Emerald Coast",
-    "Confidential Consultations",
+    "Divorce & Family Law",
+    "Military Family Matters",
+    "Criminal Defense",
+    "Pensacola & Nearby Communities",
   ],
   practiceIntro: {
     eyebrow: "Practice Areas",
-    title: "Three pillars, one standard of preparation",
+    title: "How We Can Help",
     description:
-      "The office focuses on the family law and criminal matters that most often involve service members, veterans and the families around them.",
+      "The office's published practice areas include divorce, family law, military family matters and criminal defense.",
   },
   practiceAreas: [
     {
-      href: "/military-divorce",
-      title: "Military Divorce & Family Law",
+      href: "/family-law",
+      title: "Divorce & Family Law",
       description:
-        "Retired pay, SBP, TRICARE and deployment-aware custody for service members, veterans and military spouses.",
-      bullets: ["USFSPA and the 10/10 rule", "20/20/20 and 20/20/15", "Deployment custody planning"],
+        "Information and representation for divorce, parenting, support and other family-law issues.",
+      bullets: ["Divorce", "Parenting and custody matters", "Support and court orders"],
       icon: "✦",
     },
     {
-      href: "/family-law",
-      title: "Civilian Family Law & Child Custody",
+      href: "/military-divorce",
+      title: "Military Divorce",
       description:
-        "Divorce, time-sharing, support, property division and post-judgment enforcement for Pensacola families.",
-      bullets: ["Custody and parenting plans", "Support and alimony", "Modifications and contempt"],
+        "Family-law matters involving the added questions that military service and deployments may bring.",
+      bullets: ["Divorce and support", "Parenting arrangements", "Military retirement questions"],
       icon: "⌂",
     },
     {
       href: "/criminal-defense",
       title: "Criminal Defense",
       description:
-        "Calm, prepared representation for DUI, domestic violence, injunctions, drug and felony allegations.",
-      bullets: ["DUI and license issues", "Domestic violence and injunctions", "Misdemeanors and felonies"],
+        "Defense for criminal charges, including DUI, drug, stalking and domestic-violence matters.",
+      bullets: ["DUI", "Drug-related charges", "Stalking and domestic-violence matters"],
       icon: "◇",
     },
   ],
   militaryIntro: {
-    eyebrow: "Why Military Divorce Is Different",
-    title: "Benefits, orders and jurisdiction change the analysis",
+    eyebrow: "Military Divorce",
+    title: "Military service can add family-law questions",
     description:
-      "A military divorce is not a civilian divorce with a uniform. Retired pay, healthcare, deployment and residency each follow their own rules.",
+      "The firm's published materials address military divorce, support, custody, visitation and related family-law concerns.",
   },
   militaryFeatures: [
     {
-      title: "Military Pension Division",
+      title: "Military Divorce and Support",
       description:
-        "The Uniformed Services Former Spouses’ Protection Act and the “10/10 rule” govern whether and how retired pay can be divided.",
+        "The source website identifies divorce, child support and alimony among the issues addressed in military-family matters.",
     },
     {
-      title: "Survivor Benefit Plan (SBP)",
+      title: "Custody and Visitation",
       description:
-        "SBP elections, coverage and beneficiary decisions carry long-term financial consequences that must be handled with care.",
+        "Parenting arrangements may need to account for service obligations, deployment and family circumstances.",
     },
     {
-      title: "TRICARE and Healthcare Coverage",
+      title: "Military Retirement Questions",
       description:
-        "Eligibility for military healthcare after a divorce depends on specific statutory requirements, not simply the length of the marriage.",
+        "The source materials discuss the questions military families may have about retirement benefits in a divorce.",
     },
     {
-      title: "Deployment and Custody Planning",
+      title: "Modifications and Court Orders",
       description:
-        "Deployment-aware parenting plans address mobility, notice requirements and temporary arrangements before orders are needed.",
-    },
-    {
-      title: "Servicemembers Civil Relief Act",
-      description:
-        "The SCRA can provide limited protections involving default judgments, stays and certain financial obligations during active service.",
-    },
-    {
-      title: "Jurisdiction and Residency",
-      description:
-        "Where a military family may file depends on residency, domicile and statutory waiting periods that differ from civilian cases.",
+        "The published practice areas include modifying and enforcing family-court orders.",
     },
   ],
   about: {
-    eyebrow: "About the Attorney",
-    title: "Meet James Martinez Burns",
+    eyebrow: "About the Office",
+    title: "Paying attention to your expectations",
     description:
-      "James Martinez Burns is a Pensacola attorney whose practice centers on military divorce and family law, alongside criminal defense. He represents active-duty service members, reservists, National Guard members, veterans, military spouses and civilian families across the Emerald Coast.",
+      "The office aims to explain what may come next, which decisions you may face and what your options could mean for you and your family.",
     secondary:
-      "Military family life runs on orders, deployments and timelines civilian families never face, and the legal decisions involved can shape a family’s finances and stability for years. His approach is direct, discreet and prepared: clear advice, careful documentation, and communication that respects what you are already carrying.",
+      "Located near Corry Station and NAS Pensacola, the office serves local residents and military families with divorce, family matters and criminal defense. The source website describes the practice as formerly the Law Offices of Steven W. Bowden.",
     facts: [
-      { label: "Bar Admission", value: "Placeholder — add Florida Bar admission and year" },
-      { label: "Education", value: "Placeholder — add law school and undergraduate details" },
-      { label: "Affiliations", value: "Placeholder — add professional and military associations" },
+      { label: "Location", value: "Pensacola, Florida" },
+      { label: "Practice", value: "Family Law & Criminal Defense" },
+      { label: "Communities", value: "Pensacola, Milton, Navarre & Gulf Breeze" },
     ],
   },
   approachIntro: {
     eyebrow: "Our Approach",
-    title: "A clear path, from first call to next chapter",
-    description: "Four deliberate steps, each built to keep you informed and in control.",
+    title: "Start with a conversation",
+    description:
+      "The source website does not describe a step-by-step process. This timeline is a general illustration and requires attorney review.",
   },
   approach: [
     {
-      title: "Confidential Consultation",
+      title: "Discuss Your Concerns",
       description:
-        "We start with a private conversation about your service, your family and what you are facing. Nothing is assumed.",
+        "Call the office to discuss your legal concerns and ask about a free consultation.",
     },
     {
-      title: "Strategy Built Around Your Service and Family",
+      title: "Understand Your Options",
       description:
-        "A plan shaped by your orders, your timeline and your goals, with jurisdiction and benefits considered from the outset.",
+        "Consider the options that may be available based on your circumstances.",
     },
     {
-      title: "Decisive Representation",
+      title: "Plan Your Next Steps",
       description:
-        "Clear communication, prepared filings and firm advocacy at the negotiating table or before the court.",
+        "Identify the information and decisions relevant to your legal matter.",
     },
     {
-      title: "Resolution and Your Next Chapter",
+      title: "Confirm How the Office Can Help",
       description:
-        "We work toward closure that protects what matters most, so you can move forward with clarity.",
+        "The office can confirm whether it handles your matter and how to proceed.",
     },
   ],
   testimonialIntro: {
     eyebrow: "Client Voices",
-    title: "Words from the families we serve",
+    title: "Client feedback",
     description:
-      "Placeholder testimonials are shown here and on the Results page until verified client feedback is supplied.",
+      "No verified testimonials or case outcomes were available on the source website reviewed for this content update.",
   },
   testimonials: [
     {
-      quote:
-        "Placeholder, replace with verified client feedback. A short, specific statement about how clear and calm the process felt during a difficult transition.",
-      credit: "Placeholder — client review",
-      label: "Placeholder, replace with verified client feedback",
+      quote: "Verified client feedback has not been supplied for publication.",
+      credit: "Client feedback unavailable",
+      label: "Client feedback unavailable",
     },
     {
-      quote: "Placeholder, replace with verified client feedback and approved case results.",
-      credit: "Placeholder — client review",
-      label: "Placeholder, replace with verified client feedback",
+      quote: "No approved case outcome was found in the source materials reviewed.",
+      credit: "Case outcomes unavailable",
+      label: "Case outcomes unavailable",
     },
     {
-      quote: "Placeholder, replace with verified client feedback and approved case results.",
-      credit: "Placeholder — client review",
-      label: "Placeholder, replace with verified client feedback",
+      quote: "This space is reserved for verified and approved client feedback.",
+      credit: "Client feedback pending",
+      label: "Client feedback pending",
     },
   ],
   faqIntro: {
     eyebrow: "Questions",
     title: "Answers before you call",
     description:
-      "General information only. Every family’s circumstances differ, and nothing here is legal advice about your case.",
+      "The source website did not publish these FAQs. They remain general draft information and should be reviewed by an attorney.",
   },
   faqs: homeFaqs,
   cta: {
-    title: "Take the Next Step With Confidence.",
-    description: "Your questions are confidential. Reach out today and let’s build your strategy.",
+    title: "Need to discuss a legal matter?",
+    description: "Call the office to arrange a free consultation and discuss your next steps.",
   },
 };
 
 export const militaryDivorcePage = {
-  eyebrow: "Military Divorce & Family Law",
-  title: "Military divorce raises questions civilian cases never do",
+  eyebrow: "Military Divorce",
+  title: "Family-law matters involving military service",
   description:
-    "Retired pay, healthcare, deployment orders and jurisdiction all interact with a dissolution of marriage. This page explains the issues most often involved so you can prepare for a conversation with an attorney.",
+    "The source website lists military divorce, support, custody, visitation and related family-law matters among the office's practice areas. Military service and family circumstances can raise questions that require an individual review.",
   note:
-    "The information on this page is general and does not constitute legal advice. Military benefits and family law rules change, and how they apply depends on your service dates, orders and family circumstances.",
+    "This overview is general information, not legal advice. The source website does not provide enough detail to determine how a rule or benefit applies to an individual matter.",
   sections: [
     {
-      title: "Military Pension Division: USFSPA and the 10/10 Rule",
+      title: "Military Divorce and Retirement Benefits",
       paragraphs: [
-        "Retired pay earned during a marriage is often the largest single asset in a military divorce. Under the Uniformed Services Former Spouses’ Protection Act (USFSPA), a state court may treat disposable retired pay as marital property and divide it under state law, subject to federal limits.",
-        "The “10/10 rule” controls how that division is paid, not whether a court may order it. Where the marriage and the creditable service overlapped for at least ten years, the Defense Finance and Accounting Service can generally pay a former spouse directly. Shorter overlaps usually require a different payment mechanism written into the final judgment.",
+        "A military divorce may involve questions about retirement benefits as well as other financial issues. The source website identifies military retirement as a subject for discussion but does not publish an individual case assessment.",
+        "Benefit eligibility, division and payment depend on the applicable law and the parties' records. Review current information and case-specific documents before making decisions.",
       ],
       bullets: [
-        "How disposable retired pay is calculated and which deductions are excluded",
-        "Whether the marital portion is defined by a time formula or a fixed dollar amount",
-        "Drafting an order DFAS can accept and administer without amendment",
+        "The service and marriage records relevant to the question",
+        "How an order addresses any benefit being considered",
+        "Whether additional review is needed before an agreement",
       ],
     },
     {
-      title: "The 20/20/20 and 20/20/15 Rules",
+      title: "Healthcare and Military Benefits",
       paragraphs: [
-        "These rules address whether an unremarried former spouse keeps military healthcare and certain base privileges after divorce. They are separate from pension division, and the two are often confused.",
-        "The 20/20/20 rule generally requires at least 20 years of marriage, at least 20 years of creditable service, and at least 20 years of overlap between the marriage and the service. A qualifying unremarried former spouse may retain medical, dental, commissary, exchange and military legal assistance eligibility.",
-        "The 20/20/15 rule applies where the overlap is at least 15 years but fewer than 20. It generally provides a limited period of continued medical coverage rather than permanent eligibility. Remarriage changes the analysis.",
+        "Healthcare and other military benefits may raise separate questions from the division of retirement pay. The source materials discuss benefit-related issues in the context of military divorce.",
+        "Eligibility depends on current rules and the facts of the marriage and service. Do not rely on a general description as a determination of coverage.",
       ],
       bullets: [
-        "How overlap years are documented in the record",
-        "What a court order must say for a former spouse to be recognized",
-        "Why the distinction matters before a settlement is signed",
+        "Identify the specific benefit in question",
+        "Gather current service and family records",
+        "Confirm eligibility with the appropriate source",
       ],
     },
     {
-      title: "Survivor Benefit Plan (SBP)",
+      title: "Survivor Benefit Plan Questions",
       paragraphs: [
-        "The Survivor Benefit Plan is an annuity a retiree may elect to provide continuing monthly income to a beneficiary after death. In a divorce, the SBP decision can matter more over time than the pension division itself.",
-        "A court may order former spouse coverage, and a deemed election generally must be requested within one year of the divorce for it to take effect. Deadlines can be difficult to correct once missed.",
+        "The Survivor Benefit Plan may be one of the benefits to consider when a military family is addressing divorce and future financial arrangements.",
+        "Coverage, cost, election requirements and timing should be checked against current official guidance and the family's circumstances.",
       ],
       bullets: [
-        "Whether coverage already exists and who is currently named",
-        "The cost of coverage and which party bears it",
-        "Documenting an election so it is recorded correctly",
+        "Confirm current coverage and beneficiary information",
+        "Review any proposed order or agreement",
+        "Verify applicable requirements and deadlines",
       ],
     },
     {
-      title: "TRICARE and Healthcare Coverage",
+      title: "Deployment, Custody and Visitation",
       paragraphs: [
-        "Healthcare eligibility after a military divorce is set by statute, and the length of the marriage alone does not decide it. TRICARE generally follows the 20/20/20 analysis; former spouses who do not qualify may have a limited option to purchase temporary coverage through the Continued Health Care Benefit Program.",
-        "Because coverage can end abruptly, it is worth planning healthcare for the period after the divorce is final. Coverage for children is analyzed separately from coverage for a former spouse.",
+        "Military service and deployment can affect family arrangements, including custody and visitation. The source website identifies these as issues that may arise in military family-law matters.",
+        "Parenting plans and court orders should be considered in light of the family's actual schedule, service obligations and children's needs.",
       ],
       bullets: [
-        "An eligibility review before a settlement is signed",
-        "Coverage for minor children and young adults",
-        "Coordination with employer or marketplace coverage",
+        "Existing parenting plans and court orders",
+        "The family's anticipated schedule and communication needs",
+        "How to address changes through the proper process",
       ],
     },
     {
-      title: "Deployment and Custody Planning Under Florida Law",
+      title: "Child Support and Alimony",
       paragraphs: [
-        "Florida’s Uniform Deployed Parents Custody and Visitation Act addresses what happens to time-sharing when a parent receives deployment orders. It provides mechanisms for a temporary arrangement, for delegating limited time to a close family member, and for notifying the other parent of pending deployment.",
-        "A parenting plan built with deployment in mind can establish notice requirements, a temporary schedule and communication terms before a crisis arrives, rather than after a motion is filed.",
+        "The source website lists child support and alimony among the family-law issues addressed by the office. Military income, family needs and existing orders may be relevant to an individual matter.",
+        "The outcome depends on the applicable law and financial information available for review.",
       ],
       bullets: [
-        "Notice provisions and how deployment is defined",
-        "Temporary schedules and delegated time with relatives",
-        "Restoring the original schedule after return",
+        "Current support orders and relevant financial information",
+        "Questions about existing or proposed arrangements",
+        "Whether an order may need further review",
       ],
     },
     {
-      title: "Servicemembers Civil Relief Act (SCRA) Protections",
+      title: "Residency and Jurisdiction",
       paragraphs: [
-        "The SCRA offers limited protections to service members on active duty. In family law, the provisions most often used allow a request to stay proceedings when military service materially affects the ability to appear, and require an affidavit before a default judgment is entered.",
-        "The SCRA also caps interest at six percent on obligations incurred before military service in some circumstances. It is not a blanket immunity from court proceedings and does not suspend every deadline.",
+        "When a family has connections to more than one place, questions about where a matter should be handled may arise. The source website serves communities in Northwest Florida, including Pensacola, Milton, Navarre and Gulf Breeze.",
+        "Residency, court authority and case timing depend on the specific circumstances. Have the relevant records reviewed rather than relying on a general statement.",
       ],
       bullets: [
-        "Stays and continuances when service interferes with participation",
-        "Default judgment safeguards",
-        "Interest rate relief on pre-service obligations",
+        "Where each person lives and has lived",
+        "The relevant service and family records",
+        "Any existing case or court order",
       ],
     },
     {
-      title: "Residency and Jurisdiction for Military Families",
+      title: "Modifications and Court Orders",
       paragraphs: [
-        "Florida requires that a petitioner reside in the state for six months before filing for dissolution. For military families, residency and domicile questions are usually reviewed alongside orders, home of record, and where the spouse and children actually live.",
-        "When more than one state could be involved, jurisdiction over support and custody may be governed by statutes such as the Uniform Interstate Family Support Act. The choice of forum can affect timing and what relief is available.",
+        "The source website lists modifications and enforcement among its family-law services. A request involving an existing order requires review of that order and the circumstances surrounding it.",
+        "Do not assume that a change in circumstances automatically changes a court order; get advice about the appropriate process.",
       ],
       bullets: [
-        "Proving the six-month residency requirement",
-        "Which state has authority over custody and support",
-        "How a filing in one state interacts with another",
+        "Locate the current signed order",
+        "Identify which part needs to be addressed",
+        "Ask about the appropriate court process",
       ],
     },
     {
-      title: "Pensacola Base Jurisdiction",
+      title: "Serving Pensacola and Nearby Communities",
       paragraphs: [
-        "Where a case is filed depends on where the parties live, and military families in this region often cross county lines. A petition is typically filed in the circuit court of the county where the parties reside.",
-        "This office is based in Pensacola, a short distance from Corry Station and NAS Pensacola, and serves clients from Escambia, Santa Rosa and Okaloosa counties, including NAS Whiting Field, Eglin AFB and Hurlburt Field.",
+        "The Law Office of James M. Burns is located at 4502 Twin Oaks Drive in Pensacola. The source website lists Pensacola, Milton, Navarre and Gulf Breeze among the communities it serves.",
+        "Call the office to confirm whether it can assist with your location and the type of legal matter you have.",
       ],
       bullets: [
-        "Escambia County — Pensacola, Corry Station, NAS Pensacola",
-        "Santa Rosa County — Milton, Navarre, NAS Whiting Field",
-        "Okaloosa County — Fort Walton Beach, Eglin AFB, Hurlburt Field",
+        "Pensacola",
+        "Milton",
+        "Navarre and Gulf Breeze",
       ],
     },
   ],
   faqIntro: {
     eyebrow: "Military Divorce Questions",
     title: "A few answers to start with",
-    description: "These are general answers. Your dates and orders determine how the rules apply.",
+    description:
+      "The source website did not publish these FAQs. The existing general answers should be reviewed by an attorney before relying on them.",
   },
   faqs: militaryFaqs,
   cta: {
-    title: "Facing a military divorce?",
-    description: "Bring your orders, your timeline and your questions. The first conversation is confidential.",
+    title: "Need to discuss a military family-law matter?",
+    description: "Call the office to arrange a free consultation.",
   },
 };
 
 export const familyLawPage = {
-  eyebrow: "Civilian Family Law & Child Custody",
-  title: "Family law matters handled with care and preparation",
+  eyebrow: "Divorce & Family Law",
+  title: "Guidance for family-law matters",
   description:
-    "Divorce, custody, support and post-judgment disputes are decided on records, deadlines and documentation. These are the matters the office handles, and what each one generally involves.",
+    "The source website lists divorce, family law, child custody, support, alimony, modifications and enforcement among its practice areas. The details of each matter depend on the people and circumstances involved.",
   services: familyServiceItems,
   faqIntro: {
     eyebrow: "Family Law Questions",
     title: "Common questions about custody and support",
-    description: "General information only. Every case turns on its own facts and documents.",
+    description:
+      "The source website did not publish these FAQs. The existing general answers should be reviewed by an attorney before relying on them.",
   },
   faqs: familyFaqs,
   cta: {
-    title: "Clarity for the decisions ahead.",
-    description: "Custody, support and property decisions last for years. Start with a confidential conversation.",
+    title: "Questions about a family-law matter?",
+    description: "Call the office to arrange a free consultation.",
+  },
+};
+
+export const motionsForContemptPage = {
+  eyebrow: "Family Law",
+  title: "Motions for Contempt",
+  description:
+    "When a court order is not being followed, a motion for contempt may be one way to ask the court to address compliance. The right approach depends on the order, current law and the facts.",
+  sections: [
+    {
+      title: "Court orders and compliance",
+      paragraphs: [
+        "The source website discusses motions for contempt in connection with court orders involving matters such as support, parenting arrangements and protective orders.",
+        "Whether conduct violates an order, and what steps may be available, depends on the order's language and the circumstances.",
+      ],
+    },
+    {
+      title: "Filing or responding to a motion",
+      paragraphs: [
+        "The source page describes both seeking enforcement and responding to an allegation of noncompliance. The appropriate process depends on the current order, the relevant records and applicable law.",
+        "This page does not determine whether contempt is appropriate or predict how a court may rule.",
+      ],
+    },
+    {
+      title: "Information to gather",
+      bullets: [
+        "A copy of the current court order",
+        "Records related to the issue being raised",
+        "Relevant dates and communications",
+        "Any notice or filing received from the court",
+      ],
+    },
+  ],
+  cta: {
+    title: "Questions about a court order?",
+    description: "Call the office to arrange a free consultation.",
   },
 };
 
 export const criminalDefensePage = {
   eyebrow: "Criminal Defense",
-  title: "A calm, prepared response to a criminal charge",
+  title: "Criminal defense in Pensacola",
   description:
-    "A charge is the beginning of a process, not an ending. The office handles the matters listed below and works through each stage with attention to the record, the deadlines and the consequences that reach beyond the courtroom.",
+    "The source website identifies DUI, drug trafficking, sexual assault, stalking, domestic-violence charges and injunction-related matters among its criminal-defense services.",
   servicesIntro: {
     eyebrow: "Practice Areas",
-    title: "Matters the office handles",
-    description: "Each of these matters is different in its defenses, its deadlines and its consequences. The descriptions below are general.",
+    title: "Criminal defense matters",
+    description: "The source website lists the following criminal-defense practice areas. The information here is general.",
   },
   services: [
     {
-      title: "DUI Defense",
+      title: "DUI",
       paragraphs: [
-        "Florida DUI cases involve both a criminal charge and a separate administrative license process with its own short deadlines. The evidence usually centers on the stop, the investigation and testing, and each is reviewed closely.",
-        "License consequences can begin before any court appearance, so the first steps after an arrest matter. This is general information, not advice about a specific case.",
+        "The source website lists DUI among the criminal matters handled by the office. The circumstances, records and legal issues in each case need individual review.",
+        "If you have questions after an arrest or charge, contact an attorney to discuss the matter and any documents you received.",
       ],
     },
     {
-      title: "Sex Crimes and Sexual Assault Defense",
+      title: "Sexual Assault Allegations",
       paragraphs: [
-        "These charges carry severe consequences and are investigated thoroughly and early. Representation focuses on the accuracy of the allegations, the reliability of the evidence, and protecting the rights of the accused at every stage.",
-        "Early involvement matters most where an investigation is open and no charge has yet been filed.",
-      ],
-    },
-    {
-      title: "Violent Crimes, Including Serious Felony Defense",
-      paragraphs: [
-        "Serious felony allegations require a careful review of the state’s evidence, including identification, statements and physical proof. Sentencing exposure and collateral consequences are addressed from the first meeting.",
-        "Includes matters where the possible penalty is measured in years rather than months.",
-      ],
-    },
-    {
-      title: "Domestic Violence Defense",
-      paragraphs: [
-        "Domestic violence charges often involve disputed accounts of a single event and can affect housing, firearm rights and family law proceedings at the same time. A violation of an existing order is treated as a separate offense.",
-        "Where a family law case is also open, the two matters are best considered together.",
+        "The source website lists sexual assault among the criminal matters addressed by the practice. Each allegation and its supporting information should be reviewed on its own facts.",
+        "Avoid relying on a general web description to assess a specific investigation or charge.",
       ],
     },
     {
       title: "Domestic Violence Injunctions",
       paragraphs: [
-        "An injunction is a protective-order proceeding in civil court, separate from a criminal charge. It can set contact restrictions, temporary time-sharing and other conditions, and it can be contested at a hearing.",
-        "Responding to a petition has a short timeline and a defined evidentiary process.",
+        "The source website discusses domestic-violence injunctions as a distinct legal matter. The applicable process and requirements depend on the petition and the court's orders.",
+        "Read any papers carefully and seek legal guidance about the next steps.",
+      ],
+    },
+    {
+      title: "Domestic-Violence Charges",
+      paragraphs: [
+        "The source website lists domestic-violence charges among the matters addressed by the office. Criminal allegations and any related family-court proceedings may raise separate issues.",
+        "The specific charge, documents and court process should be reviewed individually.",
+      ],
+    },
+    {
+      title: "Injunction Violations",
+      paragraphs: [
+        "The source website lists injunction violations among the criminal matters addressed by the practice. The circumstances, existing orders and current law should be reviewed in an individual case.",
+        "This page does not determine whether an order was violated or predict a case outcome.",
       ],
     },
     {
       title: "Drug Trafficking",
       paragraphs: [
-        "Trafficking charges are driven by statutory quantity thresholds and can carry mandatory minimum exposure. The analysis usually examines the stop, the search, chain of custody and the weight attributed to the substance.",
-        "Florida thresholds vary by substance and are set by statute.",
+        "The source website lists drug trafficking as a criminal-defense practice area. The facts, evidence and law applicable to an individual case require review.",
+        "This page does not describe penalties or predict an outcome.",
       ],
     },
     {
-      title: "Stalking",
+      title: "Stalking and Cyberstalking",
       paragraphs: [
-        "Stalking allegations often involve messages, repeated contact or conduct described as a course of action. Whether the matter is charged as a misdemeanor or a felony generally depends on the conduct alleged and any prior record.",
-        "The content and context of communications are usually central to the case.",
+        "Stalking is among the criminal matters listed on the source website. Questions about the conduct alleged, communications and any related orders depend on the specific record.",
+        "A general web page cannot determine how a particular allegation will be charged or resolved.",
       ],
     },
     {
       title: "Misdemeanors and Felonies",
       paragraphs: [
-        "Not every charge requires the same response, but every charge deserves a review of the facts, the available defenses and the practical consequences of a plea or a conviction.",
-        "Includes cases resolved through diversion or pretrial programs where eligible.",
+        "The source website also refers to criminal defense more broadly. For a matter not listed above, contact the office to confirm whether it can assist.",
+        "No outcome or particular defense can be assumed without reviewing the case-specific information.",
       ],
     },
   ],
   stepsIntro: {
     eyebrow: "If You Have Been Charged",
-    title: "Calm, practical first steps",
-    description: "A charge is a process with stages. These steps apply to most criminal matters, and they buy time to make better decisions.",
+    title: "Questions after an arrest or charge",
+    description: "Contact an attorney to discuss the paperwork, the court process and the circumstances of your matter.",
   },
   steps: [
     {
-      title: "Say little, and ask for counsel",
+      title: "Review the documents",
       description:
-        "You are not required to explain the situation to investigators. Identify yourself, decline to answer questions, and ask to speak with an attorney before going further.",
+        "Keep the paperwork you received and note any court dates or instructions. An attorney can help explain what the documents mean.",
     },
     {
-      title: "Keep the paperwork",
+      title: "Write down your questions",
       description:
-        "The citation, bond documents, booking paperwork and any court notice all matter. Note the case number, the court and the date on every document.",
+        "Record the questions you want to ask and the events you remember, while details are available to you.",
     },
     {
-      title: "Do not miss a court date",
+      title: "Ask about next steps",
       description:
-        "A missed appearance can create additional problems, including a warrant. If you cannot appear, address it before the date rather than after.",
+        "Discuss the process, any upcoming dates and the steps that may be relevant to your specific matter.",
     },
     {
-      title: "Write down what you remember",
+      title: "Protect your privacy",
       description:
-        "Record the sequence of events while it is fresh, including names, times and locations. Do not post about the matter on social media or discuss it with witnesses.",
+        "Avoid sharing sensitive case details through a public website or social media.",
     },
     {
-      title: "Tell your command if you serve",
+      title: "Mention related proceedings",
       description:
-        "Service members may be required to report certain arrests, and a civilian case can proceed alongside command action. Addressing both tracks early avoids surprises.",
+        "Tell the attorney if there are related family-court, injunction or service-related matters that may need to be considered.",
     },
   ],
   stepsNote:
-    "Service members may face both civilian and military consequences for the same conduct. A command can take administrative or disciplinary action while a civilian case is pending, so the two should be planned for together.",
+    "This information is general and is not legal advice. The appropriate next steps depend on the charge, documents and circumstances.",
   cta: {
-    title: "Charged or under investigation?",
-    description:
-      "The earlier the facts are reviewed, the more options usually remain. Reach out for a confidential conversation.",
+    title: "Need to discuss a criminal matter?",
+    description: "Contact the office to arrange a free consultation.",
   },
 };
 
 export const attorneyPage = {
   eyebrow: "Attorney Profile",
-  title: "James Martinez Burns",
+  title: "James M. Burns",
   description:
-    "Attorney at the Law Office of James M. Burns, practicing military divorce, family law and criminal defense in Pensacola.",
+    "The Law Office of James M. Burns is based in Pensacola and lists divorce, family law and criminal defense among its practice areas.",
   facts: [
     { label: "Bar Admission", value: "Placeholder — add Florida Bar admission and year" },
     { label: "Education", value: "Placeholder — add law school and undergraduate details" },
@@ -428,8 +455,8 @@ export const attorneyPage = {
     {
       title: "Background",
       paragraphs: [
-        "James Martinez Burns is a Pensacola attorney with a practice centered on military divorce and family law, alongside criminal defense. He works with active-duty service members, reservists, National Guard members, veterans, military spouses and civilian families throughout Escambia, Santa Rosa and Okaloosa counties.",
-        "Placeholder — add the attorney's background: where he grew up, military or family experience that shaped the practice, and the path that led to opening the Law Office of James M. Burns in Pensacola.",
+        "The source website identifies the practice as the Law Office of James M. Burns and describes it as formerly the Law Offices of Steven W. Bowden.",
+        "The source materials reviewed for this update do not provide verified personal background details for James M. Burns. Information about another attorney's experience is not attributed to him.",
       ],
     },
     {
@@ -442,15 +469,15 @@ export const attorneyPage = {
     {
       title: "Pensacola Community Ties",
       paragraphs: [
-        "The office is located on Twin Oaks Drive in southwest Pensacola, a short drive from Corry Station and NAS Pensacola. That proximity is practical: clients can meet in person before or after duty hours without a long trip.",
-        "Placeholder — add community involvement, local organizations, volunteer work or ties to the military community that the attorney wants listed.",
+        "The office address listed on the source website is 4502 Twin Oaks Drive, Pensacola, Florida 32506.",
+        "The source website lists Pensacola, Milton, Navarre and Gulf Breeze among the communities served. It does not provide verified details about personal community involvement.",
       ],
     },
     {
       title: "Advocacy Philosophy",
       paragraphs: [
-        "The approach is direct and prepared: understand the facts and the documents first, explain the realistic options, and keep the client informed at each stage. Cases are built to be ready for a hearing, because preparation shapes negotiation as much as it shapes trial.",
-        "Communication is treated as part of the representation, not an extra. Questions are answered, deadlines are tracked, and clients are told what is happening and what comes next.",
+        "The current website describes the firm's approach as direct, determined and dedicated.",
+        "Prospective clients can call the office to discuss their legal concerns and arrange a consultation.",
       ],
     },
   ],
@@ -459,7 +486,7 @@ export const attorneyPage = {
 export const resultsPage = {
   title: "Client feedback and case outcomes",
   description:
-    "This page is reserved for verified client feedback and approved case results. The entries below are placeholders until that information is supplied and approved for publication.",
+    "The source website reviewed for this content update did not publish verified client testimonials or specific case outcomes.",
   categories: [
     "Military Divorce",
     "Time-Sharing",
@@ -472,7 +499,7 @@ export const resultsPage = {
   cta: {
     title: "Every case starts with its own facts.",
     description:
-      "Bring your questions and documents to a confidential consultation and hear how the law applies to your situation.",
+      "Call the office to arrange a free consultation and discuss your legal matter.",
   },
 };
 
@@ -480,16 +507,16 @@ export const contactPage = {
   eyebrow: "Contact & Pensacola Office",
   title: "Talk with the office",
   description:
-    "Call, email or send a message. Consultations are confidential, and the office will explain what to bring before you meet.",
+    "Call the office or use the contact form to ask about a free consultation and the legal matter you would like to discuss.",
   address: SITE_ADDRESS,
   city: SITE_CITY,
   phone: SITE_PHONE,
   email: SITE_EMAIL,
-  officeHours: "Office hours: placeholder — add regular hours",
+  officeHours: SITE_OFFICE_HOURS,
   officeDescription:
-    "The office is on Twin Oaks Drive in southwest Pensacola, a short drive from Corry Station and NAS Pensacola.",
+    "The Law Office of James M. Burns is located at 4502 Twin Oaks Drive in Pensacola.",
   gettingHere:
-    "Directions placeholder — add turn-by-turn notes from the main routes and where to park.",
+    "Contact the office for directions and current parking information.",
   serviceArea: SERVICE_AREA,
 };
 
@@ -497,38 +524,37 @@ export const articleData = [
   {
     slug: "residency-in-a-florida-military-divorce",
     category: "Military Divorce",
-    readTime: "4 min read",
+    date: "July 13, 2026",
     title: "Residency Issues in a Florida Military Divorce",
     listingTitle: "Residency Issues in a Florida Military Divorce",
     description:
-      "Florida requires six months of residency before a dissolution is filed. For service members, that requirement is often more layered than it first appears.",
+      "Military moves and changing assignments may complicate where a divorce can be filed. The source article discusses residency and jurisdiction; confirm current requirements for your situation.",
     sections: [
       {
-        title: "The statutory starting point",
+        title: "Military moves and residency",
         paragraphs: [
-          "A dissolution of marriage may be filed in Florida when the petitioner has resided in the state for six months before the filing. That requirement is separate from where the marriage took place or where the other spouse lives.",
+          "The source article describes how frequent relocations and deployments can affect a military family's connection to a state. Residency requirements differ, and the article's legal details should be checked against current law.",
         ],
       },
       {
-        title: "Why military families ask about it",
+        title: "Considering where to file",
         paragraphs: [
-          "A service member may be stationed in Pensacola while retaining a different home of record, or may have recently arrived from an overseas assignment. Residency and domicile are not always the same question, and orders can complicate how each is documented.",
-          "Judges look at the facts: where the person actually lives, how long they have lived there, and what ties exist to another state. Documents such as a lease, utility records, a driver's license and orders are commonly relevant.",
+          "A military family may have ties to more than one state. The source article notes that laws and filing requirements can differ between places, so a decision should be based on current rules and the family's circumstances.",
         ],
       },
       {
-        title: "What to gather before a consultation",
+        title: "Preparing for a conversation",
         bullets: [
-          "Your current orders and reporting date",
-          "Your home of record and state of legal residence",
-          "Dates of residence in Florida for each spouse",
-          "Where the children have lived for the past six months",
+          "Current and recent duty-station information",
+          "Where each family member has lived",
+          "Any existing court case or order",
+          "Questions about the location and timing of a filing",
         ],
       },
       {
-        title: "Related questions",
+        title: "Get current guidance",
         paragraphs: [
-          "When more than one state could be involved, jurisdiction over support and custody may be governed by separate statutes, and the choice of forum can affect timing. Those questions are best reviewed with an attorney using your actual dates.",
+          "This summary is based on a legacy source article and does not determine where a specific case may be filed. Ask an attorney to review the current requirements and relevant facts.",
         ],
       },
     ],
@@ -540,37 +566,37 @@ export const articleData = [
   {
     slug: "custody-rights-for-deployed-parents",
     category: "Military Divorce",
-    readTime: "4 min read",
-    title: "Custody Rights for a Deployed Parent",
-    listingTitle: "Custody Rights for a Deployed Parent",
+    date: "July 13, 2026",
+    title: "Custody Rights Expand for Deployed Military",
+    listingTitle: "Custody Rights Expand for Deployed Military",
     description:
-      "Deployment changes a schedule, but Florida law provides a process for a temporary arrangement and a return to the original plan.",
+      "The source article discusses custody and time-sharing questions when a parent is deployed. Its legal references are historical, so verify current Florida law before relying on them.",
     sections: [
       {
-        title: "A temporary arrangement, not a permanent change",
+        title: "Deployment and parenting arrangements",
         paragraphs: [
-          "Florida's Uniform Deployed Parents Custody and Visitation Act addresses time-sharing when a parent receives deployment orders. It allows for a temporary modification during the deployment rather than a permanent rewrite of the parenting plan.",
+          "A legacy source article describes Florida legislation concerning deployed parents and arrangements for their children's care. Because the article refers to an earlier version of the law, its descriptions should not be treated as current legal advice.",
         ],
       },
       {
-        title: "Notice and planning",
+        title: "Questions families may need to address",
         paragraphs: [
-          "The statute provides for notice to the other parent and for arrangements during the deployment, including limited delegation of time to a close family member in some circumstances. A parenting plan that anticipates deployment can set these terms before anything is filed.",
+          "The source article focuses on planning for a parent's absence and the child's care. The right process depends on current law, any existing parenting plan and the family's circumstances.",
         ],
       },
       {
-        title: "After returning home",
+        title: "Review existing orders",
         paragraphs: [
-          "The original schedule generally resumes when deployment ends. Keeping records of the arrangement during deployment, including communications and exchanges, makes the transition back easier to document.",
+          "Before making changes, review any current court orders and get advice about how they apply. This page does not determine the rights or obligations of any parent.",
         ],
       },
       {
-        title: "What a plan can address",
+        title: "Topics to discuss",
         bullets: [
-          "How and when deployment notice is given",
-          "The temporary schedule and exchange logistics",
-          "Communication with the deployed parent",
-          "Delegated time with relatives, if the plan allows it",
+          "The current parenting plan or court order",
+          "The expected service schedule",
+          "The child's care and communication arrangements",
+          "Current requirements for any proposed change",
         ],
       },
     ],
@@ -582,35 +608,34 @@ export const articleData = [
   {
     slug: "military-retirement-benefits-20-20-20",
     category: "Military Divorce",
-    readTime: "5 min read",
-    title: "Military Retirement Benefits and the 20/20/20 Rule",
-    listingTitle: "Military Retirement Benefits and the 20/20/20 Rule",
+    date: "July 13, 2026",
+    title: "Military Divorce: 20/20/20 Standards & 20/20/15 Standards",
+    listingTitle: "Military Divorce: 20/20/20 & 20/20/15 Standards",
     description:
-      "The 20/20/20 rule is about healthcare eligibility, not pension division. Confusing the two can lead to costly assumptions in a settlement.",
+      "A legacy source article discusses the 20/20/20 and 20/20/15 standards. Benefit rules may change, so check current official guidance and your individual circumstances.",
     sections: [
       {
-        title: "Two separate questions",
+        title: "Military benefits in a divorce",
         paragraphs: [
-          "Retired pay division is governed by the Uniformed Services Former Spouses' Protection Act and state law. Healthcare eligibility after divorce is governed by a different set of rules, including the 20/20/20 and 20/20/15 tests.",
+          "The source article discusses military benefits that may arise in a divorce and describes the 20/20/20 and 20/20/15 standards. It also contains legacy information about a former attorney; that experience is not attributed to James M. Burns.",
         ],
       },
       {
-        title: "How the test works",
+        title: "Verify current requirements",
         paragraphs: [
-          "The 20/20/20 rule generally requires at least 20 years of marriage, at least 20 years of creditable service, and at least 20 years of overlap between the marriage and the service. When those conditions are met, an unremarried former spouse may retain medical and certain base privileges.",
-          "Where the overlap is at least 15 but fewer than 20 years, the 20/20/15 rule may provide a limited period of continued medical coverage rather than ongoing eligibility.",
+          "Eligibility for military benefits depends on current requirements and the relevant service and family records. The legacy article's statements are not a determination that any person qualifies for a benefit.",
         ],
       },
       {
-        title: "Why documentation matters",
+        title: "Documents to have reviewed",
         paragraphs: [
-          "Dates drive these tests. Service records, marriage dates and the divorce date all need to be confirmed early, because the answer can shape both healthcare planning and settlement terms.",
+          "A careful review may require records relating to the marriage, service and any existing orders. Contact the appropriate benefits administrator for current official information.",
         ],
       },
       {
-        title: "Do not overlook the Survivor Benefit Plan",
+        title: "Get case-specific advice",
         paragraphs: [
-          "SBP coverage is a separate annuity decision with its own deadlines, including a deemed election that generally must be requested within one year of the divorce.",
+          "This article is a summary of a legacy source page, not legal or benefits advice. Discuss current rules with a qualified professional before relying on them.",
         ],
       },
     ],
@@ -622,34 +647,34 @@ export const articleData = [
   {
     slug: "when-stalking-is-a-misdemeanor-or-felony",
     category: "Criminal Defense",
-    readTime: "4 min read",
-    title: "When Stalking Is Charged as a Misdemeanor or a Felony",
-    listingTitle: "When Stalking Is Charged as a Misdemeanor or a Felony",
+    date: "July 13, 2026",
+    title: "When Is It a Crime? Florida's Laws on Stalking",
+    listingTitle: "Florida's Laws on Stalking",
     description:
-      "Stalking allegations usually turn on a course of conduct and its effect on the person targeted, not on a single message.",
+      "The source article discusses Florida stalking charges. Its descriptions of statutory elements and penalties may be out of date; seek current legal advice.",
     sections: [
       {
-        title: "The core of the allegation",
+        title: "A legacy overview",
         paragraphs: [
-          "Stalking allegations typically describe repeated conduct directed at a specific person that causes substantial emotional distress and serves no legitimate purpose. A single incident is usually not enough on its own.",
+          "The source article describes stalking allegations and conduct that it says may be relevant. Its statutory descriptions are historical and should not be relied on as a current statement of Florida law.",
         ],
       },
       {
-        title: "Misdemeanor and felony exposure",
+        title: "Charge classifications and penalties",
         paragraphs: [
-          "Whether a matter is charged as a misdemeanor or a felony generally depends on the conduct alleged and on any prior record. Aggravated allegations, threats and violations of existing orders can change the level of the charge.",
+          "The source article discusses misdemeanor and felony classifications, but its descriptions of charges and penalties may have changed. Confirm current law with an attorney rather than relying on this summary.",
         ],
       },
       {
-        title: "Evidence that matters",
+        title: "Individual circumstances matter",
         paragraphs: [
-          "Messages, call logs, social media activity and witness accounts usually define the case. Context, including whether contact was mutual or invited, is often central to how the allegation is evaluated.",
+          "The information needed to understand an allegation depends on the specific facts and records. This page does not assess any person's conduct or predict an outcome.",
         ],
       },
       {
-        title: "First steps",
+        title: "Seek current advice",
         paragraphs: [
-          "Preserve the communications rather than deleting them, avoid further contact, and treat any court date as mandatory. General information only; every case depends on its facts.",
+          "If you have questions about a stalking investigation or charge, contact an attorney for guidance based on current law and your circumstances.",
         ],
       },
     ],
@@ -658,37 +683,30 @@ export const articleData = [
   {
     slug: "what-to-do-after-a-dui-arrest-in-florida",
     category: "Criminal Defense",
-    readTime: "4 min read",
+    date: "Source not verified",
     title: "What to Do After a DUI Arrest in Florida",
     listingTitle: "What to Do After a DUI Arrest in Florida",
     description:
-      "A Florida DUI involves two tracks running at once: a criminal case and an administrative license process with its own deadlines.",
+      "A DUI article matching this topic was not located in the source materials reviewed. Contact the office to confirm current services and guidance.",
     sections: [
       {
-        title: "Two processes, two timelines",
+        title: "Source content not verified",
         paragraphs: [
-          "A DUI arrest usually starts a criminal case and a separate administrative review of driving privileges. The license process can move faster than the court case, so the paperwork you received at arrest matters immediately.",
+          "The source website lists DUI among its practice areas, but a corresponding source article was not located during this content update. This page does not provide legal guidance about DUI charges.",
         ],
       },
       {
-        title: "The first few days",
+        title: "Contact the office",
         bullets: [
-          "Read every document you were given and note each deadline",
-          "Note the court date, courthouse and case number",
-          "Do not discuss the stop or the testing with anyone but your attorney",
-          "Keep the vehicle, booking and testing paperwork together",
+          "Ask whether the office can assist with your matter",
+          "Have any relevant documents available for discussion",
+          "Confirm any dates or instructions with the appropriate source",
         ],
       },
       {
-        title: "What gets reviewed",
+        title: "General information only",
         paragraphs: [
-          "The stop, the investigation, the field sobriety exercises and any breath or blood testing are all examined. Whether the required procedures were followed is often the central question.",
-        ],
-      },
-      {
-        title: "Service members",
-        paragraphs: [
-          "A DUI can carry consequences beyond the criminal case for service members, including command action and reporting obligations. Addressing both tracks early avoids conflicting information.",
+          "Do not rely on outdated or general material to decide what to do in a specific case. Seek current advice from a qualified attorney.",
         ],
       },
     ],
@@ -697,37 +715,31 @@ export const articleData = [
   {
     slug: "how-social-media-can-affect-a-divorce",
     category: "Family Law",
-    readTime: "3 min read",
-    title: "How Social Media Can Affect a Divorce",
-    listingTitle: "How Social Media Can Affect a Divorce",
+    date: "July 13, 2026",
+    title: "How Can Social Media Affect My Divorce?",
+    listingTitle: "How Social Media Can Affect My Divorce?",
     description:
-      "Posts are evidence. In a family law case, they can be used to test credibility, income claims and parenting decisions.",
+      "The source article discusses how social media may intersect with divorce issues. Whether particular information matters depends on the case and applicable law.",
     sections: [
       {
-        title: "Posts are discoverable",
+        title: "The source article's overview",
         paragraphs: [
-          "Public and semi-public content is routinely collected in family law cases, including photos, check-ins and comments. Even deleted material can surface through screenshots or records held by another party.",
+          "The legacy source article discusses social media in relation to support, parenting, property, income and credibility. Its examples are not a determination that a post is relevant or admissible in a particular case.",
         ],
       },
       {
-        title: "Where it shows up",
+        title: "Consider the context",
         bullets: [
-          "Income and employment claims in support cases",
-          "Parenting decisions and supervision questions",
-          "Statements about the other parent or the case itself",
-          "Lifestyle claims that conflict with financial disclosures",
+          "The subject and context of the information",
+          "How it relates to the issues in the case",
+          "Current legal requirements for using information",
+          "Whether the material should be reviewed by counsel",
         ],
       },
       {
-        title: "Practical guidance",
+        title: "Avoid assumptions",
         paragraphs: [
-          "Assume anything posted may be read aloud in a courtroom. Pause new posts about the case, review privacy settings, and ask friends and family not to post about the situation either.",
-        ],
-      },
-      {
-        title: "What not to do",
-        paragraphs: [
-          "Do not delete material after litigation begins without discussing it with an attorney, and do not create new accounts to monitor the other party. Both can create problems that are avoidable.",
+          "Not every post will be relevant to a divorce. Ask an attorney to review questions about particular content and current legal rules.",
         ],
       },
     ],

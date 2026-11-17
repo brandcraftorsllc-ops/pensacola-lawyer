@@ -3,7 +3,13 @@ import localFont from "next/font/local";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
-import { absoluteUrl, getSiteUrl, SITE_ADDRESS, SITE_NAME } from "@/lib/site";
+import {
+  absoluteUrl,
+  getSiteUrl,
+  SITE_ADDRESS,
+  SITE_NAME,
+  SITE_PHONE_E164,
+} from "@/lib/site";
 import "./globals.css";
 
 const manrope = localFont({
@@ -31,13 +37,13 @@ const playfair = localFont({
 });
 
 const siteDescription =
-  "Law Office of James M. Burns: military divorce, family law, child custody and criminal defense for service members, veterans and families in Pensacola and the Emerald Coast.";
+  "The Law Office of James M. Burns serves Pensacola with divorce, military family law and criminal defense representation.";
 const socialImage = absoluteUrl("/images/pensacola-bay.png") ?? "/images/pensacola-bay.png";
 const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   title: {
-    default: "Pensacola Military Divorce, Family Law & Criminal Defense | JMB",
+    default: "Divorce, Military Family Law & Criminal Defense | JMB Pensacola",
     template: "%s",
   },
   description: siteDescription,
@@ -45,14 +51,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: "Pensacola Military Divorce, Family Law & Criminal Defense | JMB",
+    title: "Divorce, Military Family Law & Criminal Defense | JMB Pensacola",
     description: siteDescription,
     images: [{ url: socialImage, alt: "Dusk over Pensacola Bay" }],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pensacola Military Divorce, Family Law & Criminal Defense | JMB",
+    title: "Divorce, Military Family Law & Criminal Defense | JMB Pensacola",
     description: siteDescription,
     images: [socialImage],
   },
@@ -66,8 +72,7 @@ function LegalServiceJsonLd() {
     "@type": "LegalService",
     name: SITE_NAME,
     ...(url ? { url } : {}),
-    telephone: "+1-850-293-0392",
-    email: "Jmbpcola33@gmail.com",
+    telephone: SITE_PHONE_E164,
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE_ADDRESS,
@@ -78,10 +83,9 @@ function LegalServiceJsonLd() {
     },
     areaServed: [
       "Pensacola",
-      "Escambia County",
-      "Santa Rosa County",
-      "Okaloosa County",
-      "Emerald Coast",
+      "Milton",
+      "Navarre",
+      "Gulf Breeze",
     ],
     image: socialImage,
   };

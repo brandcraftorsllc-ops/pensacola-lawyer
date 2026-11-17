@@ -1,12 +1,14 @@
 export const SITE_NAME = "Law Office of James M. Burns";
-export const SITE_PHONE = "(850) 293-0392";
-export const SITE_PHONE_LINK = "tel:+18502930392";
+export const SITE_PHONE = "(850) 456-5779";
+export const SITE_PHONE_E164 = "+18504565779";
+export const SITE_PHONE_LINK = `tel:${SITE_PHONE_E164}`;
 export const SITE_EMAIL = "Jmbpcola33@gmail.com";
 export const SITE_EMAIL_LINK = "mailto:Jmbpcola33@gmail.com";
 export const SITE_ADDRESS = "4502 Twin Oaks Drive";
 export const SITE_CITY = "Pensacola, FL 32506";
+export const SITE_OFFICE_HOURS = "Monday–Friday, 9 a.m.–5 p.m.; Saturday and Sunday: closed.";
 export const SERVICE_AREA =
-  "Pensacola, Escambia County, Santa Rosa County, Okaloosa County and the Emerald Coast, including military families from NAS Pensacola, NAS Whiting Field, Corry Station, Eglin AFB and Hurlburt Field.";
+  "Pensacola, Milton, Navarre and Gulf Breeze.";
 
 export function getSiteUrl(): string | undefined {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");

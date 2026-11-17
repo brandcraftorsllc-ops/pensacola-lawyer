@@ -9,8 +9,8 @@ export default function ResultsPage() {
   return (
     <main id="main">
       <PageHero
-        current="Results"
-        eyebrow="Client Results"
+        current="Client Feedback"
+        eyebrow="Client Feedback"
         title={resultsPage.title}
         description={resultsPage.description}
         image="/images/military-divorce-header.png"
@@ -18,9 +18,9 @@ export default function ResultsPage() {
       <section className="section">
         <div className="container">
           <SectionHeading
-            eyebrow="Testimonials"
-            title="In the words of clients"
-            description="Placeholder, replace with verified client feedback and approved case results"
+            eyebrow="Client Feedback"
+            title="No verified testimonials available"
+            description="The source website reviewed for this update did not publish client testimonials."
           />
           <TestimonialCarousel items={homeContent.testimonials} />
         </div>
@@ -29,14 +29,14 @@ export default function ResultsPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Case Outcomes"
-            title="Approved results only"
-            description="Placeholder, replace with verified client feedback and approved case results"
+            title="No approved case outcomes available"
+            description="No specific case outcomes were available in the source materials reviewed."
           />
           <div className="outcome-grid">
             {resultsPage.categories.map((category) => (
               <article className="outcome-card" key={category}>
                 <p className="eyebrow">{category}</p>
-                <p>Placeholder — outcome summary</p>
+                <p>No verified outcome supplied for publication.</p>
               </article>
             ))}
           </div>

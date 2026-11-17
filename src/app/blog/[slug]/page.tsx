@@ -39,61 +39,71 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         description={article.description}
         image="/images/pensacola-bay.png"
       />
-      <article className="section">
-        <div className="container article-content">
-          <p className="draft-note">Draft, replace with attorney-approved content</p>
-          <Link className="text-link article-list-link" href="/blog">
-            All Articles <span aria-hidden="true">→</span>
-          </Link>
-          <div className="article-meta">
-            <span>{article.category}</span>
-            <span>{article.readTime}</span>
+      <article className="section article-page-section">
+        <div className="container article-page-container">
+          <div className="article-content">
+            <div className="article-toolbar">
+              <Link className="text-link article-list-link" href="/blog">
+                All Articles <span aria-hidden="true">→</span>
+              </Link>
+              <p className="draft-note">
+                {article.date === "Source not verified"
+                  ? "Draft — source article not located"
+                  : `Published ${article.date}; legal information may be outdated`}
+              </p>
+            </div>
+            {article.sections.map((section) => (
+              <section className="content-section" key={section.title}>
+                <h2>{section.title}</h2>
+                {"paragraphs" in section
+                  ? section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                  : null}
+                {"bullets" in section && section.bullets ? (
+                  <ul className="content-list">
+                    {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  </ul>
+                ) : null}
+              </section>
+            ))}
+            <p className="article-disclaimer">
+              This article is general information, not legal advice. Reading it does not create an
+              attorney-client relationship, and every case depends on its own facts.
+            </p>
           </div>
-          {article.sections.map((section) => (
-            <section className="content-section" key={section.title}>
-              <h2>{section.title}</h2>
-              {"paragraphs" in section
-                ? section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-                : null}
-              {"bullets" in section && section.bullets ? (
-                <ul className="content-list">
-                  {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-                </ul>
-              ) : null}
-            </section>
-          ))}
-          <p className="article-disclaimer">
-            This article is general information, not legal advice. Reading it does not create an
-            attorney-client relationship, and every case depends on its own facts.
-          </p>
-          {relatedArticles.length > 0 ? (
-            <section className="related-articles" aria-label="Related reading">
+        </div>
+      </article>
+      {relatedArticles.length > 0 ? (
+        <section className="section section-alt related-reading-section">
+          <div className="container article-page-container">
+            <div className="related-articles" aria-label="Related reading">
               <p className="eyebrow">Related Reading</p>
               <div className="article-grid related-grid">
                 {relatedArticles.map((related) => (
                   <article className="article-card" key={related.slug}>
                     <div className="article-meta">
                       <span>{related.category}</span>
-                      <span>{related.readTime}</span>
+                      <span>{related.date}</span>
                     </div>
                     <h2>
                       <Link href={`/blog/${related.slug}`}>{related.listingTitle}</Link>
                     </h2>
                     <p>{related.description}</p>
-                    <span className="draft-label">Draft</span>
+                    <span className="draft-label">
+                      {related.date === "Source not verified" ? "Draft" : "Insights"}
+                    </span>
                     <Link className="text-link" href={`/blog/${related.slug}`}>
                       Read Article <span aria-hidden="true">→</span>
                     </Link>
                   </article>
                 ))}
               </div>
-            </section>
-          ) : null}
-        </div>
-      </article>
+            </div>
+          </div>
+        </section>
+      ) : null}
       <CallToAction
-        title="Questions about your situation?"
-        description="General reading cannot replace advice about your own facts. Reach out for a confidential conversation."
+        title="Questions about a legal matter?"
+        description="Call the office to arrange a free consultation."
       />
     </main>
   );

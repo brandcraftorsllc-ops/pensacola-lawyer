@@ -9,7 +9,7 @@ export default function FamilyLawPage() {
   return (
     <main id="main">
       <PageHero
-        current="Civilian Family Law & Child Custody"
+        current="Divorce & Family Law"
         eyebrow={familyLawPage.eyebrow}
         title={familyLawPage.title}
         description={familyLawPage.description}

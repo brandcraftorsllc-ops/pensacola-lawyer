@@ -4,20 +4,21 @@ import {
   SITE_CITY,
   SITE_EMAIL,
   SITE_EMAIL_LINK,
+  SITE_OFFICE_HOURS,
   SITE_PHONE,
   SITE_PHONE_LINK,
   SERVICE_AREA,
 } from "@/lib/site";
 
 const practiceLinks = [
-  { href: "/military-divorce", label: "Military Divorce & Family Law" },
-  { href: "/family-law", label: "Civilian Family Law & Child Custody" },
+  { href: "/family-law", label: "Divorce & Family Law" },
+  { href: "/military-divorce", label: "Military Divorce" },
   { href: "/criminal-defense", label: "Criminal Defense" },
 ];
 
 const exploreLinks = [
   { href: "/attorney", label: "About the Attorney" },
-  { href: "/results", label: "Client Results" },
+  { href: "/results", label: "Client Feedback" },
   { href: "/resources", label: "Legal Resources" },
   { href: "/blog", label: "Legal Insights" },
   { href: "/case-evaluation", label: "Case Evaluation" },
@@ -34,7 +35,7 @@ export function Footer() {
             <span className="brand-divider" aria-hidden="true" />
             <span className="brand-caption">Military Divorce, Family Law &amp; Criminal Defense</span>
           </Link>
-          <p>Your service protected. Your family defended.</p>
+          <p>Personal attention. Practical guidance.</p>
           <p>{SERVICE_AREA}</p>
         </div>
         <nav aria-label="Practice areas">
@@ -64,13 +65,14 @@ export function Footer() {
               <a href={SITE_PHONE_LINK}>{SITE_PHONE}</a>
             </li>
             <li>
+              <span>Email (not confirmed by source):</span>
               <a href={SITE_EMAIL_LINK}>{SITE_EMAIL}</a>
             </li>
             <li>
               <span>{SITE_ADDRESS}</span>
               <span>{SITE_CITY}</span>
             </li>
-            <li>Office hours: placeholder — add regular hours</li>
+            <li>{SITE_OFFICE_HOURS}</li>
           </ul>
         </div>
       </div>

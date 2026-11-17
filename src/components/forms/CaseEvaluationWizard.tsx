@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { SITE_EMAIL, SITE_EMAIL_LINK, SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
+import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
 const matters = [
   {
@@ -103,8 +103,7 @@ export function CaseEvaluationWizard() {
         ) : null}
       </div>
       <p className="direct-contact">
-        Prefer to speak directly? Call <a href={SITE_PHONE_LINK}>{SITE_PHONE}</a> or email{" "}
-        <a href={SITE_EMAIL_LINK}>{SITE_EMAIL}</a>.
+        Prefer to speak directly? Call <a href={SITE_PHONE_LINK}>{SITE_PHONE}</a>.
       </p>
       <p className="form-disclaimer">
         <Link href="/privacy">Privacy Policy</Link>

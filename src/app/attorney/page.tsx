@@ -2,7 +2,8 @@ import Image from "next/image";
 import { CallToAction, PageHero } from "@/components/sections/CommonSections";
 import { getPageMetadata } from "@/data/route-metadata";
 import { attorneyPage } from "@/data/site-content";
-import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_LINK, SITE_EMAIL_LINK } from "@/lib/site";
+import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
+import Link from "next/link";
 
 export const metadata = getPageMetadata("/attorney");
 
@@ -16,54 +17,47 @@ export default function AttorneyPage() {
         description={attorneyPage.description}
         image="/images/attorney-contact-header.png"
       />
-      <section className="section section-alt">
-        <div className="container attorney-profile">
-          <div className="attorney-image">
-            <Image
-              src="/images/headshot-placeholder.png"
-              alt="Placeholder portrait, to be replaced with a professional portrait of James Martinez Burns"
-              width={1024}
-              height={1365}
-              sizes="(max-width: 700px) 90vw, 42vw"
-            />
-            <p className="draft-note">Headshot placeholder — replace with a professional portrait</p>
+      <section className="section section-alt attorney-profile-section">
+        <div className="container attorney-content-grid">
+          <div className="attorney-profile">
+            <div className="attorney-image">
+              <Image
+                src="/images/headshot-placeholder.png"
+                alt="Placeholder portrait for the Law Office of James M. Burns"
+                width={1024}
+                height={1365}
+                sizes="(max-width: 700px) 90vw, 38vw"
+              />
+              <p className="draft-note">Headshot placeholder — replace with a professional portrait</p>
+            </div>
+            <div className="attorney-facts">
+              {attorneyPage.facts.map((fact) => (
+                <div key={fact.label}>
+                  <span className="eyebrow">{fact.label}</span>
+                  <p>{fact.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="attorney-facts">
-            {attorneyPage.facts.map((fact) => (
-              <div key={fact.label}>
-                <span className="eyebrow">{fact.label}</span>
-                <p>{fact.value}</p>
-              </div>
+          <div className="prose-content attorney-prose">
+            {attorneyPage.sections.map((section) => (
+              <section className="content-section" key={section.title}>
+                <h2>{section.title}</h2>
+                {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </section>
             ))}
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container prose-content">
-          {attorneyPage.sections.map((section) => (
-            <section className="content-section" key={section.title}>
-              <h2>{section.title}</h2>
-              {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            </section>
-          ))}
-        </div>
-      </section>
-      <section className="attorney-contact section-alt">
-        <div className="container attorney-contact-inner">
-          <div>
-            <p className="eyebrow">Speak with the attorney directly.</p>
-            <h2>Consultations are confidential.</h2>
-            <p>The office will explain what to bring and how the process works.</p>
-          </div>
-          <div className="contact-links">
-            <a href={SITE_PHONE_LINK}>{SITE_PHONE}</a>
-            <a href={SITE_EMAIL_LINK}>{SITE_EMAIL}</a>
+            <div className="attorney-profile-actions">
+              <Link className="button button-gold" href="/case-evaluation">
+                Free Consultation
+              </Link>
+              <a href={SITE_PHONE_LINK}>Or Call {SITE_PHONE}</a>
+            </div>
           </div>
         </div>
       </section>
       <CallToAction
-        title="Schedule a confidential consultation"
-        description="A clear conversation about your circumstances is the first step."
+        title="Contact the Pensacola office."
+        description="Call to arrange a free consultation and discuss your legal matter."
       />
     </main>
   );

@@ -8,94 +8,99 @@ export interface RouteMetadata {
 
 export const routeMetadata: Record<string, RouteMetadata> = {
   "/": {
-    title: "Pensacola Military Divorce, Family Law & Criminal Defense | JMB",
+    title: "Divorce, Military Family Law & Criminal Defense | JMB Pensacola",
     description:
-      "Law Office of James M. Burns: military divorce, family law, child custody and criminal defense for service members, veterans and families in Pensacola and the Emerald Coast.",
+      "The Law Office of James M. Burns serves Pensacola with divorce, military family law and criminal defense representation.",
   },
   "/military-divorce": {
-    title: "Military Divorce & Family Law Attorney in Pensacola | JMB",
+    title: "Military Divorce in Pensacola | Law Office of James M. Burns",
     description:
-      "USFSPA and the 10/10 rule, 20/20/20 and 20/20/15 healthcare rules, Survivor Benefit Plan, TRICARE, deployment custody and SCRA protections for Pensacola military families.",
+      "The office lists military divorce, support, custody, visitation and related family-law matters among its practice areas.",
   },
   "/family-law": {
-    title: "Family Law & Child Custody Attorney in Pensacola | JMB",
+    title: "Divorce & Family Law in Pensacola | Law Office of James M. Burns",
     description:
-      "Divorce, custody and time-sharing, parenting plans, child support, alimony, property division, paternity, modifications and enforcement in Pensacola and Escambia County.",
+      "The Law Office of James M. Burns lists divorce, family law, support, alimony, modifications and enforcement among its practice areas.",
+  },
+  "/motions-for-contempt": {
+    title: "Motions for Contempt | Law Office of James M. Burns",
+    description:
+      "Information about motions for contempt and court-order compliance in family-law matters. The right process depends on the order and circumstances.",
   },
   "/criminal-defense": {
-    title: "Criminal Defense Attorney in Pensacola | JMB",
+    title: "Criminal Defense in Pensacola | Law Office of James M. Burns",
     description:
-      "Defense for DUI, domestic violence, injunctions, sex crimes, violent felonies, drug trafficking, stalking and misdemeanor or felony charges in Pensacola and Escambia County.",
+      "The source website lists DUI, drug trafficking, sexual assault, stalking, domestic-violence charges and injunction-related matters.",
   },
   "/attorney": {
-    title: "James Martinez Burns, Attorney in Pensacola | JMB",
+    title: "About James M. Burns | Law Office of James M. Burns",
     description:
-      "Meet James Martinez Burns of the Law Office of James M. Burns, practicing military divorce, family law and criminal defense in Pensacola, Florida.",
+      "The Law Office of James M. Burns is based in Pensacola. Verified personal biographical and credential details were not available in the source materials reviewed.",
   },
   "/results": {
-    title: "Client Results & Testimonials | JMB Pensacola",
+    title: "Client Feedback | Law Office of James M. Burns",
     description:
-      "Client feedback and case outcome placeholders for the Law Office of James M. Burns. Every case is different, and past results do not guarantee future outcomes.",
+      "The source website reviewed for this update did not publish verified client testimonials or specific case outcomes.",
   },
   "/resources": {
-    title: "Military Legal Resources & FAQ | JMB Pensacola",
+    title: "Legal Resources | Law Office of James M. Burns",
     description:
-      "Practical, general answers for service members and spouses on military divorce, deployment custody, criminal charges, domestic violence and injunctions in Florida.",
+      "General information on military family matters, divorce and criminal law. Some retained FAQ content requires attorney review.",
   },
   "/blog": {
-    title: "Legal Insights & Blog | JMB Pensacola",
+    title: "Our Blog | Law Office of James M. Burns",
     description:
-      "Articles on military divorce, family law and criminal defense in Florida, published by the Law Office of James M. Burns in Pensacola.",
+      "Articles from the Law Office of James M. Burns on military family matters, divorce and criminal defense. Some legal information may be outdated.",
   },
   "/contact": {
-    title: "Contact & Pensacola Office | JMB Military Divorce & Family Law",
+    title: "Contact the Pensacola Office | Law Office of James M. Burns",
     description:
-      "Call (850) 293-0392 or send a message to the Law Office of James M. Burns, 4502 Twin Oaks Drive, Pensacola, FL 32506, near Corry Station and NAS Pensacola.",
+      "Call (850) 456-5779 or contact the Law Office of James M. Burns at 4502 Twin Oaks Drive, Pensacola, FL 32506.",
   },
   "/case-evaluation": {
-    title: "Confidential Case Evaluation | JMB Pensacola",
+    title: "Request a Free Consultation | Law Office of James M. Burns",
     description:
-      "Request a confidential case evaluation for military divorce, family law, child custody or criminal defense matters in Pensacola, Florida.",
+      "Contact the Law Office of James M. Burns to request a consultation about a divorce, family-law or criminal-defense matter in Pensacola.",
   },
   "/privacy": {
     title: "Privacy Policy | JMB Pensacola",
     description:
-      "How the Law Office of James M. Burns handles information submitted through this website, including consultation and case evaluation requests.",
+      "A current privacy policy was not available in the source materials reviewed. This page requires firm review before publication.",
   },
   "/terms": {
     title: "Terms of Use | JMB Pensacola",
     description:
-      "Terms of use for the Law Office of James M. Burns website, including the limits of the general information published here.",
+      "A plain-language summary of website terms from the source site. Review the current terms with the firm before publication.",
   },
   "/blog/residency-in-a-florida-military-divorce": {
-    title: "Residency in a Florida Military Divorce | JMB Pensacola",
+    title: "Residency Issues in a Florida Military Divorce | JMB",
     description:
-      "What Florida's six-month residency requirement means for service members stationed in Pensacola, and how orders and home of record can affect a filing.",
+      "Military moves and changing assignments may complicate where a divorce can be filed. Confirm current residency and jurisdiction requirements.",
   },
   "/blog/custody-rights-for-deployed-parents": {
-    title: "Custody Rights for Deployed Parents in Florida | JMB",
+    title: "Custody Rights Expand for Deployed Military | JMB",
     description:
-      "How Florida's deployment custody statute addresses temporary schedules, notice and the return to an existing parenting plan after deployment.",
+      "A legacy source article discusses custody and time-sharing when a parent is deployed. Verify current Florida law before relying on it.",
   },
   "/blog/military-retirement-benefits-20-20-20": {
-    title: "Military Retirement and the 20/20/20 Rule | JMB Pensacola",
+    title: "Military Divorce: 20/20/20 and 20/20/15 Standards | JMB",
     description:
-      "How the 20/20/20 rule affects healthcare eligibility for an unremarried former spouse, and how it differs from pension division under USFSPA.",
+      "A legacy source article discusses military benefit standards. Check current official guidance and your individual circumstances.",
   },
   "/blog/when-stalking-is-a-misdemeanor-or-felony": {
-    title: "Stalking Charges: Misdemeanor or Felony in Florida | JMB",
+    title: "Florida's Laws on Stalking | JMB",
     description:
-      "A general overview of how Florida stalking allegations are evaluated, including the conduct alleged, prior record and the role of communications evidence.",
+      "The source article discusses Florida stalking charges. Its descriptions of statutory elements and penalties may be out of date.",
   },
   "/blog/what-to-do-after-a-dui-arrest-in-florida": {
-    title: "What to Do After a DUI Arrest in Florida | JMB Pensacola",
+    title: "What to Do After a DUI Arrest in Florida | JMB",
     description:
-      "Practical first steps after a Florida DUI arrest, including the separate license process, court dates and documents to keep.",
+      "A DUI article matching this topic was not located in the source materials reviewed. Contact the office to confirm current guidance.",
   },
   "/blog/how-social-media-can-affect-a-divorce": {
-    title: "How Social Media Can Affect a Divorce | JMB Pensacola",
+    title: "How Social Media Can Affect My Divorce | JMB",
     description:
-      "Why posts, photos and location data are routinely used in family law cases, and how to reduce risk while a case is pending.",
+      "A legacy source article discusses social media in divorce matters. Whether information matters depends on the case and current law.",
   },
 };
 

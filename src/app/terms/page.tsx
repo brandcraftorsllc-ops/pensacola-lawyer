@@ -1,34 +1,40 @@
-import { PageHero } from "@/components/sections/CommonSections";
 import { getPageMetadata } from "@/data/route-metadata";
-import { SITE_EMAIL, SITE_PHONE } from "@/lib/site";
+import { SITE_PHONE } from "@/lib/site";
 
 export const metadata = getPageMetadata("/terms");
 
 export default function TermsPage() {
   return (
     <main id="main">
-      <PageHero
-        current="Terms of Use"
-        eyebrow="Legal"
-        title="Terms of Use"
-        image="/images/pensacola-bay.png"
-      />
-      <article className="section">
+      <article className="section legal-page">
         <div className="container legal-content">
-          <p className="draft-note">Placeholder — replace with the firm&apos;s full terms of use.</p>
-          <p>
-            The information published on this website is general and is not legal advice. Reading
-            the site, calling the office or submitting a form does not create an attorney-client
-            relationship. A relationship is formed only by a signed written engagement.
+          <p className="eyebrow">Legal</p>
+          <h1>Terms of Use</h1>
+          <p className="draft-note">
+            Plain-language summary of the source terms; have the firm review and approve before
+            publication.
           </p>
           <p>
-            The information on this website is for general informational purposes only and does not
-            constitute legal advice. Contacting this firm does not create an attorney-client
-            relationship. Past results do not guarantee future outcomes. Attorney advertising.
+            By using this website, you agree to follow its terms and applicable laws. The materials
+            are provided for personal, non-commercial viewing. Do not copy, modify, distribute or
+            republish them without permission.
           </p>
           <p>
-            For questions about this website, contact{" "}
-            <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a> or {SITE_PHONE}.
+            Website materials are provided as-is. The firm does not promise that information is
+            accurate, complete or current, and may update or remove materials without notice.
+            Information on this site is general and is not legal advice.
+          </p>
+          <p>
+            External links are provided for convenience; their inclusion does not mean the firm
+            endorses the linked site. Visitors use external sites at their own risk.
+          </p>
+          <p>
+            The source terms state that website-related claims are governed by Florida law. The
+            firm may revise its website terms; check this page for the current version.
+          </p>
+          <p>
+            Contact the office at {SITE_PHONE} with questions about this website. These terms are a
+            summary and should not replace the firm&apos;s approved legal terms.
           </p>
         </div>
       </article>

@@ -12,7 +12,7 @@ export default function MilitaryDivorcePage() {
   return (
     <main id="main">
       <PageHero
-        current="Military Divorce & Family Law"
+        current="Military Divorce"
         eyebrow={militaryDivorcePage.eyebrow}
         title={militaryDivorcePage.title}
         description={militaryDivorcePage.description}
@@ -23,8 +23,8 @@ export default function MilitaryDivorcePage() {
           <p>{militaryDivorcePage.note}</p>
         </div>
       </section>
-      <section className="section">
-        <div className="container">
+      <section className="section military-reading-section">
+        <div className="container military-content">
           <nav className="military-toc" aria-label="On this page">
             <h2>On this page</h2>
             <ol>
@@ -38,11 +38,7 @@ export default function MilitaryDivorcePage() {
               ))}
             </ol>
           </nav>
-        </div>
-      </section>
-      <section className="section military-articles-section">
-        <div className="container">
-          <div className="military-articles">
+          <div className="military-sections">
             {militaryDivorcePage.sections.map((section, index) => (
               <section
                 className="detail-article content-section"

@@ -6,6 +6,7 @@ const paths = [
   "/",
   "/military-divorce",
   "/family-law",
+  "/motions-for-contempt",
   "/criminal-defense",
   "/attorney",
   "/results",

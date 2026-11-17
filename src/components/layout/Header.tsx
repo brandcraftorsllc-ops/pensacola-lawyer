@@ -7,28 +7,26 @@ import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
 const practiceLinks = [
   {
-    href: "/military-divorce",
-    label: "Military Divorce & Family Law",
-    description: "USFSPA and the 10/10 rule · 20/20/20 and 20/20/15 · Deployment custody planning",
+    href: "/family-law",
+    label: "Divorce & Family Law",
+    description: "Divorce · Parenting arrangements · Support and property matters",
   },
   {
-    href: "/family-law",
-    label: "Civilian Family Law & Child Custody",
-    description: "Custody and parenting plans · Support and alimony · Modifications and contempt",
+    href: "/military-divorce",
+    label: "Military Divorce",
+    description: "Military family matters · Retirement questions · Deployment planning",
   },
   {
     href: "/criminal-defense",
     label: "Criminal Defense",
-    description: "DUI and license issues · Domestic violence and injunctions · Misdemeanors and felonies",
+    description: "DUI · Drug trafficking · Sexual assault · Stalking and injunction matters",
   },
 ];
 
-const primaryLinks = [
-  { href: "/attorney", label: "About" },
-  { href: "/results", label: "Results" },
-  { href: "/resources", label: "Resources" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+const linksBeforePractice = [{ href: "/attorney", label: "About Us" }];
+const linksAfterPractice = [
+  { href: "/motions-for-contempt", label: "Motions for Contempt" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 function Brand() {
@@ -57,7 +55,28 @@ export function Header() {
           <Link className={pathname === "/" ? "active" : ""} href="/">
             Home
           </Link>
-          <details className="nav-dropdown">
+          {linksBeforePractice.map((item) => (
+            <Link
+              className={pathname === item.href ? "active" : ""}
+              href={item.href}
+              key={item.href}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <details
+            className="nav-dropdown"
+            onMouseEnter={(event) => {
+              if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                event.currentTarget.open = true;
+              }
+            }}
+            onMouseLeave={(event) => {
+              if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                event.currentTarget.open = false;
+              }
+            }}
+          >
             <summary>
               Practice Areas <span className="chevron" aria-hidden="true" />
             </summary>
@@ -70,7 +89,7 @@ export function Header() {
               ))}
             </div>
           </details>
-          {primaryLinks.map((item) => (
+          {linksAfterPractice.map((item) => (
             <Link
               className={pathname === item.href ? "active" : ""}
               href={item.href}
@@ -110,6 +129,11 @@ export function Header() {
           <Link href="/" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
+          {linksBeforePractice.map((item) => (
+            <Link href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
+              {item.label}
+            </Link>
+          ))}
           <details>
             <summary>Practice Areas</summary>
             <div className="mobile-practice-links">
@@ -120,7 +144,7 @@ export function Header() {
               ))}
             </div>
           </details>
-          {primaryLinks.map((item) => (
+          {linksAfterPractice.map((item) => (
             <Link href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
               {item.label}
             </Link>

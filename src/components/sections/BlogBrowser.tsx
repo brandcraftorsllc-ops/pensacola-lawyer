@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 interface ArticleCardData {
   slug: string;
   category: string;
-  readTime: string;
+  date: string;
   listingTitle: string;
   description: string;
 }
@@ -64,13 +64,15 @@ export function BlogBrowser({ articles }: { articles: ArticleCardData[] }) {
             <article className="article-card" key={article.slug}>
               <div className="article-meta">
                 <span>{article.category}</span>
-                <span>{article.readTime}</span>
+                <span>{article.date}</span>
               </div>
               <h2>
                 <Link href={`/blog/${article.slug}`}>{article.listingTitle}</Link>
               </h2>
               <p>{article.description}</p>
-              <span className="draft-label">Draft</span>
+              <span className="draft-label">
+                {article.date === "Source not verified" ? "Draft" : "Insights"}
+              </span>
               <Link className="text-link" href={`/blog/${article.slug}`}>
                 Read Article <span aria-hidden="true">→</span>
               </Link>

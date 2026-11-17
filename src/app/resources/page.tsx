@@ -17,22 +17,23 @@ export default function ResourcesPage() {
       />
       <section className="section section-alt">
         <div className="container">
+          <p className="draft-note">
+            These FAQs were retained from the existing reference site because equivalent answers
+            were not available in the source materials. An attorney should review them before use.
+          </p>
           <div className="resource-heading">
             <div>
               <p className="eyebrow">Questions &amp; Answers</p>
               <h2>16 questions, grouped by topic</h2>
-              <p>
-                Choose a category to narrow the list. Each answer is written to be accurate and
-                general rather than a prediction about any outcome.
-              </p>
+              <p>Choose a category to narrow the list. The answers are general information only.</p>
             </div>
           </div>
           <ResourcesBrowser categories={resourceCategories} resources={resourceFaqs} />
         </div>
       </section>
       <CallToAction
-        title="Still have a question about your situation?"
-        description="The answer usually depends on dates, orders and documents. A confidential consultation is the place to sort that out."
+        title="Questions about a legal matter?"
+        description="Call the office to arrange a free consultation."
       />
     </main>
   );

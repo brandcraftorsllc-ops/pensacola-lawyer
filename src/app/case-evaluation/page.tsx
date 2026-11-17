@@ -9,9 +9,9 @@ export default function CaseEvaluationPage() {
     <main id="main">
       <PageHero
         current="Case Evaluation"
-        eyebrow="Confidential Case Evaluation"
-        title="Start with a private case evaluation"
-        description="Three short steps. Share only what you are comfortable putting in writing, and the office will follow up directly."
+        eyebrow="Free Consultation"
+        title="Contact the office to discuss your matter"
+        description="Use this form to request a consultation. Share only information you are comfortable submitting online."
         image="/images/evaluation-header.png"
       />
       <section className="section section-alt">

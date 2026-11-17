@@ -4,6 +4,7 @@ const routes = [
   "/",
   "/military-divorce",
   "/family-law",
+  "/motions-for-contempt",
   "/criminal-defense",
   "/attorney",
   "/results",
@@ -20,6 +21,30 @@ const routes = [
   "/privacy",
   "/terms",
 ];
+
+test("desktop navigation follows the requested order and opens practice areas on hover", async ({ page }) => {
+  await page.goto("/");
+  const nav = page.locator(".desktop-nav");
+  const menuItems = await nav.evaluate((element) =>
+    Array.from(element.children).map((child) =>
+      child.tagName === "DETAILS"
+        ? child.querySelector("summary")?.textContent?.trim()
+        : child.textContent?.trim(),
+    ),
+  );
+  expect(menuItems).toEqual([
+    "Home",
+    "About Us",
+    "Practice Areas",
+    "Motions for Contempt",
+    "Contact Us",
+  ]);
+
+  const dropdown = nav.locator(".nav-dropdown");
+  await dropdown.hover();
+  await expect(dropdown).toHaveAttribute("open", "");
+  await expect(dropdown.getByRole("link", { name: "Divorce & Family Law" })).toBeVisible();
+});
 
 test("all discovered routes load directly with a page heading", async ({ page }) => {
   for (const route of routes) {

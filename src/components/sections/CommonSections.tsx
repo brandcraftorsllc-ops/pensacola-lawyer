@@ -132,7 +132,7 @@ export function CallToAction({ title, description }: CallToActionProps) {
             <a className="cta-email" href={SITE_EMAIL_LINK}>{SITE_EMAIL}</a>
           </div>
           <Link className="button button-gold" href="/case-evaluation">
-            Schedule a Confidential Consultation <span aria-hidden="true">→</span>
+            Free Consultation <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

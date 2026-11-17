@@ -10,20 +10,23 @@ export default function BlogPage() {
     <main id="main">
       <PageHero
         current="Blog"
-        eyebrow="Legal Insights"
-        title="Notes on military divorce, family law and criminal defense"
-        description="Short, practical articles on the questions clients ask most. Each is seed copy pending attorney review."
+        eyebrow="Our Blog"
+        title="Legal insights from the Pensacola office"
+        description="Articles on military family matters, divorce and criminal defense from the Law Office of James M. Burns."
         image="/images/blog-header.png"
       />
       <section className="section section-alt">
         <div className="container">
-          <p className="draft-note">Draft, replace with attorney-approved content</p>
+          <p className="draft-note">
+            Some source articles contain legacy legal information. Review each article&apos;s notice
+            and confirm current law before relying on it.
+          </p>
           <BlogBrowser articles={[...articleData]} />
         </div>
       </section>
       <CallToAction
-        title="Questions the articles do not answer?"
-        description="General reading cannot replace advice about your own facts. Reach out for a confidential conversation."
+        title="Questions about a legal matter?"
+        description="Call the office to arrange a free consultation."
       />
     </main>
   );
