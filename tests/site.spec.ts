@@ -162,15 +162,31 @@ test("practice hub navigation links target sections on both hub pages", async ({
     for (const targets of navigationTargets) expect(targets, route).toEqual(sectionIds);
     await expect(page.locator(".practice-area-topic .practice-artwork")).toHaveCount(sectionIds.length);
     const columnCount = await page
-      .locator(".practice-area-topic")
-      .first()
+      .locator(".practice-story-grid")
       .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
-    expect(columnCount, route).toBe(2);
+    expect(columnCount, route).toBe(3);
     await expect(page.locator(".practice-area-toc")).toHaveCSS("position", "sticky");
+    await expect(page.locator(".practice-story-scene")).toHaveCSS("position", "sticky");
 
-    const firstReveal = page.locator(".practice-area-reveal").first();
-    await firstReveal.scrollIntoViewIfNeeded();
-    await expect(firstReveal).toHaveClass(/is-visible/);
+    const targetId = sectionIds[sectionIds.length - 1];
+    if (!targetId) throw new Error(`Missing practice section for ${route}`);
+    const targetTopic = page.locator(`#${targetId}`);
+    const targetTitle = await targetTopic.locator("h2 span").nth(1).textContent();
+    await targetTopic.scrollIntoViewIfNeeded();
+    await expect(page.locator(`.practice-area-toc a[href="#${targetId}"]`)).toHaveAttribute(
+      "aria-current",
+      "location",
+    );
+    await expect(page.locator(".practice-story-scene-title")).toHaveText(targetTitle ?? "");
+    await expect
+      .poll(async () =>
+        Number(
+          await page
+            .locator(".practice-story-nav-track span")
+            .evaluate((element) => element.style.getPropertyValue("--practice-progress")),
+        ),
+      )
+      .toBeGreaterThan(0.6);
   }
 });
 
@@ -178,6 +194,24 @@ test("legacy military divorce route redirects to its consolidated section", asyn
   await page.goto("/military-divorce");
   await expect(page).toHaveURL(/\/family-law#military-divorce$/);
   await expect(page.locator("#military-divorce")).toBeVisible();
+});
+
+test("practice guide remains readable and navigable with reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/family-law");
+  await expect(page.locator(".practice-story-topic-heading").first()).toHaveCSS("opacity", "1");
+
+  const lastTopic = page.locator(".practice-story-topic").last();
+  const targetId = await lastTopic.getAttribute("id");
+  if (!targetId) throw new Error("Missing final practice topic ID.");
+  await lastTopic.scrollIntoViewIfNeeded();
+  await expect(page.locator(`.practice-area-toc a[href="#${targetId}"]`)).toHaveAttribute(
+    "aria-current",
+    "location",
+  );
+  await expect(page.locator(".practice-story-scene-title")).toHaveText(
+    await lastTopic.locator(".practice-story-topic-heading span").nth(1).textContent() ?? "",
+  );
 });
 
 test("approach timeline progress follows the scroll position", async ({ page }) => {

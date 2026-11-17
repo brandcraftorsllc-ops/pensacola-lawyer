@@ -20,14 +20,17 @@ test("mobile navigation opens and routes to family law", async ({ page }) => {
   await expect(page.locator("main h1")).toBeVisible();
 });
 
-test("practice hubs keep illustrations and topic sections in a single mobile column", async ({ page }) => {
+test("practice hubs use the mobile topic rail and inline illustrations", async ({ page }) => {
   await page.goto("/family-law");
   const topic = page.locator(".practice-area-topic").first();
-  await expect(topic.locator(".practice-artwork")).toBeVisible();
-  const columnCount = await topic.evaluate(
-    (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length,
+  await expect(topic.locator(".practice-story-topic-art .practice-artwork")).toBeVisible();
+  await expect(page.locator(".practice-story-scene")).not.toBeVisible();
+  await expect(topic).toHaveCSS("flex-direction", "column");
+  await expect(page.locator(".practice-area-toc")).toBeVisible();
+  const hasHorizontalOverflow = await page.evaluate(
+    () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
   );
-  expect(columnCount).toBe(1);
+  expect(hasHorizontalOverflow).toBe(false);
 });
 
 test("homepage practice areas use a single-column mobile layout", async ({ page }) => {
