@@ -200,31 +200,73 @@ img {
 .nav-dropdown-panel {
   position: absolute;
   top: calc(100% - 3px);
-  left: -24px;
-  width: 370px;
-  padding: 8px;
-  border: 1px solid var(--line);
-  background: rgba(10, 22, 41, 0.98);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+  left: -12px;
+  width: 178px;
+  padding: 4px 0;
+  border: 1px solid rgba(14, 33, 56, 0.14);
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
 }
 
-.nav-dropdown-panel a {
+.nav-practice-group {
+  position: relative;
+}
+
+.nav-practice-link {
+  min-height: 38px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #172941;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.nav-practice-link:hover,
+.nav-practice-link[aria-expanded="true"] {
+  background: #f3f4f4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav-practice-arrow {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.nav-submenu-panel {
+  position: absolute;
+  z-index: 2;
+  top: -1px;
+  left: calc(100% - 1px);
+  width: 202px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  border: 1px solid rgba(14, 33, 56, 0.14);
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+}
+
+.nav-submenu-panel a {
   display: block;
-  padding: 13px 15px;
-  color: var(--ivory);
+  padding: 8px 11px;
+  color: #172941;
   font-size: 12px;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-.nav-dropdown-panel a:hover {
-  background: rgba(244, 240, 230, 0.06);
-}
-
-.nav-dropdown-panel small {
-  display: block;
-  margin-top: 3px;
-  color: var(--soft);
-  font-size: 10px;
+.nav-submenu-panel a:hover,
+.nav-submenu-panel a:focus-visible {
+  background: #f3f4f4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .header-actions {
@@ -464,6 +506,7 @@ img {
 }
 
 .section-heading h2,
+.practice-intro h2,
 .page-heading h1,
 .content-title,
 .cta-band h2 {
@@ -482,40 +525,68 @@ img {
   line-height: 1.75;
 }
 
+.practice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
+  align-items: start;
+  gap: clamp(56px, 7vw, 96px);
+}
+
+.practice-intro {
+  max-width: 440px;
+}
+
+.practice-intro .eyebrow {
+  margin-bottom: 20px;
+}
+
+.practice-divider {
+  width: 92px;
+  height: 2px;
+  margin: 28px 0;
+  display: block;
+  background: var(--gold);
+}
+
+.practice-intro-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.practice-intro .text-link {
+  margin-top: 30px;
+}
+
 .practice-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(30px, 3.5vw, 52px);
+  row-gap: 42px;
 }
 
 .practice-card {
-  min-height: 356px;
-  padding: 32px 29px 27px;
+  min-height: 0;
+  padding: 0 0 30px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--line);
-  background: rgba(10, 22, 41, 0.36);
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .practice-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(194, 158, 97, 0.55);
-  background: rgba(10, 22, 41, 0.62);
+  transform: translateY(-3px);
+  border-bottom-color: rgba(194, 158, 97, 0.55);
 }
 
-.card-icon {
-  width: 38px;
-  height: 38px;
-  margin-bottom: 26px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(194, 158, 97, 0.38);
+.practice-number {
+  margin-bottom: 25px;
   color: var(--gold);
-  font-size: 15px;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 25px;
+  line-height: 1;
 }
 
 .practice-card h3,
@@ -529,9 +600,9 @@ img {
 }
 
 .practice-card p {
-  margin: 15px 0 18px;
+  margin: 15px 0 22px;
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.75;
 }
 
@@ -2041,6 +2112,21 @@ img {
     justify-content: space-between;
   }
 
+  .mobile-navigation summary::after {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    content: "";
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 180ms ease;
+  }
+
+  .mobile-navigation details[open] > summary::after {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
   .mobile-navigation details {
     border-bottom: 1px solid var(--line);
   }
@@ -2055,16 +2141,40 @@ img {
     flex-direction: column;
   }
 
-  .mobile-practice-links a {
-    padding: 9px 0;
+  .mobile-practice-group {
+    border-bottom: 1px solid rgba(244, 240, 230, 0.08);
+  }
+
+  .mobile-navigation .mobile-practice-group summary {
+    min-height: 42px;
+    padding: 10px 0;
+    color: var(--ivory);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-practice-subnav {
+    padding: 0 0 8px 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-practice-subnav a {
+    padding: 8px 0;
     color: var(--muted);
     font-size: 11px;
+    line-height: 1.45;
   }
 
   .home-hero {
     min-height: 850px;
     height: 100svh;
     max-height: 980px;
+  }
+
+  .criminal-card[id],
+  .accordion-item[id] {
+    scroll-margin-top: 100px;
   }
 
   .home-hero-content {
@@ -2089,6 +2199,11 @@ img {
 
   .trust-grid span + span {
     border-left: 0;
+  }
+
+  .practice-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 
   .practice-grid,
@@ -2287,6 +2402,31 @@ img {
     font-size: 13px;
   }
 
+  .practice-layout {
+    gap: 34px;
+  }
+
+  .practice-intro {
+    max-width: none;
+  }
+
+  .practice-intro h2 {
+    font-size: 31px;
+    line-height: 1.14;
+  }
+
+  .practice-divider {
+    margin: 20px 0;
+  }
+
+  .practice-intro-description {
+    font-size: 13px;
+  }
+
+  .practice-intro .text-link {
+    margin-top: 24px;
+  }
+
   .practice-grid,
   .feature-grid,
   .blog-grid {
@@ -2295,12 +2435,17 @@ img {
   }
 
   .practice-card {
-    min-height: 300px;
-    padding: 25px 22px;
+    min-height: 0;
+    padding: 0 0 24px;
   }
 
   .practice-card h3 {
     font-size: 22px;
+  }
+
+  .practice-number {
+    margin-bottom: 16px;
+    font-size: 23px;
   }
 
   .feature-grid {

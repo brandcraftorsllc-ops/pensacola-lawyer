@@ -13,8 +13,14 @@ export const homeFaqs = toAccordionItems(source.home);
 export const militaryFaqs = toAccordionItems(source.militaryDivorce);
 export const familyFaqs = toAccordionItems(source.familyLaw);
 
-export const familyServiceItems = [
+export const familyServiceItems: Array<{
+  id?: string;
+  question: string;
+  description: string;
+  bullets: string[];
+}> = [
   {
+    id: "divorce-representation",
     question: "Divorce Representation",
     description:
       "The source website lists divorce among the office's practice areas. The concerns in a divorce depend on the people and circumstances involved.",
@@ -33,6 +39,7 @@ export const familyServiceItems = [
     bullets: ["Current parenting arrangements", "Questions about visitation", "Whether an existing order needs review"],
   },
   {
+    id: "child-support",
     question: "Child Support",
     description:
       "The source website lists support among the family-law matters addressed by the office. Individual questions depend on the relevant records and circumstances.",

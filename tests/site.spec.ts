@@ -43,8 +43,87 @@ test("desktop navigation follows the requested order and opens practice areas on
   const dropdown = nav.locator(".nav-dropdown");
   await dropdown.hover();
   await expect(dropdown).toHaveAttribute("open", "");
-  await expect(dropdown.getByRole("link", { name: "Divorce & Family Law" })).toBeVisible();
+  const divorceLink = dropdown.getByRole("link", { name: "Divorce", exact: true });
+  const criminalLink = dropdown.getByRole("link", { name: "Criminal Defense", exact: true });
+  await expect(divorceLink).toBeVisible();
+  await expect(criminalLink).toBeVisible();
+
+  await divorceLink.hover();
+  const divorceSubmenu = dropdown.locator('[data-practice-submenu="divorce"]');
+  await expect(divorceSubmenu).toBeVisible();
+  await expect(divorceSubmenu.locator("a")).toHaveText([
+    "Military Divorce",
+    "Child Support Law",
+    "Deployed Parents’ Custody Rights",
+    "How can Social Media Affect My Divorce",
+    "Military Retirement Benefits",
+    "Military Divorce Residency",
+    "Same Sex Marriage in Florida",
+    "Senior Citizen Divorce",
+    "Substantial Asset Divorce",
+    "The Irretrievably-Broken Marriage",
+    "What to Expect During a Florida Divorce",
+  ]);
+  await expect(divorceSubmenu.getByRole("link", { name: "Child Support Law" })).toHaveAttribute(
+    "href",
+    "/family-law#child-support",
+  );
+  await expect(
+    divorceSubmenu.getByRole("link", { name: "What to Expect During a Florida Divorce" }),
+  ).toBeVisible();
+
+  await criminalLink.hover();
+  const criminalSubmenu = dropdown.locator('[data-practice-submenu="criminal-defense"]');
+  await expect(criminalSubmenu).toBeVisible();
+  await expect(criminalSubmenu.locator("a")).toHaveText([
+    "Drug Trafficking",
+    "Stalking",
+    "Violation of Domestic Violence – Criminal",
+    "Domestic Violence Injunction",
+    "Sexual Assault",
+    "DUI",
+  ]);
+  await expect(criminalSubmenu.getByRole("link", { name: "Drug Trafficking" })).toHaveAttribute(
+    "href",
+    "/criminal-defense#drug-trafficking",
+  );
+  await expect(criminalSubmenu.getByRole("link", { name: "DUI", exact: true })).toBeVisible();
 });
+
+test(
+  "homepage practice section uses the four supplied areas without a separate military intro",
+  async ({ page }) => {
+    await page.goto("/");
+    const section = page.locator("#practice-areas");
+
+    await expect(section.locator(".practice-intro .eyebrow")).toHaveText("How We Can Help");
+    await expect(section.locator(".practice-intro h2")).toHaveText("Practice Areas");
+    await expect(section.locator(".practice-card h3")).toHaveText([
+      "Divorce",
+      "Military Divorce",
+      "Family Law",
+      "Criminal Defense",
+    ]);
+    await expect(section.locator(".practice-card p")).toHaveText([
+      "Practical guidance through the personal and financial decisions of divorce.",
+      "Help for military service members and spouses facing family changes.",
+      "Personal attention for the issues affecting your family and future.",
+      "Understand your options when criminal allegations put your freedom at stake.",
+    ]);
+    await expect(section.getByRole("link", { name: /Discuss your case/ })).toHaveAttribute(
+      "href",
+      "/case-evaluation",
+    );
+    const columnCount = await section.locator(".practice-grid").evaluate(
+      (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length,
+    );
+    expect(columnCount).toBe(2);
+    await expect(
+      page.getByRole("heading", { name: "Military service can add family-law questions" }),
+    ).toHaveCount(0);
+    await expect(page.locator(".scroll-cue")).toHaveAttribute("href", "#practice-areas");
+  },
+);
 
 test("all discovered routes load directly with a page heading", async ({ page }) => {
   for (const route of routes) {

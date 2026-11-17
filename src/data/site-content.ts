@@ -23,63 +23,36 @@ export const homeContent = {
     "Pensacola & Nearby Communities",
   ],
   practiceIntro: {
-    eyebrow: "Practice Areas",
-    title: "How We Can Help",
+    eyebrow: "How We Can Help",
+    title: "Practice Areas",
     description:
-      "The office's published practice areas include divorce, family law, military family matters and criminal defense.",
+      "Legal issues affect your family, your finances, and your future. Get straightforward guidance and a plan built around your circumstances.",
+    cta: "Discuss your case",
   },
   practiceAreas: [
     {
+      number: "01",
       href: "/family-law",
-      title: "Divorce & Family Law",
-      description:
-        "Information and representation for divorce, parenting, support and other family-law issues.",
-      bullets: ["Divorce", "Parenting and custody matters", "Support and court orders"],
-      icon: "✦",
+      title: "Divorce",
+      description: "Practical guidance through the personal and financial decisions of divorce.",
     },
     {
+      number: "02",
       href: "/military-divorce",
       title: "Military Divorce",
-      description:
-        "Family-law matters involving the added questions that military service and deployments may bring.",
-      bullets: ["Divorce and support", "Parenting arrangements", "Military retirement questions"],
-      icon: "⌂",
+      description: "Help for military service members and spouses facing family changes.",
     },
     {
+      number: "03",
+      href: "/family-law",
+      title: "Family Law",
+      description: "Personal attention for the issues affecting your family and future.",
+    },
+    {
+      number: "04",
       href: "/criminal-defense",
       title: "Criminal Defense",
-      description:
-        "Defense for criminal charges, including DUI, drug, stalking and domestic-violence matters.",
-      bullets: ["DUI", "Drug-related charges", "Stalking and domestic-violence matters"],
-      icon: "◇",
-    },
-  ],
-  militaryIntro: {
-    eyebrow: "Military Divorce",
-    title: "Military service can add family-law questions",
-    description:
-      "The firm's published materials address military divorce, support, custody, visitation and related family-law concerns.",
-  },
-  militaryFeatures: [
-    {
-      title: "Military Divorce and Support",
-      description:
-        "The source website identifies divorce, child support and alimony among the issues addressed in military-family matters.",
-    },
-    {
-      title: "Custody and Visitation",
-      description:
-        "Parenting arrangements may need to account for service obligations, deployment and family circumstances.",
-    },
-    {
-      title: "Military Retirement Questions",
-      description:
-        "The source materials discuss the questions military families may have about retirement benefits in a divorce.",
-    },
-    {
-      title: "Modifications and Court Orders",
-      description:
-        "The published practice areas include modifying and enforcing family-court orders.",
+      description: "Understand your options when criminal allegations put your freedom at stake.",
     },
   ],
   about: {
@@ -748,6 +721,7 @@ export const articleData = [
 ] as const;
 
 export const familyServiceAccordionItems: AccordionItemData[] = familyServiceItems.map((item) => ({
+  id: item.id,
   question: item.question,
   answer: item.description,
   bullets: item.bullets,

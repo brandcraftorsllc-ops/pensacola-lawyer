@@ -2,24 +2,70 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
-const practiceLinks = [
+const practiceGroups = [
   {
+    id: "divorce",
+    label: "Divorce",
     href: "/family-law",
-    label: "Divorce & Family Law",
-    description: "Divorce · Parenting arrangements · Support and property matters",
+    items: [
+      { href: "/military-divorce", label: "Military Divorce" },
+      { href: "/family-law#child-support", label: "Child Support Law" },
+      {
+        href: "/blog/custody-rights-for-deployed-parents",
+        label: "Deployed Parents’ Custody Rights",
+      },
+      {
+        href: "/blog/how-social-media-can-affect-a-divorce",
+        label: "How can Social Media Affect My Divorce",
+      },
+      {
+        href: "/blog/military-retirement-benefits-20-20-20",
+        label: "Military Retirement Benefits",
+      },
+      {
+        href: "/blog/residency-in-a-florida-military-divorce",
+        label: "Military Divorce Residency",
+      },
+      { href: "/family-law#divorce-representation", label: "Same Sex Marriage in Florida" },
+      { href: "/family-law#divorce-representation", label: "Senior Citizen Divorce" },
+      { href: "/family-law#divorce-representation", label: "Substantial Asset Divorce" },
+      {
+        href: "/family-law#divorce-representation",
+        label: "The Irretrievably-Broken Marriage",
+      },
+      {
+        href: "/family-law#divorce-representation",
+        label: "What to Expect During a Florida Divorce",
+      },
+    ],
   },
   {
-    href: "/military-divorce",
-    label: "Military Divorce",
-    description: "Military family matters · Retirement questions · Deployment planning",
-  },
-  {
-    href: "/criminal-defense",
+    id: "criminal-defense",
     label: "Criminal Defense",
-    description: "DUI · Drug trafficking · Sexual assault · Stalking and injunction matters",
+    href: "/criminal-defense",
+    items: [
+      { href: "/criminal-defense#drug-trafficking", label: "Drug Trafficking" },
+      {
+        href: "/blog/when-stalking-is-a-misdemeanor-or-felony",
+        label: "Stalking",
+      },
+      {
+        href: "/criminal-defense#injunction-violations",
+        label: "Violation of Domestic Violence – Criminal",
+      },
+      {
+        href: "/criminal-defense#domestic-violence-injunctions",
+        label: "Domestic Violence Injunction",
+      },
+      {
+        href: "/criminal-defense#sexual-assault-allegations",
+        label: "Sexual Assault",
+      },
+      { href: "/criminal-defense#dui", label: "DUI" },
+    ],
   },
 ];
 
@@ -45,7 +91,18 @@ function Brand() {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openPracticeGroup, setOpenPracticeGroup] = useState<string | null>(null);
   const pathname = usePathname();
+
+  function closeMobileNavigation(event: MouseEvent<HTMLAnchorElement>) {
+    event.currentTarget
+      .closest(".mobile-navigation")
+      ?.querySelectorAll<HTMLDetailsElement>("details[open]")
+      .forEach((details) => {
+        details.open = false;
+      });
+    setMenuOpen(false);
+  }
 
   return (
     <header className="site-header">
@@ -73,7 +130,17 @@ export function Header() {
             }}
             onMouseLeave={(event) => {
               if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                if (!event.currentTarget.contains(document.activeElement)) {
+                  event.currentTarget.open = false;
+                  setOpenPracticeGroup(null);
+                }
+              }
+            }}
+            onBlur={(event) => {
+              const nextTarget = event.relatedTarget;
+              if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
                 event.currentTarget.open = false;
+                setOpenPracticeGroup(null);
               }
             }}
           >
@@ -81,11 +148,48 @@ export function Header() {
               Practice Areas <span className="chevron" aria-hidden="true" />
             </summary>
             <div className="nav-dropdown-panel">
-              {practiceLinks.map((item) => (
-                <Link href={item.href} key={item.href}>
-                  <span>{item.label}</span>
-                  <small>{item.description}</small>
-                </Link>
+              {practiceGroups.map((group) => (
+                <div
+                  className="nav-practice-group"
+                  key={group.id}
+                  onMouseEnter={() => setOpenPracticeGroup(group.id)}
+                  onMouseLeave={(event) => {
+                    if (!event.currentTarget.contains(document.activeElement)) {
+                      setOpenPracticeGroup(null);
+                    }
+                  }}
+                  onFocus={() => setOpenPracticeGroup(group.id)}
+                  onBlur={(event) => {
+                    const nextTarget = event.relatedTarget;
+                    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+                      setOpenPracticeGroup(null);
+                    }
+                  }}
+                >
+                  <Link
+                    className="nav-practice-link"
+                    href={group.href}
+                    aria-haspopup="true"
+                    aria-expanded={openPracticeGroup === group.id}
+                  >
+                    {group.label}
+                    <span className="nav-practice-arrow" aria-hidden="true" />
+                  </Link>
+                  {openPracticeGroup === group.id ? (
+                    <div
+                      className="nav-submenu-panel"
+                      role="group"
+                      aria-label={`${group.label} practice links`}
+                      data-practice-submenu={group.id}
+                    >
+                      {group.items.map((item) => (
+                        <Link href={item.href} key={item.label}>
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
               ))}
             </div>
           </details>
@@ -126,31 +230,45 @@ export function Header() {
         aria-hidden={!menuOpen}
       >
         <nav aria-label="Mobile primary">
-          <Link href="/" onClick={() => setMenuOpen(false)}>
+          <Link href="/" onClick={closeMobileNavigation}>
             Home
           </Link>
           {linksBeforePractice.map((item) => (
-            <Link href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
+            <Link href={item.href} key={item.href} onClick={closeMobileNavigation}>
               {item.label}
             </Link>
           ))}
           <details>
             <summary>Practice Areas</summary>
             <div className="mobile-practice-links">
-              {practiceLinks.map((item) => (
-                <Link href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
-                  {item.label}
-                </Link>
+              {practiceGroups.map((group) => (
+                <details className="mobile-practice-group" key={group.id}>
+                  <summary>{group.label}</summary>
+                  <div className="mobile-practice-subnav">
+                    <Link href={group.href} onClick={closeMobileNavigation}>
+                      {group.label} Overview
+                    </Link>
+                    {group.items.map((item) => (
+                      <Link
+                        href={item.href}
+                        key={item.label}
+                        onClick={closeMobileNavigation}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </details>
               ))}
             </div>
           </details>
           {linksAfterPractice.map((item) => (
-            <Link href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
+            <Link href={item.href} key={item.href} onClick={closeMobileNavigation}>
               {item.label}
             </Link>
           ))}
-          <a href={SITE_PHONE_LINK}>{SITE_PHONE}</a>
-          <Link href="/case-evaluation" onClick={() => setMenuOpen(false)}>
+          <a href={SITE_PHONE_LINK} onClick={closeMobileNavigation}>{SITE_PHONE}</a>
+          <Link href="/case-evaluation" onClick={closeMobileNavigation}>
             Free Consultation
           </Link>
         </nav>

@@ -32,6 +32,19 @@
   and mobile screenshots.
 - [x] Latest production build, typecheck, lint and 9-test Playwright suite pass
   after the header navigation update.
+- [x] Added the two-level Practice Areas menu with Divorce and Criminal
+  Defense submenus. Desktop hover/focus, mobile click disclosures and all
+  supplied submenu labels are covered; submenu targets use existing pages or
+  section anchors.
+- [x] Rebuilt production and passed typecheck, lint and the isolated 9-test
+  desktop/mobile Playwright suite after the nested menu change.
+- [x] Reworked the homepage Practice Areas block to use the reference's
+  left-side introduction and numbered two-column list, retaining the site's
+  existing dark/gold palette and typography. Added the four supplied practice
+  area descriptions and removed the separate military-intro/features section.
+- [x] Updated the hero scroll link and verified desktop two-column and mobile
+  single-column layouts; production build, typecheck, lint and all 11
+  desktop/mobile Playwright tests pass.
 - [x] Matched the homepage attorney section to the Base44 reference layout:
   widened 1280px desktop grid, aligned portrait and copy proportions, converted
   credentials to label/value rows, and restored gold/outline action buttons.

@@ -24,7 +24,11 @@ export default function CriminalDefensePage() {
           />
           <div className="criminal-grid">
             {criminalDefensePage.services.map((service) => (
-              <article className="criminal-card" key={service.title}>
+              <article
+                className="criminal-card"
+                id={service.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
+                key={service.title}
+              >
                 <h2>{service.title}</h2>
                 {service.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 <Link className="text-link" href="/case-evaluation">

@@ -43,7 +43,7 @@ export function HomePage() {
           </div>
           <p className="hero-note">{homeContent.promise}</p>
         </div>
-        <a className="scroll-cue" href="#military-divorce" aria-label="Scroll to learn why military divorce is different">
+        <a className="scroll-cue" href="#practice-areas" aria-label="Scroll to explore our practice areas">
           Scroll
         </a>
       </section>
@@ -56,57 +56,30 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section section-alt" id="practice-areas">
-        <div className="container">
-          <SectionHeading
-            eyebrow={homeContent.practiceIntro.eyebrow}
-            title={homeContent.practiceIntro.title}
-            description={homeContent.practiceIntro.description}
-          />
+      <section className="section section-alt practice-section" id="practice-areas">
+        <div className="container practice-layout">
+          <div className="practice-intro">
+            <p className="eyebrow">{homeContent.practiceIntro.eyebrow}</p>
+            <h2>{homeContent.practiceIntro.title}</h2>
+            <span className="practice-divider" aria-hidden="true" />
+            <p className="practice-intro-description">{homeContent.practiceIntro.description}</p>
+            <Link className="text-link" href="/case-evaluation">
+              {homeContent.practiceIntro.cta} <span aria-hidden="true">→</span>
+            </Link>
+          </div>
           <div className="practice-grid">
             {homeContent.practiceAreas.map((area) => (
-              <Link className="practice-card" href={area.href} key={area.href}>
-                <span className="card-icon" aria-hidden="true">
-                  {area.icon}
+              <Link className="practice-card" href={area.href} key={area.number}>
+                <span className="practice-number" aria-hidden="true">
+                  {area.number}
                 </span>
                 <h3>{area.title}</h3>
                 <p>{area.description}</p>
-                <ul>
-                  {area.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
                 <span className="text-link">
                   Learn more <span aria-hidden="true">→</span>
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="military-divorce">
-        <div className="container">
-          <SectionHeading
-            eyebrow={homeContent.militaryIntro.eyebrow}
-            title={homeContent.militaryIntro.title}
-            description={homeContent.militaryIntro.description}
-          />
-          <div className="feature-grid">
-            {homeContent.militaryFeatures.map((feature, index) => (
-              <article className="feature-card" key={feature.title}>
-                <span className="feature-icon" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="section-foot">
-            <Link className="text-link" href="/military-divorce">
-              Explore Military Divorce in Detail <span aria-hidden="true">→</span>
-            </Link>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 
 export interface AccordionItemData {
+  id?: string;
   question: string;
   answer: string;
   bullets?: string[];
@@ -32,7 +33,11 @@ export function Accordion({ items, label, multiple = false, className = "" }: Ac
         const isOpen = openItems.includes(index);
         const panelId = `${id}-panel-${index}`;
         return (
-          <section className={`accordion-item ${isOpen ? "is-open" : ""}`} key={item.question}>
+          <section
+            className={`accordion-item ${isOpen ? "is-open" : ""}`}
+            id={item.id}
+            key={item.question}
+          >
             <h3>
               <button
                 type="button"
