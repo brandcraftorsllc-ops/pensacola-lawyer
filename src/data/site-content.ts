@@ -436,9 +436,9 @@ export const attorneyPage = {
   ],
   practiceAreas: [
     {
-      title: "Divorce & Family Law",
+      title: "Divorce",
       description:
-        "Practical guidance through the personal and financial decisions of divorce, and the family matters that accompany it.",
+        "Practical guidance through the personal and financial decisions of divorce.",
       href: "/family-law",
       image: "/images/practice-divorce-family.jpg",
       imageAlt: "Wedding rings beside a judge's gavel, representing divorce and family law",
@@ -452,12 +452,20 @@ export const attorneyPage = {
       imageAlt: "A service member speaking with an attorney about a military family-law matter",
     },
     {
+      title: "Family Law",
+      description:
+        "Personal attention for the issues affecting your family and future.",
+      href: "/family-law#child-support-law",
+      image: "/images/practice-family-law.jpg",
+      imageAlt: "Parents and child spending time together outdoors",
+    },
+    {
       title: "Criminal Defense",
       description:
         "Understand your options when criminal allegations put your freedom at stake.",
       href: "/criminal-defense",
-      image: "/images/practice-criminal-defense.jpg",
-      imageAlt: "A judge's gavel, law books and scales of justice",
+      image: "/images/criminal-defense-header.png",
+      imageAlt: "A courthouse illuminated at dusk",
     },
   ] satisfies {
     title: string;

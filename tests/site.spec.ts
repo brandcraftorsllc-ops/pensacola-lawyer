@@ -165,15 +165,16 @@ test("attorney profile uses verified content and preserves protected site sectio
   );
   expect(secondPracticeDelay).toBe("0.22s");
   await expect(practiceAreas.locator("h3")).toHaveText([
-    "Divorce & Family Law",
+    "Divorce",
     "Military Divorce",
+    "Family Law",
     "Criminal Defense",
   ]);
   const practiceLinks = await practiceAreas
-    .getByRole("link", { name: /Explore Practice Area/ })
+    .locator('a[aria-label^="Explore "]')
     .evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")));
   expect(practiceLinks).toEqual(
-    ["/family-law", "/family-law#military-divorce", "/criminal-defense"],
+    ["/family-law", "/family-law#military-divorce", "/family-law#child-support-law", "/criminal-defense"],
   );
   await expect(
     page.getByRole("heading", { name: "Personal Attention. Practical Guidance." }),
@@ -197,18 +198,55 @@ test("attorney practice photos load and the consultation label stays legible", a
   await expect(consultationLink).toHaveCSS("color", "rgb(10, 22, 41)");
 
   const practiceAreas = page.locator("main").getByRole("article");
-  for (const [index, alt] of [
-    [0, "Wedding rings beside a judge's gavel, representing divorce and family law"],
-    [1, "A service member speaking with an attorney about a military family-law matter"],
-    [2, "A judge's gavel, law books and scales of justice"],
-  ] as const) {
-    const image = practiceAreas.nth(index).getByRole("img", { name: alt });
+  await expect(practiceAreas).toHaveCount(4);
+  await expect(practiceAreas.locator("h3")).toHaveText([
+    "Divorce",
+    "Military Divorce",
+    "Family Law",
+    "Criminal Defense",
+  ]);
+  const practiceLinks = await practiceAreas
+    .locator('a[aria-label^="Explore "]')
+    .evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")));
+  expect(practiceLinks).toEqual([
+    "/family-law",
+    "/family-law#military-divorce",
+    "/family-law#child-support-law",
+    "/criminal-defense",
+  ]);
+  for (const index of [0, 1, 2, 3]) {
+    const image = practiceAreas.nth(index).locator("img");
     await image.scrollIntoViewIfNeeded();
     await expect(image).toBeVisible();
     await expect
       .poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth))
       .toBeGreaterThan(0);
   }
+
+  const practiceGrid = practiceAreas.first();
+  await expect
+    .poll(() =>
+      practiceGrid.evaluate(
+        (element) => getComputedStyle(element.parentElement!).gridTemplateColumns.split(" ").length,
+      ),
+    )
+    .toBe(4);
+  await page.setViewportSize({ width: 900, height: 900 });
+  await expect
+    .poll(() =>
+      practiceGrid.evaluate(
+        (element) => getComputedStyle(element.parentElement!).gridTemplateColumns.split(" ").length,
+      ),
+    )
+    .toBe(2);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect
+    .poll(() =>
+      practiceGrid.evaluate(
+        (element) => getComputedStyle(element.parentElement!).gridTemplateColumns.split(" ").length,
+      ),
+    )
+    .toBe(1);
 });
 
 test("practice hub navigation links target sections on both hub pages", async ({ page }) => {

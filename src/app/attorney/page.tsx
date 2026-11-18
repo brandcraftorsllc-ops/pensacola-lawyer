@@ -109,17 +109,23 @@ export default function AttorneyPage() {
                   <div className={styles.practiceVisual}>
                     <Image
                       src={area.image}
-                      alt={area.imageAlt}
+                      alt=""
                       fill
-                      sizes="(max-width: 760px) 36vw, (max-width: 1100px) 28vw, 24vw"
+                      sizes="(max-width: 760px) 100vw, (max-width: 1000px) 50vw, 25vw"
                     />
                   </div>
-                  <p className={styles.practiceNumber}>0{index + 1}</p>
-                  <h3>{area.title}</h3>
-                  <p className={styles.practiceDescription}>{area.description}</p>
-                  <Link className={styles.practiceLink} href={area.href}>
-                    Explore Practice Area <span aria-hidden="true">→</span>
-                  </Link>
+                  <div className={styles.practiceContent}>
+                    <p className={styles.practiceNumber}>0{index + 1}</p>
+                    <h3>{area.title}</h3>
+                    <p className={styles.practiceDescription}>{area.description}</p>
+                    <Link
+                      aria-label={`Explore ${area.title} practice area`}
+                      className={styles.practiceLink}
+                      href={area.href}
+                    >
+                      Explore Practice Area <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </article>
               ))}
             </div>

@@ -430,86 +430,104 @@
 
 .practiceGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 42px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 1.8vw, 26px);
 }
 
 .practiceItem {
+  position: relative;
   min-width: 0;
-  padding: 0 0 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: transform 360ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  min-height: 438px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #101b2c;
+  border: 1px solid rgba(244, 240, 230, 0.12);
+  transition:
+    transform 360ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    border-color 300ms ease;
 }
 
 .practiceItem:hover {
   transform: translateY(-4px);
+  border-color: rgba(194, 158, 97, 0.65);
 }
 
 .practiceVisual {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1.7;
-  margin-bottom: 26px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(194, 158, 97, 0.38);
-  transition:
-    border-color 280ms ease,
-    transform 420ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  position: absolute;
+  z-index: -2;
+  inset: 0;
 }
 
 .practiceVisual img {
   object-fit: cover;
-  filter: saturate(0.86);
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  object-position: center;
+  filter: saturate(0.82);
+  transition:
+    transform 900ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    filter 600ms ease;
 }
 
-.practiceItem:hover .practiceVisual {
-  border-bottom-color: var(--gold);
+.practiceItem::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 16, 31, 0.18) 0%, rgba(7, 16, 31, 0.38) 34%, rgba(7, 16, 31, 0.96) 100%),
+    linear-gradient(90deg, rgba(7, 16, 31, 0.2), transparent 70%);
+  opacity: 1;
+  content: "";
+  transition: opacity 500ms ease;
 }
 
-.practiceItem:hover .practiceVisual img {
-  transform: scale(1.045);
+.practiceItem:hover::after,
+.practiceItem:focus-within::after {
+  opacity: 0.86;
+}
+
+.practiceItem:hover .practiceVisual img,
+.practiceItem:focus-within .practiceVisual img {
+  filter: saturate(0.96);
+  transform: scale(1.07);
+}
+
+.practiceContent {
+  min-height: inherit;
+  padding: 28px 24px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .practiceNumber {
-  margin: 0 0 11px;
+  margin: 0 0 auto;
+  padding-bottom: 110px;
   color: var(--gold);
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
 }
 
 .practiceItem h3 {
   margin: 0;
   color: var(--ivory);
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(25px, 2.4vw, 34px);
+  font-size: clamp(23px, 2.15vw, 32px);
   font-weight: 400;
   line-height: 1.15;
-  transition:
-    color 280ms ease,
-    transform 280ms cubic-bezier(0.2, 0.7, 0.25, 1);
-}
-
-.practiceItem:hover h3 {
-  color: #fffaf0;
-  transform: translateX(2px);
 }
 
 .practiceDescription {
-  max-width: 350px;
-  margin: 15px 0 25px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.9;
+  max-width: 310px;
+  min-height: 60px;
+  margin: 12px 0 22px;
+  color: rgba(244, 240, 230, 0.76);
+  font-size: 11px;
+  line-height: 1.8;
 }
 
 .practiceLink {
   position: relative;
-  margin-top: auto;
-  padding-bottom: 8px;
+  padding-bottom: 9px;
   display: inline-flex;
   align-items: center;
   gap: 13px;
@@ -531,19 +549,21 @@
   height: 1px;
   background: rgba(194, 158, 97, 0.48);
   content: "";
-  transform: scaleX(0.45);
+  transform: scaleX(0.28);
   transform-origin: left center;
   transition:
     transform 300ms cubic-bezier(0.2, 0.7, 0.25, 1),
     background-color 240ms ease;
 }
 
-.practiceLink:hover {
-  gap: 19px;
+.practiceLink:hover,
+.practiceLink:focus-visible {
+  gap: 17px;
   color: var(--ivory);
 }
 
-.practiceLink:hover::after {
+.practiceLink:hover::after,
+.practiceLink:focus-visible::after {
   background-color: var(--gold);
   transform: scaleX(1);
 }
@@ -645,6 +665,15 @@
   .credentialsInner {
     grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
     gap: 40px;
+  }
+
+  .practiceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .practiceItem {
+    min-height: 410px;
   }
 }
 
@@ -761,37 +790,29 @@
 
   .practiceGrid {
     grid-template-columns: 1fr;
-    gap: 42px;
+    gap: 18px;
   }
 
   .practiceItem {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    align-items: center;
-    column-gap: 22px;
+    min-height: 390px;
   }
 
-  .practiceVisual {
-    grid-row: 1 / span 4;
-    margin: 0;
+  .practiceContent {
+    padding: 24px;
   }
 
   .practiceNumber {
-    margin-bottom: 6px;
+    padding-bottom: 76px;
   }
 
   .practiceItem h3 {
-    font-size: clamp(23px, 6vw, 30px);
+    font-size: clamp(28px, 8vw, 36px);
   }
 
   .practiceDescription {
-    margin: 9px 0 15px;
-    font-size: 11px;
-  }
-
-  .practiceLink {
-    justify-self: start;
-    font-size: 8px;
+    min-height: 0;
+    margin: 10px 0 20px;
+    font-size: 12px;
   }
 
   .philosophy {
@@ -827,10 +848,6 @@
     column-gap: 15px;
   }
 
-  .practiceVisual {
-    max-width: none;
-  }
-
   .practiceLink {
     gap: 7px;
     letter-spacing: 0.08em;
@@ -858,6 +875,7 @@
   .profileAction :global(.button span),
   .practiceVisual,
   .practiceVisual img,
+  .practiceItem::after,
   .practiceItem,
   .practiceItem h3,
   .practiceLink,
