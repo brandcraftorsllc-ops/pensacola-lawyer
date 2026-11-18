@@ -8,45 +8,18 @@ import { AttorneyScrollAnimations } from "@/components/sections/AttorneyScrollAn
 import { homeContent } from "@/data/site-content";
 import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
-type HomeServiceIconName = "order" | "vehicle" | "shield";
+type HomeService = (typeof homeContent.additionalServices)[number];
 
-function HomeServiceIcon({ name }: { name: HomeServiceIconName }) {
-  const paths: Record<HomeServiceIconName, string[]> = {
-    order: [
-      "M7 3.5h7l4.5 4.5v12.5H7z",
-      "M14 3.5V8h4.5",
-      "M10 12h5M10 15.5h5",
-    ],
-    vehicle: [
-      "m4 14 1.5-5a2 2 0 0 1 1.9-1.4h9.2A2 2 0 0 1 18.5 9l1.5 5v4h-3v-2H7v2H4z",
-      "M6 12h12M7.5 7.6 9 12m7.5-4.4L15 12",
-      "M7.5 18v2m9-2v2",
-    ],
-    shield: [
-      "m12 3 7 2.5v6.2c0 4.5-3 7.8-7 9.3-4-1.5-7-4.8-7-9.3V5.5z",
-      "m9 12 2 2 4-4",
-    ],
-  };
-
+function HomeServiceImage({ service, sizes }: { service: HomeService; sizes: string }) {
   return (
-    <svg
-      aria-hidden="true"
-      className="home-service-icon"
-      fill="none"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      {paths[name].map((path) => (
-        <path
-          d={path}
-          key={path}
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.25"
-        />
-      ))}
-    </svg>
+    <Image
+      alt={service.image.alt}
+      className="home-service-image"
+      fill
+      sizes={sizes}
+      src={service.image.src}
+      style={{ objectPosition: service.image.position }}
+    />
   );
 }
 
@@ -357,8 +330,11 @@ export function HomePage() {
                         Explore Service <span aria-hidden="true">→</span>
                       </Link>
                     </div>
-                    <div className="home-service-featured-art" aria-hidden="true">
-                      <HomeServiceIcon name={featuredService.icon} />
+                    <div className="home-service-featured-art home-service-media">
+                      <HomeServiceImage
+                        service={featuredService}
+                        sizes="(max-width: 740px) 45vw, (max-width: 980px) 42vw, 300px"
+                      />
                     </div>
                   </div>
                 </article>
@@ -371,9 +347,14 @@ export function HomePage() {
                     data-reveal-delay={String(index + 2)}
                     key={service.title}
                   >
+                    <div className="home-service-compact-media home-service-media">
+                      <HomeServiceImage
+                        service={service}
+                        sizes="(max-width: 520px) calc(100vw - 40px), (max-width: 980px) 22vw, 240px"
+                      />
+                    </div>
                     <div className="home-service-card-top">
                       <span className="home-service-number">{service.number}</span>
-                      <HomeServiceIcon name={service.icon} />
                     </div>
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>

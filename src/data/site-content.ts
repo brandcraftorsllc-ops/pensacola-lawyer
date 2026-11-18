@@ -177,28 +177,40 @@ export const homeContent = {
       title: "Motions for Contempt",
       description: "Representation when a court order is not being followed.",
       href: "/motions-for-contempt",
-      icon: "order",
+      image: {
+        src: "/images/practice-areas/motions-for-contempt.jpg",
+        alt: "Stone columns and steps of a courthouse framed by autumn leaves",
+        position: "50% 55%",
+      },
     },
     {
       number: "02",
       title: "DUI Defense",
       description: "Discuss the charge, your license, and the next steps in your defense.",
       href: "/criminal-defense#dui",
-      icon: "vehicle",
+      image: {
+        src: "/images/practice-areas/dui-defense.jpg",
+        alt: "A car driving along a city street at night with light trails behind it",
+        position: "35% 55%",
+      },
     },
     {
       number: "03",
       title: "Domestic Violence Injunctions",
       description: "Guidance for protective-order proceedings in Florida.",
       href: "/criminal-defense#domestic-violence-injunction",
-      icon: "shield",
+      image: {
+        src: "/images/practice-areas/injunction-support.jpg",
+        alt: "One person resting their head on another's shoulder in a quiet moment of support",
+        position: "45% 45%",
+      },
     },
   ] satisfies {
     number: string;
     title: string;
     description: string;
     href: string;
-    icon: "order" | "vehicle" | "shield";
+    image: { src: string; alt: string; position: string };
   }[],
   consultation: {
     eyebrow: "Local Counsel. Personal Attention.",

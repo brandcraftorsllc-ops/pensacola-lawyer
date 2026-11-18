@@ -119,11 +119,20 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
           });
 
           if (mobileArtwork) {
+            const artworkImage = mobileArtwork.querySelector<HTMLElement>(".practice-photo-image");
             reveal.fromTo(
               mobileArtwork,
-              { opacity: 0, y: 18 },
-              { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+              { clipPath: "inset(0% 0% 100% 0%)", y: 18 },
+              { clipPath: "inset(0% 0% 0% 0%)", y: 0, duration: 0.95, ease: "power3.inOut" },
             );
+            if (artworkImage) {
+              reveal.fromTo(
+                artworkImage,
+                { scale: 1.12 },
+                { scale: 1, duration: 1.3, ease: "power3.out", clearProps: "transform" },
+                0,
+              );
+            }
           }
 
           reveal.fromTo(
@@ -154,6 +163,25 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
             );
           }
         });
+
+        const sceneMedia = root.querySelector<HTMLElement>(".practice-story-scene-media");
+        if (!reducedMotion && sceneMedia) {
+          gsap
+            .timeline({
+              scrollTrigger: { trigger: sceneMedia, start: "top 82%", once: true },
+            })
+            .fromTo(
+              sceneMedia,
+              { clipPath: "inset(0% 100% 0% 0%)" },
+              { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: "power3.inOut", clearProps: "clipPath" },
+            )
+            .fromTo(
+              sceneMedia.querySelectorAll<HTMLElement>(".practice-photo-image"),
+              { scale: 1.14 },
+              { scale: 1, duration: 1.4, ease: "power3.out", clearProps: "transform" },
+              0,
+            );
+        }
 
         if (!reducedMotion) {
           root.querySelectorAll<HTMLElement>("[data-practice-parallax]").forEach((shape, index) => {
@@ -227,7 +255,7 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
               key={section.id}
               aria-labelledby={`${section.id}-heading`}
             >
-              <div className="practice-story-topic-art" aria-hidden="true">
+              <div className="practice-story-topic-art">
                 <PracticeAreaIllustration visual={section.visual} />
               </div>
               <div className="practice-story-topic-copy">
@@ -264,22 +292,34 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
                 {String(activeIndex + 1).padStart(2, "0")} / {String(sections.length).padStart(2, "0")}
               </span>
             </p>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                className="practice-story-scene-content"
-                key={activeSection.id}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14, filter: "blur(6px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -10, filter: "blur(4px)" }}
-                transition={{
-                  duration: prefersReducedMotion ? 0 : 0.48,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <p className="practice-story-scene-title">{activeSection.title}</p>
-                <PracticeAreaIllustration visual={activeSection.visual} />
-              </motion.div>
-            </AnimatePresence>
+            <div className="practice-story-scene-content">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.p
+                  className="practice-story-scene-title"
+                  key={activeSection.id}
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 14, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: -10, filter: "blur(4px)" }}
+                  transition={{
+                    duration: prefersReducedMotion ? 0 : 0.48,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {activeSection.title}
+                </motion.p>
+              </AnimatePresence>
+              <div className="practice-story-scene-media">
+                {sections.map((section, index) => (
+                  <PracticeAreaIllustration
+                    active={index === activeIndex}
+                    decorative
+                    key={section.id}
+                    sizes="(max-width: 740px) 1px, (max-width: 1120px) 42vw, 440px"
+                    visual={section.visual}
+                  />
+                ))}
+              </div>
+            </div>
             <p className="practice-story-scene-caption">Law Office of James M. Burns</p>
           </div>
         </aside>
