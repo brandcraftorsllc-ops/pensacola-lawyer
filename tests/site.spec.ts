@@ -133,6 +133,84 @@ test("all discovered routes load directly with a page heading", async ({ page })
   }
 });
 
+test("attorney profile uses verified content and preserves protected site sections", async ({ page }) => {
+  await page.goto("/attorney");
+
+  await expect(page.locator("[data-animation-scope]")).toHaveAttribute("data-animation-active", "true");
+  await expect(page.locator('[data-reveal="hero"]')).toHaveAttribute("data-revealed", "true");
+  await expect(page.locator(".page-hero .eyebrow")).toHaveText("Attorney Profile");
+  await expect(page.locator("main h1")).toHaveText("James M. Burns");
+  await expect(page.locator(".breadcrumbs")).toContainText("Home");
+  await expect(page.getByRole("heading", { name: "Background" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Courtroom Experience" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Pensacola Community Ties" })).toBeVisible();
+  await expect(page.getByText("Verified details about James M. Burns's courtroom experience")).toBeVisible();
+  await expect(page.getByText(/Bar admission, education, years in practice/)).toBeVisible();
+  await expect(page.getByText(/Placeholder — add/)).toHaveCount(0);
+
+  await page.locator('[data-reveal="left"]').scrollIntoViewIfNeeded();
+  await expect(page.locator('[data-reveal="left"]')).toHaveAttribute("data-revealed", "true");
+  await page.getByRole("heading", { name: "Background" }).scrollIntoViewIfNeeded();
+  await expect(page.locator('[data-reveal="right"]').first()).toHaveAttribute(
+    "data-revealed",
+    "true",
+  );
+
+  await page.getByRole("heading", { name: "Focused legal representation." }).scrollIntoViewIfNeeded();
+  const practiceAreas = page.locator("main").getByRole("article");
+  await expect(practiceAreas.first()).toHaveAttribute("data-revealed", "true");
+  await expect(practiceAreas.nth(1)).toHaveAttribute("data-reveal-delay", "2");
+  const secondPracticeDelay = await practiceAreas.nth(1).evaluate(
+    (element) => getComputedStyle(element).transitionDelay,
+  );
+  expect(secondPracticeDelay).toBe("0.22s");
+  await expect(practiceAreas.locator("h3")).toHaveText([
+    "Divorce & Family Law",
+    "Military Divorce",
+    "Criminal Defense",
+  ]);
+  const practiceLinks = await practiceAreas
+    .getByRole("link", { name: /Explore Practice Area/ })
+    .evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")));
+  expect(practiceLinks).toEqual(
+    ["/family-law", "/family-law#military-divorce", "/criminal-defense"],
+  );
+  await expect(
+    page.getByRole("heading", { name: "Personal Attention. Practical Guidance." }),
+  ).toBeVisible();
+
+  const contact = page.locator(".cta-band");
+  await expect(contact).not.toHaveAttribute("data-reveal");
+  await expect(contact).toHaveAttribute("aria-label", "Contact the Pensacola office.");
+  await expect(contact.getByRole("heading")).toHaveText("Contact the Pensacola office.");
+  await expect(contact).toContainText("Call to arrange a free consultation and discuss your legal matter.");
+  await expect(page.getByRole("contentinfo")).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Practice areas" })).toBeVisible();
+});
+
+test("attorney practice photos load and the consultation label stays legible", async ({ page }) => {
+  await page.goto("/attorney");
+
+  const consultationLink = page.locator("main").getByRole("link", { name: /Free Consultation/ }).first();
+  await consultationLink.scrollIntoViewIfNeeded();
+  await expect(consultationLink).toBeVisible();
+  await expect(consultationLink).toHaveCSS("color", "rgb(10, 22, 41)");
+
+  const practiceAreas = page.locator("main").getByRole("article");
+  for (const [index, alt] of [
+    [0, "Wedding rings beside a judge's gavel, representing divorce and family law"],
+    [1, "A service member speaking with an attorney about a military family-law matter"],
+    [2, "A judge's gavel, law books and scales of justice"],
+  ] as const) {
+    const image = practiceAreas.nth(index).getByRole("img", { name: alt });
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toBeVisible();
+    await expect
+      .poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth))
+      .toBeGreaterThan(0);
+  }
+});
+
 test("practice hub navigation links target sections on both hub pages", async ({ page }) => {
   for (const { route, submenu } of [
     { route: "/family-law", submenu: "divorce" },
@@ -212,6 +290,16 @@ test("practice guide remains readable and navigable with reduced motion", async 
   await expect(page.locator(".practice-story-scene-title")).toHaveText(
     await lastTopic.locator(".practice-story-topic-heading span").nth(1).textContent() ?? "",
   );
+});
+
+test("attorney profile reveals remain visible when reduced motion is requested", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/attorney");
+
+  await expect(page.locator("[data-animation-scope]")).not.toHaveAttribute("data-animation-active", "true");
+  await expect(page.locator(".page-hero h1")).toHaveCSS("opacity", "1");
+  await expect(page.locator("main").getByRole("article").first()).toHaveCSS("opacity", "1");
+  await expect(page.getByRole("heading", { name: "Personal Attention. Practical Guidance." })).toBeVisible();
 });
 
 test("approach timeline progress follows the scroll position", async ({ page }) => {

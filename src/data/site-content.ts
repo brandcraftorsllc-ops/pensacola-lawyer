@@ -410,12 +410,8 @@ export const attorneyPage = {
   title: "James M. Burns",
   description:
     "The Law Office of James M. Burns is based in Pensacola and lists divorce, family law and criminal defense among its practice areas.",
-  facts: [
-    { label: "Bar Admission", value: "Placeholder — add Florida Bar admission and year" },
-    { label: "Education", value: "Placeholder — add law school and undergraduate details" },
-    { label: "Years of Practice", value: "Placeholder — add years in practice" },
-    { label: "Affiliations", value: "Placeholder — add professional and military associations" },
-  ],
+  credentialNote:
+    "Bar admission, education, years in practice and professional affiliations are not included because verified details were not available in the materials reviewed.",
   sections: [
     {
       title: "Background",
@@ -427,8 +423,7 @@ export const attorneyPage = {
     {
       title: "Courtroom Experience",
       paragraphs: [
-        "Placeholder — add representative courtroom experience, including the types of hearings handled, the jurisdictions practiced in, and any trial or evidentiary hearing experience the attorney wants published.",
-        "No statistics, case counts or success rates are listed here unless the attorney supplies verified figures. Every case is different.",
+        "Verified details about James M. Burns's courtroom experience were not available in the source materials reviewed.",
       ],
     },
     {
@@ -438,14 +433,45 @@ export const attorneyPage = {
         "The source website lists Pensacola, Milton, Navarre and Gulf Breeze among the communities served. It does not provide verified details about personal community involvement.",
       ],
     },
-    {
-      title: "Advocacy Philosophy",
-      paragraphs: [
-        "The current website describes the firm's approach as direct, determined and dedicated.",
-        "Prospective clients can call the office to discuss their legal concerns and arrange a consultation.",
-      ],
-    },
   ],
+  practiceAreas: [
+    {
+      title: "Divorce & Family Law",
+      description:
+        "Practical guidance through the personal and financial decisions of divorce, and the family matters that accompany it.",
+      href: "/family-law",
+      image: "/images/practice-divorce-family.jpg",
+      imageAlt: "Wedding rings beside a judge's gavel, representing divorce and family law",
+    },
+    {
+      title: "Military Divorce",
+      description:
+        "Help for military service members and spouses facing family changes.",
+      href: "/family-law#military-divorce",
+      image: "/images/practice-military-divorce.jpg",
+      imageAlt: "A service member speaking with an attorney about a military family-law matter",
+    },
+    {
+      title: "Criminal Defense",
+      description:
+        "Understand your options when criminal allegations put your freedom at stake.",
+      href: "/criminal-defense",
+      image: "/images/practice-criminal-defense.jpg",
+      imageAlt: "A judge's gavel, law books and scales of justice",
+    },
+  ] satisfies {
+    title: string;
+    description: string;
+    href: string;
+    image: string;
+    imageAlt: string;
+  }[],
+  philosophy: {
+    eyebrow: "Advocacy Philosophy",
+    title: "Personal Attention. Practical Guidance.",
+    description:
+      "The firm describes its approach as direct, determined and dedicated—taking time to explain what may come next, the decisions you may face and what your options could mean for you and your family.",
+  },
 };
 
 export const resultsPage = {
