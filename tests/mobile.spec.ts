@@ -42,3 +42,30 @@ test("homepage practice areas use a single-column mobile layout", async ({ page 
   );
   expect(columnCount).toBe(1);
 });
+
+test("homepage office, timeline, carousel, and services fit touch layouts", async ({ page }) => {
+  await page.goto("/");
+
+  const approach = page.locator(".approach-section");
+  await expect(approach.locator(".approach-intro")).toHaveCSS("position", "static");
+  const carousel = page.locator(".home-experience-carousel");
+  await carousel.scrollIntoViewIfNeeded();
+  await carousel.getByRole("button", { name: "Next approach slide" }).click();
+  await expect(page.locator(".home-experience-slide h3")).toHaveText("Understand Your Options");
+  await expect(carousel.locator(".home-experience-arrow").first()).toHaveCSS("width", "44px");
+
+  const services = page.locator(".home-services-section");
+  const layout = await services.evaluate((element) => ({
+    showcaseColumns: getComputedStyle(element.querySelector(".home-services-showcase")!).gridTemplateColumns
+      .split(" ").length,
+    secondaryColumns: getComputedStyle(element.querySelector(".home-services-secondary")!).gridTemplateColumns
+      .split(" ").length,
+    featuredWidth: element.querySelector(".home-service-featured")!.getBoundingClientRect().width,
+    viewportWidth: document.documentElement.clientWidth,
+    documentWidth: document.documentElement.scrollWidth,
+  }));
+  expect(layout.showcaseColumns).toBe(1);
+  expect(layout.secondaryColumns).toBe(1);
+  expect(layout.featuredWidth).toBeLessThanOrEqual(layout.viewportWidth);
+  expect(layout.documentWidth).toBeLessThanOrEqual(layout.viewportWidth);
+});

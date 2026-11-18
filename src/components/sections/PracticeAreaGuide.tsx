@@ -17,10 +17,43 @@ export interface PracticeAreaSection {
 
 export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAreaSection[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
   const rootRef = useRef<HTMLElement>(null);
   const progressRef = useRef<HTMLSpanElement>(null);
   const prefersReducedMotion = useReducedMotion() ?? false;
   const activeSection = sections[activeIndex] ?? sections[0];
+
+  useEffect(() => {
+    const navigation = rootRef.current?.querySelector<HTMLElement>(".practice-area-toc");
+    const activeLink = navigation?.querySelector<HTMLAnchorElement>(
+      'a[aria-current="location"]',
+    );
+    if (!navigation || !activeLink) return;
+
+    const horizontalRail = window.matchMedia("(max-width: 1120px)").matches;
+    const scrollContainer = horizontalRail
+      ? navigation.querySelector<HTMLOListElement>("ol")
+      : navigation;
+    if (!scrollContainer) return;
+
+    const linkRect = activeLink.getBoundingClientRect();
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const behavior = prefersReducedMotion ? "auto" : "smooth";
+
+    if (horizontalRail) {
+      if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+        scrollContainer.scrollTo({
+          left: scrollContainer.scrollLeft + linkRect.left - containerRect.left - 12,
+          behavior,
+        });
+      }
+    } else if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
+      scrollContainer.scrollTo({
+        top: scrollContainer.scrollTop + linkRect.top - containerRect.top - 12,
+        behavior,
+      });
+    }
+  }, [activeIndex, prefersReducedMotion]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -39,24 +72,37 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
 
         progressRef.current?.style.setProperty("--practice-progress", "0");
 
+        const syncActiveTopic = () => {
+          const activationLine = window.innerHeight * 0.52;
+          let nextActiveIndex = 0;
+
+          topics.forEach((topic, index) => {
+            if (topic.getBoundingClientRect().top <= activationLine) {
+              nextActiveIndex = index;
+            }
+          });
+
+          if (activeIndexRef.current !== nextActiveIndex) {
+            activeIndexRef.current = nextActiveIndex;
+            setActiveIndex(nextActiveIndex);
+          }
+        };
+
         ScrollTrigger.create({
           trigger: root,
           start: "top top+=140",
           end: "bottom bottom",
           onUpdate: ({ progress }) => {
             progressRef.current?.style.setProperty("--practice-progress", `${progress}`);
+            syncActiveTopic();
+          },
+          onRefresh: ({ progress }) => {
+            progressRef.current?.style.setProperty("--practice-progress", `${progress}`);
+            syncActiveTopic();
           },
         });
 
-        topics.forEach((topic, index) => {
-          ScrollTrigger.create({
-            trigger: topic,
-            start: "top 52%",
-            end: "bottom 52%",
-            onEnter: () => setActiveIndex(index),
-            onEnterBack: () => setActiveIndex(index),
-          });
-
+        topics.forEach((topic) => {
           if (reducedMotion) return;
 
           const heading = topic.querySelector<HTMLElement>(".practice-story-topic-heading");
@@ -153,7 +199,10 @@ export function PracticeAreaGuide({ sections }: { sections: readonly PracticeAre
                   <a
                     href={`#${section.id}`}
                     aria-current={index === activeIndex ? "location" : undefined}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => {
+                      activeIndexRef.current = index;
+                      setActiveIndex(index);
+                    }}
                   >
                     <span className="practice-story-number">
                       {String(index + 1).padStart(2, "0")}

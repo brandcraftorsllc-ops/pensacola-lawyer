@@ -110,6 +110,23 @@ test(
       "Personal attention for the issues affecting your family and future.",
       "Understand your options when criminal allegations put your freedom at stake.",
     ]);
+    const practiceLinks = await section
+      .locator(".practice-card-link")
+      .evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")));
+    expect(practiceLinks).toEqual([
+      "/family-law",
+      "/family-law#military-divorce",
+      "/family-law",
+      "/criminal-defense",
+    ]);
+    const practiceImages = section.locator(".practice-card img");
+    await expect(practiceImages).toHaveCount(4);
+    for (const image of await practiceImages.all()) {
+      await image.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth))
+        .toBeGreaterThan(0);
+    }
     await expect(section.getByRole("link", { name: /Discuss your case/ })).toHaveAttribute(
       "href",
       "/case-evaluation",
@@ -118,12 +135,166 @@ test(
       (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length,
     );
     expect(columnCount).toBe(2);
+    const horizontalCardGap = await section.locator(".practice-card").evaluateAll((cards) => {
+      const first = cards[0].getBoundingClientRect();
+      const second = cards[1].getBoundingClientRect();
+      return second.left - first.right;
+    });
+    expect(horizontalCardGap).toBeGreaterThan(0);
     await expect(
       page.getByRole("heading", { name: "Military service can add family-law questions" }),
     ).toHaveCount(0);
     await expect(page.locator(".scroll-cue")).toHaveAttribute("href", "#practice-areas");
   },
 );
+
+test("homepage trust, office, consultation, and additional services are accurate and responsive", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/");
+
+  const feedback = page.locator("#client-voices");
+  await expect(feedback.locator(".eyebrow")).toHaveText("Client Experience");
+  await expect(feedback.getByRole("heading", { level: 2 })).toHaveText(
+    "Every Case Deserves a Personal Approach.",
+  );
+  await expect(feedback).toContainText(
+    "Verified client testimonials and case outcomes are not currently available for publication. These slides describe the office's stated approach, not client reviews.",
+  );
+  await expect(feedback.getByRole("link", { name: "Discuss your situation" })).toHaveAttribute(
+    "href",
+    "/case-evaluation",
+  );
+  await expect(feedback.locator(".home-experience-dot")).toHaveCount(4);
+  await expect(feedback.locator(".home-experience-slide h3")).toHaveText("Discuss Your Concerns");
+  await feedback.getByRole("button", { name: "Next approach slide" }).click();
+  await expect(feedback.locator(".home-experience-slide h3")).toHaveText("Understand Your Options");
+  await feedback.getByRole("button", { name: "Previous approach slide" }).click();
+  await expect(feedback.locator(".home-experience-slide h3")).toHaveText("Discuss Your Concerns");
+
+  const office = page.locator(".home-office-section");
+  await expect(office.locator(".eyebrow")).toHaveText("A PENSACOLA OFFICE. A PERSONAL APPROACH.");
+  await expect(office.getByRole("heading")).toHaveText(
+    "Close to home. Focused on your future.",
+  );
+  await expect(office).toContainText("4502 Twin Oaks Drive · Pensacola, FL 32506");
+  await expect(office.getByRole("link", { name: "Let's Talk About Your Case" })).toHaveAttribute(
+    "href",
+    "/case-evaluation",
+  );
+  const officeImage = office.locator("img");
+  await officeImage.scrollIntoViewIfNeeded();
+  await expect
+    .poll(() => officeImage.evaluate((image) => (image as HTMLImageElement).naturalWidth))
+    .toBeGreaterThan(0);
+  await expect(officeImage).toHaveAttribute("data-scroll-parallax", "");
+  const officePrecedesAbout = await office.evaluate((element) => {
+    const about = document.querySelector(".about-grid");
+    return about !== null && Boolean(element.compareDocumentPosition(about) & Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  expect(officePrecedesAbout).toBe(true);
+
+  const consultation = page.locator(".home-consultation-section");
+  await expect(consultation.getByRole("heading")).toHaveText(
+    "Your next step starts with a conversation.",
+  );
+  await expect(consultation).toContainText(
+    "Speak with the Law Office of James M. Burns about your concerns and the options available to you.",
+  );
+  await expect(consultation.getByRole("link", { name: "Free Consultation" })).toHaveAttribute(
+    "href",
+    "/case-evaluation",
+  );
+
+  const services = page.locator(".home-services-section");
+  await expect(services.locator(".eyebrow")).toHaveText("BEYOND THE CORE PRACTICE AREAS");
+  await expect(services.getByRole("heading", { level: 2 })).toHaveText("More ways we can help.");
+  await expect(services).toContainText(
+    "Additional legal services for the challenges that life can bring.",
+  );
+  await expect(services.locator(".home-service-card h3")).toHaveText([
+    "Motions for Contempt",
+    "DUI Defense",
+    "Domestic Violence Injunctions",
+  ]);
+  await expect(services.locator(".home-service-card p")).toHaveText([
+    "Representation when a court order is not being followed.",
+    "Discuss the charge, your license, and the next steps in your defense.",
+    "Guidance for protective-order proceedings in Florida.",
+  ]);
+  const serviceLinks = await services
+    .locator(".home-service-card a")
+    .evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute("href")));
+  expect(serviceLinks).toEqual([
+    "/motions-for-contempt",
+    "/criminal-defense#dui",
+    "/criminal-defense#domestic-violence-injunction",
+  ]);
+
+  const firstServiceCard = services.locator(".home-service-card").first();
+  await expect(firstServiceCard).toHaveClass(/home-service-featured/);
+  await expect(services.locator(".home-service-compact")).toHaveCount(2);
+  await firstServiceCard.scrollIntoViewIfNeeded();
+  await expect(firstServiceCard).toHaveAttribute("data-revealed", "true");
+  const featuredBackground = await firstServiceCard.evaluate(
+    (card) => getComputedStyle(card).backgroundImage,
+  );
+  const topBeforeHover = await firstServiceCard.evaluate(
+    (card) => card.getBoundingClientRect().top,
+  );
+  await firstServiceCard.hover();
+  await expect(firstServiceCard).toHaveCSS("background-image", featuredBackground);
+  await expect
+    .poll(() => firstServiceCard.evaluate((card) => card.getBoundingClientRect().top))
+    .toBeLessThan(topBeforeHover - 2);
+  const firstServiceLink = firstServiceCard.getByRole("link", {
+    name: "Explore Motions for Contempt service",
+  });
+  await firstServiceLink.hover();
+  await expect
+    .poll(() =>
+      firstServiceLink.locator("span").evaluate(
+        (arrow) => new DOMMatrixReadOnly(getComputedStyle(arrow).transform).m41,
+      ),
+    )
+    .toBeGreaterThan(0);
+
+  for (const [width, expectedColumns] of [
+    [1440, 2],
+    [800, 1],
+    [390, 1],
+  ]) {
+    await page.setViewportSize({ width, height: 900 });
+    const columnCount = await services.locator(".home-services-showcase").evaluate(
+      (element) => getComputedStyle(element).gridTemplateColumns.split(" ").length,
+    );
+    expect(columnCount).toBe(expectedColumns);
+  }
+
+  await page.goto("/criminal-defense#dui");
+  await expect(page.locator("#dui")).toBeVisible();
+  await page.goto("/criminal-defense#domestic-violence-injunction");
+  await expect(page.locator("#domestic-violence-injunction")).toBeVisible();
+});
+
+test("homepage editorial content stays visible when reduced motion is preferred", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+
+  await expect(page.locator(".home-editorial-reveal-scope").first()).not.toHaveAttribute(
+    "data-animation-active",
+    "true",
+  );
+  await expect(page.locator(".home-editorial-reveal-scope").last()).not.toHaveAttribute(
+    "data-animation-active",
+    "true",
+  );
+  await expect(page.locator(".home-office-image")).toHaveCSS("opacity", "1");
+  await expect(page.locator(".home-office-image img")).toHaveCSS("clip-path", "none");
+  await expect(page.locator(".home-service-card").first()).toHaveCSS("opacity", "1");
+  await expect(page.locator(".home-office-image img")).toHaveCSS("transform", "none");
+});
 
 test("all discovered routes load directly with a page heading", async ({ page }) => {
   for (const route of routes) {
@@ -294,6 +465,11 @@ test("practice hub navigation links target sections on both hub pages", async ({
       "location",
     );
     await expect(page.locator(".practice-story-scene-title")).toHaveText(targetTitle ?? "");
+    const navigationTop = await page
+      .locator(".practice-area-toc")
+      .evaluate((navigation) => navigation.getBoundingClientRect().top);
+    expect(navigationTop).toBeGreaterThanOrEqual(110);
+    expect(navigationTop).toBeLessThan(140);
     await expect
       .poll(async () =>
         Number(
@@ -304,6 +480,85 @@ test("practice hub navigation links target sections on both hub pages", async ({
       )
       .toBeGreaterThan(0.6);
   }
+});
+
+test("all eleven practice topics synchronize navigation and the visual panel", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/family-law");
+
+  const topics = page.locator(".practice-area-topic");
+  const links = page.locator(".practice-area-toc a");
+  await expect(topics).toHaveCount(11);
+  await expect(links).toHaveCount(11);
+
+  const verifyTopic = async (index: number) => {
+    const topic = topics.nth(index);
+    const targetId = await topic.getAttribute("id");
+    const title = await topic.locator(".practice-story-topic-heading span").nth(1).textContent();
+    if (!targetId) throw new Error(`Missing practice topic ID at index ${index}.`);
+
+    await page.evaluate((id) => {
+      const target = document.getElementById(id);
+      if (target) {
+        window.scrollTo({
+          top: window.scrollY + target.getBoundingClientRect().top - 180,
+          behavior: "instant",
+        });
+      }
+    }, targetId);
+    const activeLink = page.locator(`.practice-area-toc a[href="#${targetId}"]`);
+    await expect(activeLink).toHaveAttribute("aria-current", "location");
+    await expect(page.locator(".practice-story-scene-title")).toHaveText(title ?? "");
+  };
+
+  for (let index = 0; index < 11; index += 1) await verifyTopic(index);
+  for (let index = 10; index >= 0; index -= 1) await verifyTopic(index);
+
+  for (let index = 0; index < 11; index += 1) {
+    const link = links.nth(index);
+    const targetId = new URL(await link.getAttribute("href") ?? "", page.url()).hash.slice(1);
+    await link.evaluate((anchor) => (anchor as HTMLAnchorElement).click());
+    await expect(page.locator(`.practice-area-toc a[href="#${targetId}"]`)).toHaveAttribute(
+      "aria-current",
+      "location",
+    );
+    const expectedTitle = await page.locator(`#${targetId} .practice-story-topic-heading span`).nth(1).textContent();
+    await expect(page.locator(".practice-story-scene-title")).toHaveText(expectedTitle ?? "");
+  }
+});
+
+test("the active practice topic stays in view on the horizontal navigation rail", async ({ page }) => {
+  await page.setViewportSize({ width: 800, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/family-law");
+
+  const lastTopic = page.locator(".practice-area-topic").last();
+  const targetId = await lastTopic.getAttribute("id");
+  if (!targetId) throw new Error("Missing final practice topic ID.");
+  await page.evaluate((id) => {
+    const target = document.getElementById(id);
+    if (target) {
+      window.scrollTo({
+        top: window.scrollY + target.getBoundingClientRect().top - 180,
+        behavior: "instant",
+      });
+    }
+  }, targetId);
+
+  const activeLink = page.locator(`.practice-area-toc a[href="#${targetId}"]`);
+  await expect(activeLink).toHaveAttribute("aria-current", "location");
+  await expect
+    .poll(() =>
+      activeLink.evaluate((anchor) => {
+        const rail = anchor.closest("ol");
+        if (!rail) return false;
+        const linkRect = anchor.getBoundingClientRect();
+        const railRect = rail.getBoundingClientRect();
+        return linkRect.left >= railRect.left && linkRect.right <= railRect.right;
+      }),
+    )
+    .toBe(true);
 });
 
 test("legacy military divorce route redirects to its consolidated section", async ({ page }) => {
@@ -343,14 +598,15 @@ test("attorney profile reveals remain visible when reduced motion is requested",
 test("approach timeline progress follows the scroll position", async ({ page }) => {
   await page.goto("/");
   const timeline = page.locator(".approach-timeline");
+  const steps = page.locator(".approach-list .step-card");
+  await expect(steps).toHaveCount(4);
+  await expect(steps.first()).toHaveAttribute("aria-current", "step");
+
   const midpoint = await timeline.evaluate((element) => {
-    const markers = element.querySelectorAll<HTMLElement>(".approach-marker");
-    const first = markers[0].getBoundingClientRect();
-    const last = markers[markers.length - 1].getBoundingClientRect();
-    const firstTop = window.scrollY + first.top + first.height / 2;
-    const lastTop = window.scrollY + last.top + last.height / 2;
-    const start = firstTop - window.innerHeight * 0.68;
-    const end = lastTop - window.innerHeight * 0.42;
+    const rect = element.getBoundingClientRect();
+    const top = window.scrollY + rect.top;
+    const start = top - window.innerHeight * 0.64;
+    const end = top + rect.height - window.innerHeight * 0.42;
     return start + (end - start) / 2;
   });
 
@@ -360,6 +616,16 @@ test("approach timeline progress follows the scroll position", async ({ page }) 
       Number(await timeline.evaluate((element) => element.style.getPropertyValue("--approach-progress"))),
     )
     .toBeGreaterThan(0.45);
+});
+
+test("approach timeline supports keyboard step navigation", async ({ page }) => {
+  await page.goto("/");
+  const steps = page.locator(".approach-list .step-card");
+  await expect(steps.first()).toHaveAttribute("aria-current", "step");
+  await steps.first().focus();
+  await page.keyboard.press("ArrowDown");
+  await expect(steps.nth(1)).toBeFocused();
+  await expect(steps.nth(1)).toHaveAttribute("aria-current", "step");
 });
 
 test("resource categories switch the visible questions", async ({ page }) => {

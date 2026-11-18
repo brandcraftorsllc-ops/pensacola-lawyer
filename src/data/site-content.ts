@@ -35,24 +35,32 @@ export const homeContent = {
       href: "/family-law",
       title: "Divorce",
       description: "Practical guidance through the personal and financial decisions of divorce.",
+      image: "/images/practice-divorce-family.jpg",
+      imageAlt: "Wedding rings, legal documents and a judge's gavel",
     },
     {
       number: "02",
       href: "/family-law#military-divorce",
       title: "Military Divorce",
       description: "Help for military service members and spouses facing family changes.",
+      image: "/images/practice-military-divorce.jpg",
+      imageAlt: "A US service member discussing a legal matter with an attorney",
     },
     {
       number: "03",
       href: "/family-law",
       title: "Family Law",
       description: "Personal attention for the issues affecting your family and future.",
+      image: "/images/practice-family-law.jpg",
+      imageAlt: "Parents and child spending time together outdoors",
     },
     {
       number: "04",
       href: "/criminal-defense",
       title: "Criminal Defense",
       description: "Understand your options when criminal allegations put your freedom at stake.",
+      image: "/images/criminal-defense-header.png",
+      imageAlt: "A courthouse illuminated at dusk",
     },
   ],
   about: {
@@ -97,10 +105,43 @@ export const homeContent = {
     },
   ],
   testimonialIntro: {
-    eyebrow: "Client Voices",
-    title: "Client feedback",
+    eyebrow: "Client Experience",
+    title: "Every Case Deserves a Personal Approach.",
     description:
-      "No verified testimonials or case outcomes were available on the source website reviewed for this content update.",
+      "Verified client testimonials and case outcomes are not currently available for publication. These slides describe the office's stated approach, not client reviews.",
+  },
+  approachSlides: [
+    {
+      title: "Discuss Your Concerns",
+      description:
+        "Call the office to discuss your legal concerns and ask about a free consultation.",
+    },
+    {
+      title: "Understand Your Options",
+      description: "Consider the options that may be available based on your circumstances.",
+    },
+    {
+      title: "Plan Your Next Steps",
+      description: "Identify the information and decisions relevant to your legal matter.",
+    },
+    {
+      title: "Confirm How the Office Can Help",
+      description: "The office can confirm whether it handles your matter and how to proceed.",
+    },
+  ],
+  office: {
+    eyebrow: "A PENSACOLA OFFICE. A PERSONAL APPROACH.",
+    title: "Close to home. Focused on your future.",
+    address: "4502 Twin Oaks Drive · Pensacola, FL 32506",
+    cta: "Let's Talk About Your Case",
+    href: "/case-evaluation",
+    image: "/images/pensacola-bay.png",
+    imageAlt: "Dusk settles over Pensacola Bay near the naval air station.",
+  },
+  additionalServicesIntro: {
+    eyebrow: "BEYOND THE CORE PRACTICE AREAS",
+    title: "More ways we can help.",
+    description: "Additional legal services for the challenges that life can bring.",
   },
   testimonials: [
     {
@@ -129,6 +170,43 @@ export const homeContent = {
   cta: {
     title: "Need to discuss a legal matter?",
     description: "Call the office to arrange a free consultation and discuss your next steps.",
+  },
+  additionalServices: [
+    {
+      number: "01",
+      title: "Motions for Contempt",
+      description: "Representation when a court order is not being followed.",
+      href: "/motions-for-contempt",
+      icon: "order",
+    },
+    {
+      number: "02",
+      title: "DUI Defense",
+      description: "Discuss the charge, your license, and the next steps in your defense.",
+      href: "/criminal-defense#dui",
+      icon: "vehicle",
+    },
+    {
+      number: "03",
+      title: "Domestic Violence Injunctions",
+      description: "Guidance for protective-order proceedings in Florida.",
+      href: "/criminal-defense#domestic-violence-injunction",
+      icon: "shield",
+    },
+  ] satisfies {
+    number: string;
+    title: string;
+    description: string;
+    href: string;
+    icon: "order" | "vehicle" | "shield";
+  }[],
+  consultation: {
+    eyebrow: "Local Counsel. Personal Attention.",
+    title: "Your next step starts with a conversation.",
+    description:
+      "Speak with the Law Office of James M. Burns about your concerns and the options available to you.",
+    cta: "Free Consultation",
+    href: "/case-evaluation",
   },
 };
 
