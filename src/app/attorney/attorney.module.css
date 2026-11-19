@@ -104,8 +104,8 @@
 
 .hero :global(.page-hero)::after {
   background:
-    linear-gradient(90deg, rgba(7, 16, 31, 0.9), rgba(7, 16, 31, 0.63) 48%, rgba(7, 16, 31, 0.28)),
-    linear-gradient(180deg, rgba(7, 16, 31, 0.3), rgba(7, 16, 31, 0.14) 47%, var(--ink) 100%);
+    linear-gradient(90deg, rgba(5, 18, 48, 0.9), rgba(5, 18, 48, 0.63) 48%, rgba(5, 18, 48, 0.28)),
+    linear-gradient(180deg, rgba(5, 18, 48, 0.3), rgba(5, 18, 48, 0.14) 47%, var(--ink) 100%);
 }
 
 .hero :global(.page-heading) {
@@ -114,7 +114,7 @@
 
 .hero :global(.breadcrumbs) {
   margin-bottom: clamp(58px, 8vh, 92px);
-  color: rgba(244, 240, 230, 0.68);
+  color: rgba(248, 250, 252, 0.68);
 }
 
 .hero :global(.page-heading .eyebrow) {
@@ -132,8 +132,8 @@
 .hero :global(.page-heading > p:not(.eyebrow)) {
   max-width: 540px;
   margin-top: 30px;
-  color: rgba(244, 240, 230, 0.78);
-  font-size: 15px;
+  color: rgba(248, 250, 252, 0.78);
+  font-size: 19px;
   line-height: 1.9;
 }
 
@@ -141,7 +141,7 @@
   position: relative;
   padding: clamp(100px, 12vw, 166px) 0 clamp(112px, 13vw, 174px);
   background:
-    radial-gradient(ellipse at 2% 16%, rgba(194, 158, 97, 0.06), transparent 28%),
+    radial-gradient(ellipse at 2% 16%, rgba(185, 191, 201, 0.06), transparent 28%),
     var(--ink);
 }
 
@@ -164,15 +164,15 @@
   margin: 0;
   padding: 12px;
   background:
-    linear-gradient(145deg, rgba(194, 158, 97, 0.16), transparent 48%),
-    #121b2b;
+    linear-gradient(145deg, rgba(185, 191, 201, 0.16), transparent 48%),
+    #0d1f43;
 }
 
 .portrait::before {
   position: absolute;
   z-index: 1;
   inset: 12px;
-  border: 1px solid rgba(244, 240, 230, 0.14);
+  border: 1px solid rgba(248, 250, 252, 0.14);
   content: "";
   pointer-events: none;
 }
@@ -198,9 +198,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: linear-gradient(90deg, rgba(7, 16, 31, 0.96), rgba(7, 16, 31, 0.72));
+  background: linear-gradient(90deg, rgba(5, 18, 48, 0.96), rgba(5, 18, 48, 0.72));
   color: var(--ivory);
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -218,7 +218,7 @@
   margin: 0 0 18px;
   color: var(--gold);
   font-family: var(--font-manrope), Arial, sans-serif;
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -243,7 +243,7 @@
 .profileIntroduction > p:not(.eyebrow) {
   margin: 16px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.85;
 }
 
@@ -252,13 +252,13 @@
   height: 1px;
   margin-top: 26px;
   display: block;
-  background: linear-gradient(90deg, var(--gold), rgba(194, 158, 97, 0.12));
+  background: linear-gradient(90deg, var(--gold), rgba(185, 191, 201, 0.12));
   transform-origin: left center;
 }
 
 .profileIntroduction .officeLocation {
-  color: rgba(244, 240, 230, 0.56);
-  font-size: 10px;
+  color: rgba(248, 250, 252, 0.56);
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -276,7 +276,7 @@
   padding: 0 0 35px 36px;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  border-bottom: 1px solid rgba(244, 240, 230, 0.12);
+  border-bottom: 1px solid rgba(248, 250, 252, 0.12);
 }
 
 .editorialBlock + .editorialBlock {
@@ -288,7 +288,7 @@
   top: 5px;
   left: 0;
   color: var(--gold);
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 0.08em;
 }
 
@@ -309,7 +309,7 @@
   max-width: 650px;
   margin: 0 0 12px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.95;
 }
 
@@ -327,7 +327,7 @@
 
 .profileAction > a[href^="tel:"] {
   color: var(--gold);
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 220ms ease;
@@ -346,7 +346,7 @@
 }
 
 .profileAction :global(.button:hover) {
-  box-shadow: 0 8px 24px rgba(194, 158, 97, 0.16);
+  box-shadow: 0 8px 24px rgba(185, 191, 201, 0.16);
 }
 
 .profileAction :global(.button span) {
@@ -361,9 +361,9 @@
 .credentials {
   position: relative;
   padding: 54px 0;
-  border-top: 1px solid rgba(194, 158, 97, 0.2);
-  border-bottom: 1px solid rgba(194, 158, 97, 0.2);
-  background: #121b2b;
+  border-top: 1px solid rgba(185, 191, 201, 0.2);
+  border-bottom: 1px solid rgba(185, 191, 201, 0.2);
+  background: #0d1f43;
 }
 
 .credentialsInner {
@@ -392,7 +392,7 @@
   padding-left: 26px;
   border-left: 1px solid var(--gold);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.9;
   transition:
     border-color 300ms ease,
@@ -400,13 +400,13 @@
 }
 
 .credentialsNote:hover {
-  border-color: #dfbd7d;
+  border-color: #dce2ec;
   color: var(--ivory);
 }
 
 .practice {
   padding: clamp(105px, 12vw, 160px) 0;
-  background: #0d192b;
+  background: #091d43;
 }
 
 .practiceInner {
@@ -440,8 +440,8 @@
   min-height: 438px;
   overflow: hidden;
   isolation: isolate;
-  background: #101b2c;
-  border: 1px solid rgba(244, 240, 230, 0.12);
+  background: #0b1f44;
+  border: 1px solid rgba(248, 250, 252, 0.12);
   transition:
     transform 360ms cubic-bezier(0.2, 0.7, 0.25, 1),
     border-color 300ms ease;
@@ -449,7 +449,7 @@
 
 .practiceItem:hover {
   transform: translateY(-4px);
-  border-color: rgba(194, 158, 97, 0.65);
+  border-color: rgba(185, 191, 201, 0.65);
 }
 
 .practiceVisual {
@@ -472,8 +472,8 @@
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(7, 16, 31, 0.18) 0%, rgba(7, 16, 31, 0.38) 34%, rgba(7, 16, 31, 0.96) 100%),
-    linear-gradient(90deg, rgba(7, 16, 31, 0.2), transparent 70%);
+    linear-gradient(180deg, rgba(5, 18, 48, 0.18) 0%, rgba(5, 18, 48, 0.38) 34%, rgba(5, 18, 48, 0.96) 100%),
+    linear-gradient(90deg, rgba(5, 18, 48, 0.2), transparent 70%);
   opacity: 1;
   content: "";
   transition: opacity 500ms ease;
@@ -502,7 +502,7 @@
   margin: 0 0 auto;
   padding-bottom: 110px;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.18em;
 }
@@ -520,8 +520,8 @@
   max-width: 310px;
   min-height: 60px;
   margin: 12px 0 22px;
-  color: rgba(244, 240, 230, 0.76);
-  font-size: 11px;
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -532,7 +532,7 @@
   align-items: center;
   gap: 13px;
   color: var(--gold);
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -547,7 +547,7 @@
   bottom: 0;
   left: 0;
   height: 1px;
-  background: rgba(194, 158, 97, 0.48);
+  background: rgba(185, 191, 201, 0.48);
   content: "";
   transform: scaleX(0.28);
   transform-origin: left center;
@@ -591,8 +591,8 @@
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at center, rgba(194, 158, 97, 0.09), transparent 52%),
-    #111c2e;
+    radial-gradient(ellipse at center, rgba(185, 191, 201, 0.09), transparent 52%),
+    #0c2047;
   text-align: center;
 }
 
@@ -602,7 +602,7 @@
   top: 50%;
   width: min(24vw, 320px);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(194, 158, 97, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(185, 191, 201, 0.4), transparent);
   content: "";
 }
 
@@ -636,7 +636,7 @@
   max-width: 670px;
   margin: 25px auto 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.9;
 }
 
@@ -644,7 +644,7 @@
   position: absolute;
   right: 30px;
   bottom: 16px;
-  color: rgba(244, 240, 230, 0.035);
+  color: rgba(248, 250, 252, 0.035);
   font-family: var(--font-playfair), Georgia, serif;
   font-size: clamp(100px, 20vw, 240px);
   line-height: 1;
@@ -697,7 +697,7 @@
 
   .hero :global(.page-heading > p:not(.eyebrow)) {
     max-width: 520px;
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .profile {
@@ -733,7 +733,7 @@
     left: 9px;
     min-height: 48px;
     padding: 10px 12px;
-    font-size: 7px;
+    font-size: 14px;
   }
 
   .profileIntroduction {
@@ -773,7 +773,7 @@
 
   .credentialsNote {
     padding: 0 0 0 18px;
-    font-size: 12px;
+    font-size: 17px;
   }
 
   .practice {
@@ -812,7 +812,7 @@
   .practiceDescription {
     min-height: 0;
     margin: 10px 0 20px;
-    font-size: 12px;
+    font-size: 17px;
   }
 
   .philosophy {
@@ -834,7 +834,7 @@
 @media (max-width: 460px) {
   .hero :global(.breadcrumbs) {
     gap: 8px;
-    font-size: 7px;
+    font-size: 14px;
   }
 
   .profileGrid,

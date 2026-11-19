@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [socialImage],
   },
-  other: { "theme-color": "#0a1628" },
+  other: { "theme-color": "#07193e" },
 };
 
 function LegalServiceJsonLd() {

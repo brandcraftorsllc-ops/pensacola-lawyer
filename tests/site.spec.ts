@@ -366,7 +366,7 @@ test("attorney practice photos load and the consultation label stays legible", a
   const consultationLink = page.locator("main").getByRole("link", { name: /Free Consultation/ }).first();
   await consultationLink.scrollIntoViewIfNeeded();
   await expect(consultationLink).toBeVisible();
-  await expect(consultationLink).toHaveCSS("color", "rgb(10, 22, 41)");
+  await expect(consultationLink).toHaveCSS("color", "rgb(7, 25, 64)");
 
   const practiceAreas = page.locator("main").getByRole("article");
   await expect(practiceAreas).toHaveCount(4);

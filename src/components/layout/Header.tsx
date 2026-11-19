@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { SITE_PHONE, SITE_PHONE_LINK } from "@/lib/site";
 
 const practiceGroups = [
@@ -77,13 +77,18 @@ const linksAfterPractice = [
 
 function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="Law Office of James M. Burns — home">
-      <span className="brand-mark">JMB</span>
+    <Link className="brand" href="/" aria-label="J&B Gulf Coast — home">
+      <span className="brand-lockup">
+        <span className="brand-mark">J&amp;B</span>
+        <span className="brand-sub">Gulf Coast</span>
+      </span>
       <span className="brand-divider" aria-hidden="true" />
       <span className="brand-caption">
-        Military Divorce, Family Law
-        <br />
-        &amp; Criminal Defense
+        <span className="brand-headline">
+          Pensacola Military Divorce <span className="brand-sep">|</span> Family Law{" "}
+          <span className="brand-sep">|</span> Criminal Defense
+        </span>
+        <span className="brand-formerly">Formerly The Law Offices Of Stephen W. Bowden</span>
       </span>
     </Link>
   );
@@ -93,6 +98,19 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openPracticeGroup, setOpenPracticeGroup] = useState<string | null>(null);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Publish the real header height so page offsets and sticky elements stay aligned.
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const root = document.documentElement;
+    const update = () => root.style.setProperty("--header-h", `${header.offsetHeight}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
 
   function closeMobileNavigation(event: MouseEvent<HTMLAnchorElement>) {
     event.currentTarget
@@ -105,9 +123,31 @@ export function Header() {
   }
 
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="header-inner">
         <Brand />
+        <div className="header-actions">
+          <a className="header-phone" href={SITE_PHONE_LINK}>
+            {SITE_PHONE}
+          </a>
+          <Link className="button button-gold header-consult" href="/case-evaluation">
+            Free Consultation
+          </Link>
+        </div>
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+      <div className="header-nav-row">
         <nav className="desktop-nav" aria-label="Primary">
           <Link className={pathname === "/" ? "active" : ""} href="/">
             Home
@@ -203,26 +243,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="header-actions">
-          <a className="header-phone" href={SITE_PHONE_LINK}>
-            {SITE_PHONE}
-          </a>
-          <Link className="button button-gold header-consult" href="/case-evaluation">
-            Free Consultation
-          </Link>
-        </div>
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
       </div>
       <div
         className={`mobile-navigation ${menuOpen ? "is-open" : ""}`}

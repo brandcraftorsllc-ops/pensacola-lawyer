@@ -5,10 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0a1629",
-        panel: "#121b2b",
-        ivory: "#f4f0e6",
-        gold: "#c29e61",
+        ink: "#071940",
+        panel: "#0d1f43",
+        ivory: "#f8fafc",
+        gold: "#b9bfc9",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "sans-serif"],
