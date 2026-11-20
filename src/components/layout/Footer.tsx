@@ -31,7 +31,7 @@ export function Footer() {
       <div className="footer-main">
         <div className="footer-brand">
           <Link className="brand footer-logo" href="/">
-            <span className="brand-mark">J&amp;B</span>
+            <span className="brand-mark">JMB</span>
             <span className="brand-divider" aria-hidden="true" />
             <span className="brand-caption">Gulf Coast</span>
           </Link>

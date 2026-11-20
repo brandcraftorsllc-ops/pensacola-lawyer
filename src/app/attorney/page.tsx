@@ -144,7 +144,7 @@ export default function AttorneyPage() {
             {attorneyPage.philosophy.description}
           </p>
           <span className={styles.philosophyMark} aria-hidden="true">
-            J&amp;B
+            JMB
           </span>
         </section>
       </AttorneyScrollAnimations>

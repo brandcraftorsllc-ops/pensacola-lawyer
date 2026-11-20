@@ -77,9 +77,9 @@ const linksAfterPractice = [
 
 function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="J&B Gulf Coast — home">
+    <Link className="brand" href="/" aria-label="JMB Gulf Coast — home">
       <span className="brand-lockup">
-        <span className="brand-mark">J&amp;B</span>
+        <span className="brand-mark">JMB</span>
         <span className="brand-sub">Gulf Coast</span>
       </span>
       <span className="brand-divider" aria-hidden="true" />
