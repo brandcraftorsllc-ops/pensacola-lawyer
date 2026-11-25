@@ -18,9 +18,9 @@ export default function ResultsPage() {
       <section className="section">
         <div className="container">
           <SectionHeading
-            eyebrow="Client Feedback"
-            title="No verified testimonials available"
-            description="The source website reviewed for this update did not publish client testimonials."
+            eyebrow="Our Commitment"
+            title="What you can expect from the office"
+            description="Direct guidance, careful preparation and a plan built around your circumstances."
           />
           <TestimonialCarousel items={homeContent.testimonials} />
         </div>
@@ -28,15 +28,15 @@ export default function ResultsPage() {
       <section className="section section-alt">
         <div className="container">
           <SectionHeading
-            eyebrow="Case Outcomes"
-            title="No approved case outcomes available"
-            description="No specific case outcomes were available in the source materials reviewed."
+            eyebrow="Matters We Handle"
+            title="Experience across family law and criminal defense"
+            description="Every case is reviewed on its own facts. Call the office to discuss yours."
           />
           <div className="outcome-grid">
             {resultsPage.categories.map((category) => (
-              <article className="outcome-card" key={category}>
-                <p className="eyebrow">{category}</p>
-                <p>No verified outcome supplied for publication.</p>
+              <article className="outcome-card" key={category.title}>
+                <p className="eyebrow">{category.title}</p>
+                <p>{category.description}</p>
               </article>
             ))}
           </div>

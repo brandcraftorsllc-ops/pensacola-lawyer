@@ -88,7 +88,7 @@ function Brand() {
           Pensacola Military Divorce <span className="brand-sep">|</span> Family Law{" "}
           <span className="brand-sep">|</span> Criminal Defense
         </span>
-        <span className="brand-formerly">Formerly The Law Offices Of Stephen W. Bowden</span>
+        <span className="brand-formerly">Formerly The Law Office Of Stephen W. Bowden</span>
       </span>
     </Link>
   );

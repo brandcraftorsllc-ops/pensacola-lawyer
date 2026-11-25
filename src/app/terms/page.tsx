@@ -10,10 +10,6 @@ export default function TermsPage() {
         <div className="container legal-content">
           <p className="eyebrow">Legal</p>
           <h1>Terms of Use</h1>
-          <p className="draft-note">
-            Plain-language summary of the source terms; have the firm review and approve before
-            publication.
-          </p>
           <p>
             By using this website, you agree to follow its terms and applicable laws. The materials
             are provided for personal, non-commercial viewing. Do not copy, modify, distribute or
@@ -29,12 +25,11 @@ export default function TermsPage() {
             endorses the linked site. Visitors use external sites at their own risk.
           </p>
           <p>
-            The source terms state that website-related claims are governed by Florida law. The
-            firm may revise its website terms; check this page for the current version.
+            Claims related to this website are governed by Florida law. The firm may revise these
+            terms; check this page for the current version.
           </p>
           <p>
-            Contact the office at {SITE_PHONE} with questions about this website. These terms are a
-            summary and should not replace the firm&apos;s approved legal terms.
+            Contact the office at {SITE_PHONE} with questions about this website.
           </p>
         </div>
       </article>

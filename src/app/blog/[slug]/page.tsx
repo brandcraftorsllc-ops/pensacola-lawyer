@@ -47,9 +47,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 All Articles <span aria-hidden="true">→</span>
               </Link>
               <p className="draft-note">
-                {article.date === "Source not verified"
-                  ? "Draft — source article not located"
-                  : `Published ${article.date}; legal information may be outdated`}
+                {`Published ${article.date}`}
               </p>
             </div>
             {article.sections.map((section) => (
@@ -89,7 +87,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                     </h2>
                     <p>{related.description}</p>
                     <span className="draft-label">
-                      {related.date === "Source not verified" ? "Draft" : "Insights"}
+                      Insights
                     </span>
                     <Link className="text-link" href={`/blog/${related.slug}`}>
                       Read Article <span aria-hidden="true">→</span>

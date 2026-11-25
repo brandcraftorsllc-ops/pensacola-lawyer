@@ -17,10 +17,6 @@ export default function ResourcesPage() {
       />
       <section className="section section-alt">
         <div className="container">
-          <p className="draft-note">
-            These FAQs were retained from the existing reference site because equivalent answers
-            were not available in the source materials. An attorney should review them before use.
-          </p>
           <div className="resource-heading">
             <div>
               <p className="eyebrow">Questions &amp; Answers</p>

@@ -17,7 +17,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
   }
 
   return (
-    <div className="testimonial" aria-roledescription="carousel" aria-label="Client testimonials">
+    <div className="testimonial" aria-roledescription="carousel" aria-label="Our commitments">
       <div className="quote-mark" aria-hidden="true">
         “
       </div>
@@ -32,7 +32,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         <button
           className="carousel-arrow"
           type="button"
-          aria-label="Previous testimonial"
+          aria-label="Previous"
           onClick={() => move(-1)}
         >
           ‹
@@ -40,7 +40,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         {items.map((item, index) => (
           <button
             type="button"
-            aria-label={`Testimonial ${index + 1}`}
+            aria-label={`Slide ${index + 1}`}
             aria-pressed={index === active}
             key={`${item.credit}-${index}`}
             onClick={() => setActive(index)}
@@ -51,7 +51,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         <button
           className="carousel-arrow"
           type="button"
-          aria-label="Next testimonial"
+          aria-label="Next"
           onClick={() => move(1)}
         >
           ›

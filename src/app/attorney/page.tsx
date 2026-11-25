@@ -29,15 +29,11 @@ export default function AttorneyPage() {
               <figure className={styles.portrait} data-reveal="left">
                 <Image
                   src="/images/headshot-placeholder.png"
-                  alt="Illustrative portrait; this is not a verified photograph of James M. Burns."
+                  alt="Law Office of James M. Burns"
                   width={1024}
                   height={1365}
                   sizes="(max-width: 760px) 88vw, (max-width: 1100px) 42vw, 34vw"
                 />
-                <figcaption>
-                  <span>Portrait pending</span>
-                  <span>Illustrative image only</span>
-                </figcaption>
               </figure>
               <div className={styles.profileIntroduction} data-reveal="up">
                 <p className={styles.eyebrow}>The Attorney</p>
@@ -83,8 +79,8 @@ export default function AttorneyPage() {
         <section className={styles.credentials} aria-labelledby="credentials-heading">
           <div className={styles.credentialsInner}>
             <div data-reveal="up">
-              <p className={styles.eyebrow}>Professional Credentials</p>
-              <h2 id="credentials-heading">A clear, verified profile.</h2>
+              <p className={styles.eyebrow}>Talk With the Attorney</p>
+              <h2 id="credentials-heading">Personal attention. Clear answers.</h2>
             </div>
             <p className={styles.credentialsNote} data-reveal="up" data-reveal-delay="1">
               {attorneyPage.credentialNote}

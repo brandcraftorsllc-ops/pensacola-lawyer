@@ -15,7 +15,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
   "/family-law": {
     title: "Divorce in Pensacola | Law Office of James M. Burns",
     description:
-      "The Law Office of James M. Burns lists divorce, military family matters, child support, alimony and related family-law services in Pensacola.",
+      "Divorce, military divorce, child support, alimony, custody and related family-law help from the Law Office of James M. Burns in Pensacola.",
   },
   "/motions-for-contempt": {
     title: "Motions for Contempt | Law Office of James M. Burns",
@@ -25,27 +25,27 @@ export const routeMetadata: Record<string, RouteMetadata> = {
   "/criminal-defense": {
     title: "Criminal Defense in Pensacola | Law Office of James M. Burns",
     description:
-      "The source website lists DUI, drug trafficking, sexual assault, stalking, domestic-violence charges and injunction-related matters.",
+      "Criminal defense for DUI, drug trafficking, sexual assault, stalking, domestic violence and injunction violations in Escambia, Santa Rosa and Okaloosa counties.",
   },
   "/attorney": {
     title: "About James M. Burns | Law Office of James M. Burns",
     description:
-      "The Law Office of James M. Burns is based in Pensacola. Verified personal biographical and credential details were not available in the source materials reviewed.",
+      "James M. Burns leads the Law Office of James M. Burns in Pensacola, formerly the Law Office of Stephen W. Bowden, serving local and military families.",
   },
   "/results": {
     title: "Client Feedback | Law Office of James M. Burns",
     description:
-      "The source website reviewed for this update did not publish verified client testimonials or specific case outcomes.",
+      "How the Law Office of James M. Burns approaches each case: personal attention, clear answers and a plan built around your circumstances.",
   },
   "/resources": {
     title: "Legal Resources | Law Office of James M. Burns",
     description:
-      "General information on military family matters, divorce and criminal law. Some retained FAQ content requires attorney review.",
+      "Answers to common questions about military divorce, family law and criminal defense in Florida.",
   },
   "/blog": {
     title: "Our Blog | Law Office of James M. Burns",
     description:
-      "Articles from the Law Office of James M. Burns on military family matters, divorce and criminal defense. Some legal information may be outdated.",
+      "Articles from the Law Office of James M. Burns on military family matters, divorce and criminal defense.",
   },
   "/contact": {
     title: "Contact the Pensacola Office | Law Office of James M. Burns",
@@ -60,42 +60,42 @@ export const routeMetadata: Record<string, RouteMetadata> = {
   "/privacy": {
     title: "Privacy Policy | JMB Pensacola",
     description:
-      "A current privacy policy was not available in the source materials reviewed. This page requires firm review before publication.",
+      "How the Law Office of James M. Burns handles information submitted through this website.",
   },
   "/terms": {
     title: "Terms of Use | JMB Pensacola",
     description:
-      "A plain-language summary of website terms from the source site. Review the current terms with the firm before publication.",
+      "Terms of use for the Law Office of James M. Burns website.",
   },
   "/blog/residency-in-a-florida-military-divorce": {
     title: "Residency Issues in a Florida Military Divorce | JMB",
     description:
-      "Military moves and changing assignments may complicate where a divorce can be filed. Confirm current residency and jurisdiction requirements.",
+      "Military moves can complicate where a divorce may be filed. How Florida's six-month residency rule applies to military families.",
   },
   "/blog/custody-rights-for-deployed-parents": {
     title: "Custody Rights Expand for Deployed Military | JMB",
     description:
-      "A legacy source article discusses custody and time-sharing when a parent is deployed. Verify current Florida law before relying on it.",
+      "Florida law gives deploying parents a faster way to set temporary custody and time-sharing arrangements.",
   },
   "/blog/military-retirement-benefits-20-20-20": {
     title: "Military Divorce: 20/20/20 and 20/20/15 Standards | JMB",
     description:
-      "A legacy source article discusses military benefit standards. Check current official guidance and your individual circumstances.",
+      "How the 20/20/20 and 20/20/15 standards decide which military benefits a former spouse keeps after divorce.",
   },
   "/blog/when-stalking-is-a-misdemeanor-or-felony": {
     title: "Florida's Laws on Stalking | JMB",
     description:
-      "The source article discusses Florida stalking charges. Its descriptions of statutory elements and penalties may be out of date.",
+      "How Florida defines stalking and cyberstalking, and when a stalking charge becomes a felony.",
   },
   "/blog/what-to-do-after-a-dui-arrest-in-florida": {
     title: "What to Do After a DUI Arrest in Florida | JMB",
     description:
-      "A DUI article matching this topic was not located in the source materials reviewed. Contact the office to confirm current guidance.",
+      "What a Florida DUI charge can mean, possible penalties, and why early decisions in a DUI case matter.",
   },
   "/blog/how-social-media-can-affect-a-divorce": {
     title: "How Social Media Can Affect My Divorce | JMB",
     description:
-      "A legacy source article discusses social media in divorce matters. Whether information matters depends on the case and current law.",
+      "How posts, photos and messages can come up in a divorce, and what to think about before you share.",
   },
 };
 

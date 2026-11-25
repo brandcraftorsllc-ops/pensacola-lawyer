@@ -160,7 +160,7 @@ test("homepage trust, office, consultation, and additional services are accurate
     "Every Case Deserves a Personal Approach.",
   );
   await expect(feedback).toContainText(
-    "Verified client testimonials and case outcomes are not currently available for publication. These slides describe the office's stated approach, not client reviews.",
+    "Personal attention and clear answers, from the first call through the steps that follow.",
   );
   await expect(feedback.getByRole("link", { name: "Discuss your situation" })).toHaveAttribute(
     "href",
@@ -304,7 +304,7 @@ test("all discovered routes load directly with a page heading", async ({ page })
   }
 });
 
-test("attorney profile uses verified content and preserves protected site sections", async ({ page }) => {
+test("attorney profile shows practice content and preserves protected site sections", async ({ page }) => {
   await page.goto("/attorney");
 
   await expect(page.locator("[data-animation-scope]")).toHaveAttribute("data-animation-active", "true");
@@ -312,16 +312,16 @@ test("attorney profile uses verified content and preserves protected site sectio
   await expect(page.locator(".page-hero .eyebrow")).toHaveText("Attorney Profile");
   await expect(page.locator("main h1")).toHaveText("James M. Burns");
   await expect(page.locator(".breadcrumbs")).toContainText("Home");
-  await expect(page.getByRole("heading", { name: "Background" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Courtroom Experience" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "The Practice" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Serving Military Families" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Pensacola Community Ties" })).toBeVisible();
-  await expect(page.getByText("Verified details about James M. Burns's courtroom experience")).toBeVisible();
-  await expect(page.getByText(/Bar admission, education, years in practice/)).toBeVisible();
+  await expect(page.getByText("formerly the Law Office of Stephen W. Bowden").first()).toBeVisible();
+  await expect(page.getByText(/talk with James M. Burns directly/)).toBeVisible();
   await expect(page.getByText(/Placeholder — add/)).toHaveCount(0);
 
   await page.locator('[data-reveal="left"]').scrollIntoViewIfNeeded();
   await expect(page.locator('[data-reveal="left"]')).toHaveAttribute("data-revealed", "true");
-  await page.getByRole("heading", { name: "Background" }).scrollIntoViewIfNeeded();
+  await page.getByRole("heading", { name: "The Practice" }).scrollIntoViewIfNeeded();
   await expect(page.locator('[data-reveal="right"]').first()).toHaveAttribute(
     "data-revealed",
     "true",

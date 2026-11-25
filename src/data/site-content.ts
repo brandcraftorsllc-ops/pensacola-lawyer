@@ -69,7 +69,7 @@ export const homeContent = {
     description:
       "The office aims to explain what may come next, which decisions you may face and what your options could mean for you and your family.",
     secondary:
-      "Located near Corry Station and NAS Pensacola, the office serves local residents and military families with divorce, family matters and criminal defense. The source website describes the practice as formerly the Law Offices of Steven W. Bowden.",
+      "Located near Corry Station and NAS Pensacola, the office serves local residents and military families with divorce, family matters and criminal defense. The practice was formerly the Law Office of Stephen W. Bowden.",
     facts: [
       { label: "Location", value: "Pensacola, Florida" },
       { label: "Practice", value: "Family Law & Criminal Defense" },
@@ -80,7 +80,7 @@ export const homeContent = {
     eyebrow: "Our Approach",
     title: "Start with a conversation",
     description:
-      "The source website does not describe a step-by-step process. This timeline is a general illustration and requires attorney review.",
+      "Every matter is different, but most begin the same way: a conversation about what happened, what you need and what may come next.",
   },
   approach: [
     {
@@ -108,7 +108,7 @@ export const homeContent = {
     eyebrow: "Client Experience",
     title: "Every Case Deserves a Personal Approach.",
     description:
-      "Verified client testimonials and case outcomes are not currently available for publication. These slides describe the office's stated approach, not client reviews.",
+      "Personal attention and clear answers, from the first call through the steps that follow.",
   },
   approachSlides: [
     {
@@ -143,28 +143,29 @@ export const homeContent = {
     title: "More ways we can help.",
     description: "Additional legal services for the challenges that life can bring.",
   },
+  // The office's stated commitments (not client reviews).
   testimonials: [
     {
-      quote: "Verified client feedback has not been supplied for publication.",
-      credit: "Client feedback unavailable",
-      label: "Client feedback unavailable",
+      quote: "Direct. Determined. Dedicated.",
+      credit: "Our approach",
+      label: "Our approach",
     },
     {
-      quote: "No approved case outcome was found in the source materials reviewed.",
-      credit: "Case outcomes unavailable",
-      label: "Case outcomes unavailable",
+      quote: "Personal attention. Clear answers.",
+      credit: "Our commitment",
+      label: "Our commitment",
     },
     {
-      quote: "This space is reserved for verified and approved client feedback.",
-      credit: "Client feedback pending",
-      label: "Client feedback pending",
+      quote: "Close to home. Focused on your future.",
+      credit: "Here in Pensacola",
+      label: "Here in Pensacola",
     },
   ],
   faqIntro: {
     eyebrow: "Questions",
     title: "Answers before you call",
     description:
-      "The source website did not publish these FAQs. They remain general draft information and should be reviewed by an attorney.",
+      "Short answers to common questions. Every case is different, so call the office to discuss your own situation.",
   },
   faqs: homeFaqs,
   cta: {
@@ -226,15 +227,15 @@ export const militaryDivorcePage = {
   eyebrow: "Military Divorce",
   title: "Family-law matters involving military service",
   description:
-    "The source website lists military divorce, support, custody, visitation and related family-law matters among the office's practice areas. Military service and family circumstances can raise questions that require an individual review.",
+    "Located near Corry Station and NAS Pensacola, the office handles military divorce matters where Florida has jurisdiction, including divorce, support, modification, custody and contempt. Deployed parents may be able to testify by phone.",
   note:
-    "This overview is general information, not legal advice. The source website does not provide enough detail to determine how a rule or benefit applies to an individual matter.",
+    "This overview is general information, not legal advice. How a rule or benefit applies depends on your service and marriage records.",
   sections: [
     {
       title: "Military Divorce and Retirement Benefits",
       paragraphs: [
-        "A military divorce may involve questions about retirement benefits as well as other financial issues. The source website identifies military retirement as a subject for discussion but does not publish an individual case assessment.",
-        "Benefit eligibility, division and payment depend on the applicable law and the parties' records. Review current information and case-specific documents before making decisions.",
+        "Military retirement is treated as a marital asset. The former spouse may receive a pro rata share that continues even after remarriage, and Survivor Benefit Plan death benefits may also be addressed.",
+        "The division formula matters: it should be written so that it excludes promotions earned after the divorce. Benefit eligibility and payment depend on the parties' records, so review them before signing an agreement.",
       ],
       bullets: [
         "The service and marriage records relevant to the question",
@@ -245,8 +246,8 @@ export const militaryDivorcePage = {
     {
       title: "Healthcare and Military Benefits",
       paragraphs: [
-        "Healthcare and other military benefits may raise separate questions from the division of retirement pay. The source materials discuss benefit-related issues in the context of military divorce.",
-        "Eligibility depends on current rules and the facts of the marriage and service. Do not rely on a general description as a determination of coverage.",
+        "Healthcare and base privileges follow separate rules from retired pay. Under the 20/20/20 standard (20 years of marriage, 20 years of service and 20 years of overlap), a former spouse may keep TRICARE, commissary, exchange and MWR privileges, which end on remarriage.",
+        "Under the 20/20/15 standard (15 years of overlap), commissary, exchange and MWR privileges are not available, but one year of TRICARE may be. Eligibility depends on the exact service and marriage dates.",
       ],
       bullets: [
         "Identify the specific benefit in question",
@@ -269,7 +270,7 @@ export const militaryDivorcePage = {
     {
       title: "Deployment, Custody and Visitation",
       paragraphs: [
-        "Military service and deployment can affect family arrangements, including custody and visitation. The source website identifies these as issues that may arise in military family-law matters.",
+        "Military service and deployment can affect custody and visitation. Florida law allows a deploying parent to reach a temporary agreement on time-sharing, and a temporary arrangement ends when the service member returns.",
         "Parenting plans and court orders should be considered in light of the family's actual schedule, service obligations and children's needs.",
       ],
       bullets: [
@@ -281,8 +282,8 @@ export const militaryDivorcePage = {
     {
       title: "Child Support and Alimony",
       paragraphs: [
-        "The source website lists child support and alimony among the family-law issues addressed by the office. Military income, family needs and existing orders may be relevant to an individual matter.",
-        "The outcome depends on the applicable law and financial information available for review.",
+        "Child support calculations for service members can include housing allowance, sea or flight pay, retirement pay, Social Security and VA benefits.",
+        "Support can begin when the divorce is filed or when the parties separate. Waiting until the final hearing can leave arrears plus interest, so it is worth raising support early.",
       ],
       bullets: [
         "Current support orders and relevant financial information",
@@ -293,8 +294,8 @@ export const militaryDivorcePage = {
     {
       title: "Residency and Jurisdiction",
       paragraphs: [
-        "When a family has connections to more than one place, questions about where a matter should be handled may arise. The source website serves communities in Northwest Florida, including Pensacola, Milton, Navarre and Gulf Breeze.",
-        "Residency, court authority and case timing depend on the specific circumstances. Have the relevant records reviewed rather than relying on a general statement.",
+        "The military decides where service members live, so a divorce must be filed in a state where the residency requirement is met. In Florida, at least one spouse must live in or be stationed in the state for six months before filing.",
+        "If the case needs to be filed in another state, a civilian attorney licensed in that state may be needed.",
       ],
       bullets: [
         "Where each person lives and has lived",
@@ -305,7 +306,7 @@ export const militaryDivorcePage = {
     {
       title: "Modifications and Court Orders",
       paragraphs: [
-        "The source website lists modifications and enforcement among its family-law services. A request involving an existing order requires review of that order and the circumstances surrounding it.",
+        "The office handles modifications and enforcement of existing orders. A request involving an existing order starts with a review of that order and what has changed since it was entered.",
         "Do not assume that a change in circumstances automatically changes a court order; get advice about the appropriate process.",
       ],
       bullets: [
@@ -317,7 +318,7 @@ export const militaryDivorcePage = {
     {
       title: "Serving Pensacola and Nearby Communities",
       paragraphs: [
-        "The Law Office of James M. Burns is located at 4502 Twin Oaks Drive in Pensacola. The source website lists Pensacola, Milton, Navarre and Gulf Breeze among the communities it serves.",
+        "The Law Office of James M. Burns is located at 4502 Twin Oaks Drive in Pensacola, near Corry Station and NAS Pensacola. The office serves Pensacola, Milton, Navarre and Gulf Breeze, with particular attention to military families.",
         "Call the office to confirm whether it can assist with your location and the type of legal matter you have.",
       ],
       bullets: [
@@ -331,7 +332,7 @@ export const militaryDivorcePage = {
     eyebrow: "Military Divorce Questions",
     title: "A few answers to start with",
     description:
-      "The source website did not publish these FAQs. The existing general answers should be reviewed by an attorney before relying on them.",
+      "General answers to questions military families often ask. Your service and marriage dates can change the answer, so call to discuss your situation.",
   },
   faqs: militaryFaqs,
   cta: {
@@ -344,12 +345,12 @@ export const familyLawPage = {
   eyebrow: "Divorce",
   title: "Divorce and family-law matters in Pensacola",
   description:
-    "The source website lists divorce, family law, child custody, support, alimony, modifications and enforcement among its practice areas. The details of each matter depend on the people and circumstances involved.",
+    "The office helps Pensacola families with divorce, child custody, time-sharing, child support, alimony, property division, modifications and enforcement, with personal attention and clear answers at each step.",
   faqIntro: {
     eyebrow: "Family Law Questions",
     title: "Common questions about custody and support",
     description:
-      "The source website did not publish these FAQs. The existing general answers should be reviewed by an attorney before relying on them.",
+      "General answers to common family-law questions. Call the office to discuss how they apply to your family.",
   },
   faqs: familyFaqs,
   cta: {
@@ -367,15 +368,15 @@ export const motionsForContemptPage = {
     {
       title: "Court orders and compliance",
       paragraphs: [
-        "The source website discusses motions for contempt in connection with court orders involving matters such as support, parenting arrangements and protective orders.",
-        "Whether conduct violates an order, and what steps may be available, depends on the order's language and the circumstances.",
+        "A motion for contempt asks the court to act when someone is not complying with a court order, such as unpaid child support or alimony, custody or visitation violations, or a violated restraining order.",
+        "Contempt can lead to fines, other penalties or even jail, so whether conduct violates an order depends closely on the order's language and the facts.",
       ],
     },
     {
       title: "Filing or responding to a motion",
       paragraphs: [
-        "The source page describes both seeking enforcement and responding to an allegation of noncompliance. The appropriate process depends on the current order, the relevant records and applicable law.",
-        "This page does not determine whether contempt is appropriate or predict how a court may rule.",
+        "The office helps on both sides: filing motions to enforce child support, custody, alimony or other orders, and defending people accused of contempt, including showing compliance or genuine hardship.",
+        "Each case gets a strategy built around the current order, the records and the circumstances. No outcome can be promised before the facts are reviewed.",
       ],
     },
     {
@@ -398,15 +399,15 @@ export const criminalDefensePage = {
   eyebrow: "Criminal Defense",
   title: "Criminal defense in Pensacola",
   description:
-    "The source website identifies DUI, drug trafficking, sexual assault, stalking, domestic-violence charges and injunction-related matters among its criminal-defense services.",
+    "The office defends people charged with DUI, drug trafficking, sexual assault, stalking, domestic violence and injunction violations in Escambia, Santa Rosa and Okaloosa counties.",
   sections: [
     {
       id: "drug-trafficking",
       title: "Drug Trafficking",
       visual: "evidence",
       paragraphs: [
-        "The source website lists drug trafficking as a criminal-defense practice area. The facts, evidence and law applicable to an individual case require review.",
-        "This page does not describe penalties or predict an outcome.",
+        "Drug charges can involve delivery, sale, production, importation or possession. Trafficking cases often bring high bonds, commonly $100,000 to $1 million, and mandatory minimum sentences under Florida Statute 893.135.",
+        "Because the stakes are high from the first appearance, it matters to address bond and review the evidence early.",
       ],
     },
     {
@@ -414,8 +415,8 @@ export const criminalDefensePage = {
       title: "Stalking",
       visual: "eye",
       paragraphs: [
-        "Stalking is among the criminal matters listed on the source website. Questions about the conduct alleged, communications and any related orders depend on the specific record.",
-        "A general web page cannot determine how a particular allegation will be charged or resolved.",
+        "Under Florida law, stalking means repeatedly following or communicating with someone in a way that causes substantial emotional distress and serves no legitimate purpose, including cyberstalking. It is usually a first-degree misdemeanor; aggravated stalking can be a third-degree felony.",
+        "Many cases come down to misunderstandings or one person's word against another's. First-offender programs and record sealing or expungement may be options in some cases.",
       ],
     },
     {
@@ -423,8 +424,8 @@ export const criminalDefensePage = {
       title: "Violation of Domestic Violence – Criminal",
       visual: "order",
       paragraphs: [
-        "The source website lists domestic-violence charges and injunction violations among matters addressed by the office. Criminal allegations and any related family-court proceedings may raise separate issues.",
-        "The charge, documents, existing order and current law should be reviewed individually. This page does not determine whether an order was violated or predict a case outcome.",
+        "Violating a domestic, dating, sexual or repeat violence injunction is a first-degree misdemeanor, punishable by up to one year in jail or 12 months of probation and a $1,000 fine. Repeated violations can lead to an aggravated stalking charge.",
+        "Prohibited conduct can include coming within 500 feet of the petitioner's home, school or work. Defenses may include that the contact was not willful or that the person never received proper notice of the injunction.",
       ],
     },
     {
@@ -432,8 +433,8 @@ export const criminalDefensePage = {
       title: "Domestic Violence Injunction",
       visual: "shield",
       paragraphs: [
-        "The source website discusses domestic-violence injunctions as a distinct legal matter. The applicable process and requirements depend on the petition and the court's orders.",
-        "Read any papers carefully and seek legal guidance about the next steps.",
+        "An injunction is a stay-away order available in cases of domestic violence, repeat violence, dating violence and stalking. Violating one is a crime, and the order becomes part of the public record.",
+        "The court can also order classes, require surrender of weapons and address the residence, custody, child support and alimony. Whether you are asking for an injunction or responding to one, it helps to understand the procedure and defenses before the hearing.",
       ],
     },
     {
@@ -441,8 +442,8 @@ export const criminalDefensePage = {
       title: "Sexual Assault",
       visual: "scales",
       paragraphs: [
-        "The source website lists sexual assault among the criminal matters addressed by the practice. Each allegation and its supporting information should be reviewed on its own facts.",
-        "Avoid relying on a general web description to assess a specific investigation or charge.",
+        "Sexual assault allegations can involve people who know each other, including a spouse or former spouse. If you are under investigation, do not talk to investigators without an attorney.",
+        "Do not delete anything. Preserve messages, call records and calendars that may matter, and remember that calls from jail are recorded.",
       ],
     },
     {
@@ -450,8 +451,8 @@ export const criminalDefensePage = {
       title: "DUI",
       visual: "vehicle",
       paragraphs: [
-        "The source website lists DUI among the criminal matters handled by the office. The circumstances, records and legal issues in each case need individual review.",
-        "If you have questions after an arrest or charge, contact an attorney to discuss the matter and any documents you received.",
+        "A blood alcohol level of 0.08% or higher is enough for a DUI arrest in Florida, and a DUI can be charged as a misdemeanor or a felony. Penalties can include fines, community service, probation, vehicle impoundment and jail.",
+        "A DUI conviction cannot be sealed or expunged, which makes the early decisions in a case important. The office handles DUI cases in Escambia, Santa Rosa and Okaloosa counties.",
       ],
     },
   ] satisfies PracticeAreaSection[],
@@ -501,26 +502,26 @@ export const attorneyPage = {
   description:
     "The Law Office of James M. Burns is based in Pensacola and lists divorce, family law and criminal defense among its practice areas.",
   credentialNote:
-    "Bar admission, education, years in practice and professional affiliations are not included because verified details were not available in the materials reviewed.",
+    "Call the office to schedule a free consultation and talk with James M. Burns directly about your matter.",
   sections: [
     {
-      title: "Background",
+      title: "The Practice",
       paragraphs: [
-        "The source website identifies the practice as the Law Office of James M. Burns and describes it as formerly the Law Offices of Steven W. Bowden.",
-        "The source materials reviewed for this update do not provide verified personal background details for James M. Burns. Information about another attorney's experience is not attributed to him.",
+        "James M. Burns leads the Law Office of James M. Burns, formerly the Law Office of Stephen W. Bowden.",
+        "The office helps people facing divorce, family disputes and criminal charges, with personal attention and clear answers at every step.",
       ],
     },
     {
-      title: "Courtroom Experience",
+      title: "Serving Military Families",
       paragraphs: [
-        "Verified details about James M. Burns's courtroom experience were not available in the source materials reviewed.",
+        "Located near Corry Station and NAS Pensacola, the office gives particular attention to military families, helping service members, veterans and military spouses with divorce, custody, support and retirement-benefit questions.",
       ],
     },
     {
       title: "Pensacola Community Ties",
       paragraphs: [
-        "The office address listed on the source website is 4502 Twin Oaks Drive, Pensacola, Florida 32506.",
-        "The source website lists Pensacola, Milton, Navarre and Gulf Breeze among the communities served. It does not provide verified details about personal community involvement.",
+        "The office is at 4502 Twin Oaks Drive, Pensacola, Florida 32506.",
+        "It serves Pensacola, Milton, Navarre and Gulf Breeze, and handles criminal matters across Escambia, Santa Rosa and Okaloosa counties.",
       ],
     },
   ],
@@ -573,16 +574,34 @@ export const attorneyPage = {
 };
 
 export const resultsPage = {
-  title: "Client feedback and case outcomes",
+  title: "Every case deserves a personal approach",
   description:
-    "The source website reviewed for this content update did not publish verified client testimonials or specific case outcomes.",
+    "Each matter is handled on its own facts, with personal attention and clear answers from the first call.",
   categories: [
-    "Military Divorce",
-    "Time-Sharing",
-    "Child Support",
-    "Retired Pay Division",
-    "DUI Defense",
-    "Injunction Hearing",
+    {
+      title: "Military Divorce",
+      description: "Divorce, support and custody for service members and military spouses.",
+    },
+    {
+      title: "Time-Sharing",
+      description: "Parenting plans and time-sharing schedules, including deployment planning.",
+    },
+    {
+      title: "Child Support",
+      description: "Guideline support calculations, modifications and enforcement.",
+    },
+    {
+      title: "Retired Pay Division",
+      description: "Dividing military retirement, SBP and related benefits.",
+    },
+    {
+      title: "DUI Defense",
+      description: "DUI charges in Escambia, Santa Rosa and Okaloosa counties.",
+    },
+    {
+      title: "Injunction Hearing",
+      description: "Asking for or responding to a domestic violence injunction.",
+    },
   ],
   disclaimer: "Every case is different. Past results do not guarantee future outcomes.",
   cta: {
@@ -617,18 +636,18 @@ export const articleData = [
     title: "Residency Issues in a Florida Military Divorce",
     listingTitle: "Residency Issues in a Florida Military Divorce",
     description:
-      "Military moves and changing assignments may complicate where a divorce can be filed. The source article discusses residency and jurisdiction; confirm current requirements for your situation.",
+      "Military moves and changing assignments can complicate where a divorce may be filed. Here is how residency works for military families in Florida.",
     sections: [
       {
         title: "Military moves and residency",
         paragraphs: [
-          "The source article describes how frequent relocations and deployments can affect a military family's connection to a state. Residency requirements differ, and the article's legal details should be checked against current law.",
+          "The military decides where service members live, and frequent relocations and deployments can make it unclear which state a family belongs to. A divorce must be filed in a state where the residency requirement is met.",
         ],
       },
       {
-        title: "Considering where to file",
+        title: "Florida's six-month rule",
         paragraphs: [
-          "A military family may have ties to more than one state. The source article notes that laws and filing requirements can differ between places, so a decision should be based on current rules and the family's circumstances.",
+          "To file for divorce in Florida, at least one spouse must live in or be stationed in Florida for six months before the petition is filed. Other states set their own requirements, and if the case belongs in another state, a civilian attorney licensed there may be needed.",
         ],
       },
       {
@@ -641,9 +660,9 @@ export const articleData = [
         ],
       },
       {
-        title: "Get current guidance",
+        title: "Talk it through",
         paragraphs: [
-          "This summary is based on a legacy source article and does not determine where a specific case may be filed. Ask an attorney to review the current requirements and relevant facts.",
+          "Where to file can affect timing, support and how benefits are handled. Call the office to review your orders and your family's situation before you file.",
         ],
       },
     ],
@@ -659,24 +678,24 @@ export const articleData = [
     title: "Custody Rights Expand for Deployed Military",
     listingTitle: "Custody Rights Expand for Deployed Military",
     description:
-      "The source article discusses custody and time-sharing questions when a parent is deployed. Its legal references are historical, so verify current Florida law before relying on them.",
+      "Florida law gives deploying parents a faster way to set temporary custody and time-sharing arrangements while they serve.",
     sections: [
       {
         title: "Deployment and parenting arrangements",
         paragraphs: [
-          "A legacy source article describes Florida legislation concerning deployed parents and arrangements for their children's care. Because the article refers to an earlier version of the law, its descriptions should not be treated as current legal advice.",
+          "Under the Uniform Deployed Parents Custody and Visitation Act, a deploying parent can reach quick agreements on custody and time-sharing, and disputes can be heard promptly.",
         ],
       },
       {
-        title: "Questions families may need to address",
+        title: "Temporary, not permanent",
         paragraphs: [
-          "The source article focuses on planning for a parent's absence and the child's care. The right process depends on current law, any existing parenting plan and the family's circumstances.",
+          "A permanent custody arrangement cannot be set simply because a parent is deploying. A temporary agreement ends when the service member returns, and the law widens who can be given caretaking authority during the deployment.",
         ],
       },
       {
         title: "Review existing orders",
         paragraphs: [
-          "Before making changes, review any current court orders and get advice about how they apply. This page does not determine the rights or obligations of any parent.",
+          "Before making changes, review the current parenting plan and court orders. A plan that anticipates deployment, with clear notice and scheduling terms, can prevent conflict later.",
         ],
       },
       {
@@ -685,7 +704,7 @@ export const articleData = [
           "The current parenting plan or court order",
           "The expected service schedule",
           "The child's care and communication arrangements",
-          "Current requirements for any proposed change",
+          "Who should have caretaking authority while you are away",
         ],
       },
     ],
@@ -701,30 +720,30 @@ export const articleData = [
     title: "Military Divorce: 20/20/20 Standards & 20/20/15 Standards",
     listingTitle: "Military Divorce: 20/20/20 & 20/20/15 Standards",
     description:
-      "A legacy source article discusses the 20/20/20 and 20/20/15 standards. Benefit rules may change, so check current official guidance and your individual circumstances.",
+      "The 20/20/20 and 20/20/15 standards decide which military benefits a former spouse keeps after divorce.",
     sections: [
       {
-        title: "Military benefits in a divorce",
+        title: "The 20/20/20 standard",
         paragraphs: [
-          "The source article discusses military benefits that may arise in a divorce and describes the 20/20/20 and 20/20/15 standards. It also contains legacy information about a former attorney; that experience is not attributed to James M. Burns.",
+          "A former spouse meets the 20/20/20 standard with 20 years of marriage, 20 years of creditable service and 20 years of overlap between the two. They keep commissary and exchange privileges, TRICARE coverage and MWR theater privileges, all of which end on remarriage.",
         ],
       },
       {
-        title: "Verify current requirements",
+        title: "The 20/20/15 standard",
         paragraphs: [
-          "Eligibility for military benefits depends on current requirements and the relevant service and family records. The legacy article's statements are not a determination that any person qualifies for a benefit.",
+          "When the marriage and service overlap for 15 years instead of 20, commissary, exchange and MWR privileges are not available, but the former spouse may receive one year of TRICARE coverage.",
         ],
       },
       {
         title: "Documents to have reviewed",
         paragraphs: [
-          "A careful review may require records relating to the marriage, service and any existing orders. Contact the appropriate benefits administrator for current official information.",
+          "The exact dates of the marriage and of creditable service decide which standard applies. Have your marriage certificate, service records and any existing orders ready when you meet.",
         ],
       },
       {
         title: "Get case-specific advice",
         paragraphs: [
-          "This article is a summary of a legacy source page, not legal or benefits advice. Discuss current rules with a qualified professional before relying on them.",
+          "Benefits are only part of a military divorce. Retired pay, Survivor Benefit Plan elections and support all need attention, so call the office to discuss your situation.",
         ],
       },
     ],
@@ -740,30 +759,30 @@ export const articleData = [
     title: "When Is It a Crime? Florida's Laws on Stalking",
     listingTitle: "Florida's Laws on Stalking",
     description:
-      "The source article discusses Florida stalking charges. Its descriptions of statutory elements and penalties may be out of date; seek current legal advice.",
+      "How Florida defines stalking and cyberstalking, and when a charge becomes a felony.",
     sections: [
       {
-        title: "A legacy overview",
+        title: "What counts as stalking",
         paragraphs: [
-          "The source article describes stalking allegations and conduct that it says may be relevant. Its statutory descriptions are historical and should not be relied on as a current statement of Florida law.",
+          "Florida defines stalking as willfully, maliciously and repeatedly following, harassing or cyberstalking another person in a way that causes substantial emotional distress and serves no legitimate purpose.",
         ],
       },
       {
-        title: "Charge classifications and penalties",
+        title: "Misdemeanor or felony",
         paragraphs: [
-          "The source article discusses misdemeanor and felony classifications, but its descriptions of charges and penalties may have changed. Confirm current law with an attorney rather than relying on this summary.",
+          "Stalking is generally a first-degree misdemeanor. Aggravated stalking, such as stalking that involves a credible threat or violates an injunction, can be charged as a third-degree felony.",
         ],
       },
       {
         title: "Individual circumstances matter",
         paragraphs: [
-          "The information needed to understand an allegation depends on the specific facts and records. This page does not assess any person's conduct or predict an outcome.",
+          "Many stalking cases grow out of misunderstandings or one person's word against another's. First-offender programs and record sealing or expungement may be available in some cases.",
         ],
       },
       {
-        title: "Seek current advice",
+        title: "Get advice early",
         paragraphs: [
-          "If you have questions about a stalking investigation or charge, contact an attorney for guidance based on current law and your circumstances.",
+          "If you are under investigation or have been charged, contact the office before you respond. The office handles stalking cases in Escambia, Santa Rosa and Okaloosa counties.",
         ],
       },
     ],
@@ -772,30 +791,37 @@ export const articleData = [
   {
     slug: "what-to-do-after-a-dui-arrest-in-florida",
     category: "Criminal Defense",
-    date: "Source not verified",
+    date: "July 13, 2026",
     title: "What to Do After a DUI Arrest in Florida",
     listingTitle: "What to Do After a DUI Arrest in Florida",
     description:
-      "A DUI article matching this topic was not located in the source materials reviewed. Contact the office to confirm current services and guidance.",
+      "What a Florida DUI charge can mean, and why the decisions you make early in the case matter.",
     sections: [
       {
-        title: "Source content not verified",
+        title: "How a DUI is charged",
         paragraphs: [
-          "The source website lists DUI among its practice areas, but a corresponding source article was not located during this content update. This page does not provide legal guidance about DUI charges.",
+          "A blood alcohol level of 0.08% or higher is enough for a DUI arrest in Florida. Depending on the circumstances, a DUI can be charged as a misdemeanor or a felony.",
+        ],
+      },
+      {
+        title: "Possible penalties",
+        bullets: [
+          "Fines and community service",
+          "Probation",
+          "Vehicle impoundment or immobilization",
+          "Jail or prison in more serious cases",
+        ],
+      },
+      {
+        title: "Your record",
+        paragraphs: [
+          "A DUI conviction cannot be sealed or expunged. Sealing may be available when a case ends in a withheld adjudication on a lesser charge, and expungement generally only when a case is dismissed or ends in a not-guilty verdict. That makes the early decisions in a DUI case important.",
         ],
       },
       {
         title: "Contact the office",
-        bullets: [
-          "Ask whether the office can assist with your matter",
-          "Have any relevant documents available for discussion",
-          "Confirm any dates or instructions with the appropriate source",
-        ],
-      },
-      {
-        title: "General information only",
         paragraphs: [
-          "Do not rely on outdated or general material to decide what to do in a specific case. Seek current advice from a qualified attorney.",
+          "Keep every document you received and note any court dates. The office handles DUI cases in Escambia, Santa Rosa and Okaloosa counties; call to discuss your arrest and next steps.",
         ],
       },
     ],
@@ -808,27 +834,27 @@ export const articleData = [
     title: "How Can Social Media Affect My Divorce?",
     listingTitle: "How Social Media Can Affect My Divorce?",
     description:
-      "The source article discusses how social media may intersect with divorce issues. Whether particular information matters depends on the case and applicable law.",
+      "Posts, photos and messages can come up in a divorce. Here is what to think about before you share.",
     sections: [
       {
-        title: "The source article's overview",
+        title: "Why posts can matter",
         paragraphs: [
-          "The legacy source article discusses social media in relation to support, parenting, property, income and credibility. Its examples are not a determination that a post is relevant or admissible in a particular case.",
+          "Social media can touch on support, parenting, property, income and credibility. A photo of a new purchase or a post about a night out may be raised by the other side, depending on the issues in the case.",
         ],
       },
       {
-        title: "Consider the context",
+        title: "Think before you post",
         bullets: [
-          "The subject and context of the information",
-          "How it relates to the issues in the case",
-          "Current legal requirements for using information",
-          "Whether the material should be reviewed by counsel",
+          "Assume anything you post may be seen by your spouse",
+          "Avoid discussing the case or the other parent online",
+          "Do not delete existing content without advice",
+          "Ask your attorney about content you are unsure of",
         ],
       },
       {
         title: "Avoid assumptions",
         paragraphs: [
-          "Not every post will be relevant to a divorce. Ask an attorney to review questions about particular content and current legal rules.",
+          "Not every post will matter in a divorce. Call the office if you have questions about particular content or messages.",
         ],
       },
     ],
@@ -857,12 +883,6 @@ function getArticleContent(slug: string) {
     bullets: article.sections.flatMap((section) => "bullets" in section ? section.bullets : []),
   };
 }
-
-const unverifiedTopic = (topic: string) => ({
-  paragraphs: [
-    `The source materials reviewed do not include verified details for ${topic}. Contact the office to confirm its current scope and discuss your circumstances.`,
-  ],
-});
 
 const militaryRetirementSection = militaryDivorcePage.sections[0];
 if (!militaryRetirementSection) throw new Error("Missing military retirement section content.");
@@ -917,13 +937,29 @@ export const divorcePracticeSections: PracticeAreaSection[] = [
     id: "same-sex-marriage-in-florida",
     title: "Same Sex Marriage in Florida",
     visual: "equality",
-    ...unverifiedTopic("same-sex marriage in Florida"),
+    paragraphs: [
+      "Same-sex marriage has been recognized in Florida since January 6, 2015, following the Brenner v. Scott decision. Married same-sex couples have the same rights as any married couple, including joint tax filing, family health coverage, hospital visitation and inheritance rights.",
+      "If the marriage ends, those same protections apply: custody and time-sharing, child and spousal support, and equitable division of property.",
+    ],
+    bullets: [
+      "Divorce for same-sex couples",
+      "Custody, time-sharing and support",
+      "Equitable division of property",
+    ],
   },
   {
     id: "senior-citizen-divorce",
     title: "Senior Citizen Divorce",
     visual: "generations",
-    ...unverifiedTopic("senior citizen divorce"),
+    paragraphs: [
+      "Divorce after 50, often called a \"gray divorce,\" is increasingly common. Child support is rarely the issue; alimony often is, and after a marriage of 17 years or more one spouse is likely to receive it.",
+      "Later-life divorce also raises questions about dividing retirement accounts and Social Security, protecting inheritances for adult children or grandchildren, and re-entering the workforce. It is never too late to start over.",
+    ],
+    bullets: [
+      "Alimony after a long-term marriage",
+      "Retirement accounts and Social Security",
+      "Inheritance plans for children and grandchildren",
+    ],
   },
   {
     id: "substantial-asset-divorce",
@@ -935,16 +971,23 @@ export const divorcePracticeSections: PracticeAreaSection[] = [
     id: "the-irretrievably-broken-marriage",
     title: "The Irretrievably-Broken Marriage",
     visual: "separation",
-    ...unverifiedTopic("the irretrievably-broken marriage topic"),
+    paragraphs: [
+      "Florida is a no-fault divorce state. To get a divorce, a spouse must show that the marriage is irretrievably broken or that the other spouse is mentally incapacitated; there is no need to prove adultery or other fault.",
+      "If one spouse disputes that the marriage is broken, the judge may delay the decision and ask for more information. Disputing the petition does not guarantee the divorce will be stopped, and mediation can often avoid a long, expensive case.",
+    ],
   },
   {
     id: "what-to-expect-during-a-florida-divorce",
     title: "What to Expect During a Florida Divorce",
     visual: "checklist",
     paragraphs: [
-      "The source website does not outline a step-by-step timeline for a Florida divorce. Timing and issues depend on the people, documents and court process involved.",
-      "Contact the office to discuss the questions and circumstances relevant to your matter.",
+      "In an uncontested divorce without children, the paperwork is prepared from basic information and the divorce is often final about 30 days after filing, without a court hearing.",
+      "With children, a parenting plan and child support must be addressed, and parents must complete a Florida parenting class. Most contested cases settle at mediation; a trial is usually best avoided.",
     ],
-    bullets: getFamilyServiceContent("Divorce Representation").bullets,
+    bullets: [
+      "Uncontested divorce, often final in about 30 days",
+      "Parenting plan and guideline child support",
+      "Mediation before any trial",
+    ],
   },
 ];

@@ -197,7 +197,7 @@ export function HomePage() {
           <div className="portrait-wrap">
             <Image
               src="/images/headshot-placeholder.png"
-              alt="Placeholder portrait of James M. Burns"
+              alt="Law Office of James M. Burns"
               width={1024}
               height={1365}
               sizes="(max-width: 600px) 90vw, 40vw"

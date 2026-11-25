@@ -17,10 +17,6 @@ export default function BlogPage() {
       />
       <section className="section section-alt">
         <div className="container">
-          <p className="draft-note">
-            Some source articles contain legacy legal information. Review each article&apos;s notice
-            and confirm current law before relying on it.
-          </p>
           <BlogBrowser articles={[...articleData]} />
         </div>
       </section>

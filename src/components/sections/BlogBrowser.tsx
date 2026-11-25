@@ -71,7 +71,7 @@ export function BlogBrowser({ articles }: { articles: ArticleCardData[] }) {
               </h2>
               <p>{article.description}</p>
               <span className="draft-label">
-                {article.date === "Source not verified" ? "Draft" : "Insights"}
+                Insights
               </span>
               <Link className="text-link" href={`/blog/${article.slug}`}>
                 Read Article <span aria-hidden="true">→</span>
